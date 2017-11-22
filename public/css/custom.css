@@ -1,0 +1,320 @@
+/*======================================
+||||||||| GOOGLE FONT |||||||||
+========================================*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Yesteryear');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:100,100i,300,300i,400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento:400,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+.google_font_1{font-size: 2em; font-family: 'Patua One', sans-serif; margin-bottom: 0}
+.google_font_2{font-family: 'Oswald', sans-serif}
+.google_font_3{font-family: 'Permanent Marker', cursive;}
+.google_font_4{font-family: 'Raleway', sans-serif; letter-spacing: 1px; line-height: 1.8}
+
+.font_color_white{color: white}
+
+.is_size3{font-size: 2em !important}
+
+/*======================================
+||||||||| MISC |||||||||
+========================================*/
+.mgt_1{margin-top: 1em} .mgt_2{margin-top: 2em} .mgt_4{margin-top: 4em}
+.mgb_1{margin-bottom: 1em !important} .mgb_2{margin-bottom: 2em} .mgb_4{margin-bottom: 4em} .mgb_8{margin-bottom: 8em !important}
+.mgr_1{margin-right: 1em} .mgl_1{margin-left: 1em}
+.pda_1{padding: 1em !important}
+
+.form_field_color{background-color: #e2eff3; height: 40px}
+.form_label{text-align: left; font-family: 'Lato', 'Raleway', sans-serif; font-size: 20px; margin:10px 0 0 0; padding: 0}
+.seperator{ border-bottom: 2px solid #ddd; width: 100%; margin: 10px auto; }
+.border_center{
+  box-sizing: border-box;
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin: 20px auto 20px;
+  background: #2553c1};
+}
+
+.is_full_width{width: 100%}
+
+.is_inactive{color: #ddd !important}
+
+/*======================================
+||||||||| COLORS |||||||||
+========================================*/
+.color_hero{background-color: #FAA444; color: black}
+.color_hero2{background-color: #F5F5F5; border: 1px solid #ddd; font-family: 'Patua One', sans-serif;}
+
+.is_color1{background-color: #FAA444; color: white}
+.is_color2{background-color: #c4d7e0; color: #6D82B4} /* submit button */
+.is_color3{background-color: #f03c36; color: #fff}
+.is_color3_d{background-color: #d68e6c !important}
+span.is_color4 a{color: #FFF}
+span.is_color4 a:hover{color: #FAA444}
+.is_color5{color: #42454E !important}
+.is_color6{background-color: #F6F7FB}
+.is_color7{color: #00D664} /* LOGO TEXT */
+.is_color8{background-color: #00D664; color: #F6F7FB} /* LOGIN BUTTON */
+.is_color9{background-color: #EEEEEE}
+.is_color10{background-color: #fff}
+.is_color11{background-color: rgba(244, 246, 250, 0.19)}
+.is_color12{background-color: #b87a9f; color: #fff !important}
+.is_color12d{background-color: rgba(184, 122, 159, 0.68); color: #fff !important}
+.is_danger_d{background-color: #ff8a8a !important}
+
+/*======================================
+||||||||| NAV |||||||||
+========================================*/
+img.img_position{margin:0; padding: 5px 0 0 0} /*max-height: 100%*/
+nav.navbar{height: 5em; background-color: #4C4C45 !important}
+a.wider_button{text-decoration:none; padding: .4em 1.8em; border-radius:3px; text-transform:uppercase;}
+span.wider_button{padding: 0 1.8em; border-radius:3px; text-transform:uppercase;}
+
+a.navbar-item{color:#fff; text-decoration: none; !important}
+a.navbar-item:hover{color:#1AC8B2}
+.is-active{background-color: #fff !important}
+
+ul.menu-list a, div.level-item a, a.card-footer-item, a.button, div.card-content a, a.css_a {text-decoration: none !important}
+a.is_link{color: #2553c1 !important}
+a.is_notpointer{cursor: default;}
+/*======================================
+||||||||| DASHBOARD >> HERO |||||||||
+========================================*/
+.hero-body{padding: 1.5rem !important}
+
+/*======================================
+||||||||| DASHBOARD >> PANEL |||||||||
+========================================*/
+a.panel-block{height: 45px !important}
+nav.panel, nav a{border: none !important}
+
+/*======================================
+||||||||| TABLE |||||||||
+========================================*/
+.tblCell_small a{font-size: 1.1em; color: #606060}
+.tblCell_font_small {font-size: .8em; color:rgba(72, 71, 71, 0.81)}
+
+tr.notification a{text-decoration: none !important; font-size: .8em; font-weight: lighter;}
+
+/*======================================
+||||||||| ICONS |||||||||
+========================================*/
+.size18{font-size:18px !important}
+.size24{font-size:24px !important}
+.css_icon{font-size:24px; color: white !important}
+
+/*======================================
+||||||||| MENU DROPDOWN LIST |||||||||
+========================================*/
+.dropbtn {cursor: pointer;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*======================================
+||||||||| BANNER |||||||||
+========================================*/
+.is_height1{height: 18em !important}
+.banner{padding: 3em 0; background: url(../img/banner2.png)}
+
+/*======================================
+||||||||| HOME PAGE: RECENT ACTIVITIES |||||||||
+========================================*/
+.has_borders{border: 1px solid #ddd; }
+
+/*======================================
+||||||||| HOME PAGE: BANNER |||||||||
+========================================*/
+.why_banner{background: url(../img/why_job_save.jpg) left 30% no-repeat; background-size: cover !important}
+.features{background: url(../img/features.jpg) left center no-repeat; background-size: cover !important}
+.screenshots{background: url(../img/screenshots.jpg) center center no-repeat; background-size: cover !important; }
+.technologies{background: url(../img/technologies.jpg) center center no-repeat; background-size: cover !important; }
+
+/*======================================
+||||||||| SIDE NAV |||||||||
+========================================*/
+.is_active{border-left: 10px solid #2553c1; padding-left: 5px}
+/*.is_active{background-color: #e8ded2;}*/
+
+/*======================================
+||||||||| CHANGES TO DEFAULTS |||||||||
+========================================*/
+.navbar-item img {height: 65px; max-height: none; !important}
+a.navbar-item img:hover {color: black}
+.title{font-weight: normal !important; line-height: 1.5 !important}
+
+/*======================================
+||||||||| CHEK BOX : http://www.dynamicdrive.com/style/csslibrary/item/css3_checkbox_and_radio_button_replacements/
+========================================*/
+
+input[type="checkbox"].css3checkbox{
+  display: none;
+}
+
+label.toggler{ /* checkbox label */
+  display: block;
+  position: relative;
+  padding-left: 32px; /* space to the left of label text */
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+label.toggler::before{ /* flat box */
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #c4d7e0 ; /* B1E5EF */
+  box-shadow: 0 0 3px #BFDEFC inset;
+  left: 0;
+  top: 0;
+}
+
+label.toggler::after{ /* check mark inside flat box*/
+  content: '\f00c'; /* fontAwesome icon font unicode. See http://fortawesome.github.io/Font-Awesome/cheatsheet/ for others */
+  position:absolute;
+  left: 3px;
+  top: 3px;
+  font: bold 18px FontAwesome;
+  color: #6D82B4; /* 1B4977 */
+  width: 0; /* hide check mark initially */
+  text-shadow: 0 0 2px #eee;
+  overflow: hidden;
+}
+
+input[type="checkbox"]:checked + label.toggler::after{ /* check mark when checkbox is checked */
+  transition: width 0.2s; /* CSS3 transition on width property */
+  width: 25px; /* expand check mark to show it. Value should reflect that of container box */
+}
+
+/*======================================
+||||||||| MODAL: FORM-MODAL |||||||||
+========================================*/
+dev.modal p{font-family:Verdana, Helvetica, Calibri, sans-serif, Arial !important}
+
+/*==========================*==========================
+||||||||| FROM jQuery 2.0 Development Cookbook - Ch7 Creating an animated login form - RECIPE 1 |||||||||
+============================*============================*/
+.image-frame, .login-frame {position: absolute; top: 0; bottom: 0; left: 0; right: 0; display: none; z-index: 600; }
+.image-box {padding: 5px; margin: auto; top: -165px; box-shadow: 0 0 10px #CCC; border-radius: 5px; position: relative; background-color: #F1F7ED}
+.image-actions, .login-actions {text-align: right;}
+.btn {height: 40px; width: 100px; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: 4px;}
+.image-btn, .login-btn {color: #ffffff; background-color: #5cb85c; border-color: #4cae4c;}
+.image-btn:hover, .login-btn:hover {background-color: #458a45;}
+
+.form-group {margin-bottom: 10px;}
+.login-box {width: 400px; height: 165px; padding: 20px; margin: auto; top: -165px; box-shadow: 0 0 10px #CCC; border-radius: 5px; position: relative; background-color: #F1F7ED}
+.image-group {margin-bottom: 10px;}
+.form-group .form-control {margin-left: 55px; width: 275px; height: 30px; padding: 0 5px 0 5px; font-size: 16px; border-radius: 5px; border: solid 1px #CCCCCC; color: #999;}
+.login-msg {border: solid 1px #bce8f1; text-align: center; line-height: 30px; margin-bottom: 10px; border-radius: 5px; color: rgba(58, 135, 173, 0.90); background-color: rgba(217, 237, 247, 0.99);}
+.login-msg.success {color: rgba(70, 136, 71, 0.96); background-color: rgba(223, 240, 216, 0.97); border-color: rgba(214, 233, 198, 0.98);}
+.login-msg.error {color: rgba(185, 74, 72, 0.98); background-color: rgba(242, 222, 222, 0.98); border-color: rgba(238, 211, 215, 0.98);}
+.close-login {color: #ffffff; background-color: #d2322d; border-color: #ac2925;}
+.close-login:hover {background-color: #ac2c2c;}
+
+/*==========================*==========================
+||||||||| FROM jQuery 2.0 Development Cookbook - Ch6 Creating a modal pop up - RECIPE 10 |||||||||
+============================*============================*/
+.js_modal_backdrop {
+    background-color: rgba(0, 0, 0, 0.61);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.js_modal {
+    width: 500px;
+    position: absolute;
+    top: 25%;
+    z-index: 1020;
+    background-color: #FFF;
+    border-radius: 6px;
+    display: none;
+}
+.js_modal_header {
+    background-color: #FAA444;
+    color: #333;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.js_modal_header h3 {
+    margin: 0;
+    padding: 0 10px 0 10px;
+    line-height: 40px;
+}
+.js_modal_header h3 .close_modal {
+    float: right;
+    text-decoration: none;
+    color: #FFF;
+}
+.js_modal_footer {
+    background-color: #F1F1F1;
+    padding: 10px 10px 0 10px;
+    line-height: 40px;
+    text-align: right;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: solid 1px #CCC;
+}
+.js_modal_body {
+    padding: 20px 10px;
+}
+
+/*======================================
+||||||||| jQuery: TOOLTIP |||||||||
+========================================*/
+label {display: inline-block;}
+fieldset div {margin-bottom: 2em;}
+fieldset .help {display: inline-block;}
+.ui-tooltip {width: 210px;}
+
+/*======================================
+||||||||| FROM UNIFY |||||||||
+========================================*/
+.u-icon {display: block; color: #72c02c; margin-bottom: 0.14286rem !important; font-size: 2.14286rem !important; border-radius: 50%; }
+
+/*======================================
+||||||||| FLEX FOR SHORT FORMS >> LOGIN  |||||||||
+========================================*/
+.flex_me{display: flex; flex-direction: column;}
+.short_form{flex: 4; width: 100%}

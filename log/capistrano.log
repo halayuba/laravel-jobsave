@@ -1,0 +1,1168 @@
+# Logfile created on 2017-09-10 15:54:28 +0000 by logger.rb/v1.2.7
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-10 15:54:28 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4e92b126] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [4e92b126] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4e92b126] Finished in 12.649 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [47ef76d7] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [47ef76d7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [47ef76d7] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [d7213738] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [d7213738] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [d7213738] 	77d85cf13a558e30e3bd7adb509a6c23fa3cfcef	HEAD
+  INFO [d7213738] Finished in 0.545 seconds with exit status 0 (successful).
+  INFO [b8a57ce7] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [b8a57ce7] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [b8a57ce7] Finished in 0.201 seconds with exit status 0 (successful).
+ DEBUG [2c934ee9] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [2c934ee9] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [2c934ee9] Finished in 0.130 seconds with exit status 1 (failed).
+ DEBUG [c7363d60] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [c7363d60] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [c7363d60] Finished in 0.137 seconds with exit status 1 (failed).
+ DEBUG [1d0aea84] Running if test ! -d /var/www/Code/jobsave55; then echo "Directory does not exist '/var/www/Code/jobsave55'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [1d0aea84] Command: if test ! -d /var/www/Code/jobsave55; then echo "Directory does not exist '/var/www/Code/jobsave55'" 1>&2; false; fi
+ DEBUG [1d0aea84] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [8e5c35d6] Running /usr/bin/env git clone --mirror git@bitbucket.org:halayuba/jobsave55.git /var/www/Code/jobsave55/repo as deploy@67.205.137.231
+ DEBUG [8e5c35d6] Command: cd /var/www/Code/jobsave55 && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git clone --mirror git@bitbucket.org:halayuba/jobsave55.git /var/www/Code/jobsave55/repo )
+ DEBUG [8e5c35d6] 	Cloning into bare repository '/var/www/Code/jobsave55/repo'...
+  INFO [8e5c35d6] Finished in 0.832 seconds with exit status 0 (successful).
+ DEBUG [0732e599] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [0732e599] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [0732e599] Finished in 0.152 seconds with exit status 0 (successful).
+  INFO [201e38e0] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [201e38e0] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [201e38e0] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [7f05d06b] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [7f05d06b] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7f05d06b] 	Fetching origin
+  INFO [7f05d06b] Finished in 0.494 seconds with exit status 0 (successful).
+ DEBUG [e9129854] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [e9129854] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [e9129854] Finished in 0.178 seconds with exit status 0 (successful).
+  INFO [e33996b7] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170910155442 as deploy@67.205.137.231
+ DEBUG [e33996b7] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170910155442 )
+  INFO [e33996b7] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [8447df46] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170910155442 as deploy@67.205.137.231
+ DEBUG [8447df46] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170910155442 )
+  INFO [8447df46] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [117f6560] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [117f6560] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [117f6560] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [311f4351] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [311f4351] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [311f4351] 	77d85cf13a558e30e3bd7adb509a6c23fa3cfcef
+ DEBUG [311f4351] Finished in 0.153 seconds with exit status 0 (successful).
+ DEBUG [e076bb1e] Running if test ! -d /var/www/Code/jobsave55/releases/20170910155442; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170910155442'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [e076bb1e] Command: if test ! -d /var/www/Code/jobsave55/releases/20170910155442; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170910155442'" 1>&2; false; fi
+ DEBUG [e076bb1e] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO [f074dfeb] Running /usr/bin/env echo "77d85cf13a558e30e3bd7adb509a6c23fa3cfcef" >> REVISION as deploy@67.205.137.231
+ DEBUG [f074dfeb] Command: cd /var/www/Code/jobsave55/releases/20170910155442 && /usr/bin/env echo "77d85cf13a558e30e3bd7adb509a6c23fa3cfcef" >> REVISION
+  INFO [f074dfeb] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [a9d7a577] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170910155442 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [a9d7a577] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170910155442 /var/www/Code/jobsave55/releases/current
+  INFO [a9d7a577] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [fb5fefc8] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [fb5fefc8] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [fb5fefc8] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [5f3888c4] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [5f3888c4] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [5f3888c4] 	20170910155442
+ DEBUG [5f3888c4] Finished in 0.139 seconds with exit status 0 (successful).
+ DEBUG [14c95673] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [14c95673] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [14c95673] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [7a8aba98] Running /usr/bin/env echo "Branch master (at 77d85cf13a558e30e3bd7adb509a6c23fa3cfcef) deployed as release 20170910155442 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [7a8aba98] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 77d85cf13a558e30e3bd7adb509a6c23fa3cfcef) deployed as release 20170910155442 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [7a8aba98] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-10 16:55:33 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1612bb3a] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [1612bb3a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1612bb3a] Finished in 12.878 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [e695e670] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [e695e670] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [e695e670] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [d873b6d9] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [d873b6d9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [d873b6d9] 	728a5c17f55186f0347ea7ef8db797877dd6fbcd	HEAD
+  INFO [d873b6d9] Finished in 0.548 seconds with exit status 0 (successful).
+  INFO [7d228649] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [7d228649] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [7d228649] Finished in 0.195 seconds with exit status 0 (successful).
+ DEBUG [0d88343c] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [0d88343c] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [0d88343c] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [629fa08e] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [629fa08e] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [629fa08e] 	77d85cf13a558e30e3bd7adb509a6c23fa3cfcef
+ DEBUG [629fa08e] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [1834e82e] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [1834e82e] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [1834e82e] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [3ad4b71a] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [3ad4b71a] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [3ad4b71a] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [783fed3c] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [783fed3c] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [783fed3c] Finished in 0.147 seconds with exit status 0 (successful).
+  INFO [7bf19bbc] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [7bf19bbc] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7bf19bbc] 	Fetching origin
+ DEBUG [7bf19bbc] 	From bitbucket.org:halayuba/jobsave55
+   77d85cf..728a5c1  master     -> master
+  INFO [7bf19bbc] Finished in 0.587 seconds with exit status 0 (successful).
+ DEBUG [840b8b11] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [840b8b11] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [840b8b11] Finished in 0.172 seconds with exit status 0 (successful).
+  INFO [7539e18c] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170910165547 as deploy@67.205.137.231
+ DEBUG [7539e18c] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170910165547 )
+  INFO [7539e18c] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [d93a8ec2] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170910165547 as deploy@67.205.137.231
+ DEBUG [d93a8ec2] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170910165547 )
+  INFO [d93a8ec2] Finished in 0.296 seconds with exit status 0 (successful).
+ DEBUG [c8fd993c] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [c8fd993c] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [c8fd993c] Finished in 0.135 seconds with exit status 0 (successful).
+ DEBUG [92c76117] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [92c76117] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [92c76117] 	728a5c17f55186f0347ea7ef8db797877dd6fbcd
+ DEBUG [92c76117] Finished in 0.139 seconds with exit status 0 (successful).
+ DEBUG [68bc55d4] Running if test ! -d /var/www/Code/jobsave55/releases/20170910165547; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170910165547'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [68bc55d4] Command: if test ! -d /var/www/Code/jobsave55/releases/20170910165547; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170910165547'" 1>&2; false; fi
+ DEBUG [68bc55d4] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [66de95ec] Running /usr/bin/env echo "728a5c17f55186f0347ea7ef8db797877dd6fbcd" >> REVISION as deploy@67.205.137.231
+ DEBUG [66de95ec] Command: cd /var/www/Code/jobsave55/releases/20170910165547 && /usr/bin/env echo "728a5c17f55186f0347ea7ef8db797877dd6fbcd" >> REVISION
+  INFO [66de95ec] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [1d23f232] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170910165547 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [1d23f232] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170910165547 /var/www/Code/jobsave55/releases/current
+  INFO [1d23f232] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [bfd679de] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [bfd679de] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [bfd679de] Finished in 0.137 seconds with exit status 0 (successful).
+ DEBUG [d1836319] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [d1836319] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [d1836319] 	20170910155442	20170910165547
+ DEBUG [d1836319] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [540f1899] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [540f1899] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [540f1899] Finished in 0.148 seconds with exit status 0 (successful).
+  INFO [38758686] Running /usr/bin/env echo "Branch master (at 728a5c17f55186f0347ea7ef8db797877dd6fbcd) deployed as release 20170910165547 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [38758686] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 728a5c17f55186f0347ea7ef8db797877dd6fbcd) deployed as release 20170910165547 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [38758686] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-11 16:01:28 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [40a073b0] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [40a073b0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [40a073b0] Finished in 5.715 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [eddb7b62] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [eddb7b62] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [eddb7b62] Finished in 0.140 seconds with exit status 0 (successful).
+  INFO [de31f189] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [de31f189] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [de31f189] 	5fd21f23586d2c55b2a2cc1c97ee98de0012f6ed	HEAD
+  INFO [de31f189] Finished in 0.591 seconds with exit status 0 (successful).
+  INFO [40f1b13f] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [40f1b13f] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [40f1b13f] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [1bec79dd] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [1bec79dd] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [1bec79dd] Finished in 0.136 seconds with exit status 0 (successful).
+ DEBUG [ade313c5] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [ade313c5] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [ade313c5] 	728a5c17f55186f0347ea7ef8db797877dd6fbcd
+ DEBUG [ade313c5] Finished in 0.134 seconds with exit status 0 (successful).
+ DEBUG [ce8619fa] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [ce8619fa] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [ce8619fa] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [d1a9a244] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [d1a9a244] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [d1a9a244] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [d7655d44] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [d7655d44] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [d7655d44] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [314daf0c] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [314daf0c] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [314daf0c] 	Fetching origin
+ DEBUG [314daf0c] 	From bitbucket.org:halayuba/jobsave55
+   728a5c1..5fd21f2  master     -> master
+  INFO [314daf0c] Finished in 1.509 seconds with exit status 0 (successful).
+ DEBUG [69576f48] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [69576f48] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [69576f48] Finished in 0.144 seconds with exit status 0 (successful).
+  INFO [6dea4b7d] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170911160135 as deploy@67.205.137.231
+ DEBUG [6dea4b7d] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170911160135 )
+  INFO [6dea4b7d] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [6ff64544] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170911160135 as deploy@67.205.137.231
+ DEBUG [6ff64544] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170911160135 )
+  INFO [6ff64544] Finished in 0.223 seconds with exit status 0 (successful).
+ DEBUG [572fa4c7] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [572fa4c7] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [572fa4c7] Finished in 0.134 seconds with exit status 0 (successful).
+ DEBUG [17ec9adb] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [17ec9adb] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [17ec9adb] 	5fd21f23586d2c55b2a2cc1c97ee98de0012f6ed
+ DEBUG [17ec9adb] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [e00d2ba7] Running if test ! -d /var/www/Code/jobsave55/releases/20170911160135; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170911160135'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [e00d2ba7] Command: if test ! -d /var/www/Code/jobsave55/releases/20170911160135; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170911160135'" 1>&2; false; fi
+ DEBUG [e00d2ba7] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [68b3e9f7] Running /usr/bin/env echo "5fd21f23586d2c55b2a2cc1c97ee98de0012f6ed" >> REVISION as deploy@67.205.137.231
+ DEBUG [68b3e9f7] Command: cd /var/www/Code/jobsave55/releases/20170911160135 && /usr/bin/env echo "5fd21f23586d2c55b2a2cc1c97ee98de0012f6ed" >> REVISION
+  INFO [68b3e9f7] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [8ac6042b] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170911160135 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [8ac6042b] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170911160135 /var/www/Code/jobsave55/releases/current
+  INFO [8ac6042b] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [a9667bc9] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [a9667bc9] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [a9667bc9] Finished in 0.134 seconds with exit status 0 (successful).
+ DEBUG [384939a8] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [384939a8] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [384939a8] 	20170910155442	20170910165547	20170911160135
+ DEBUG [384939a8] Finished in 0.134 seconds with exit status 0 (successful).
+ DEBUG [674bc353] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [674bc353] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [674bc353] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [2f612eca] Running /usr/bin/env echo "Branch master (at 5fd21f23586d2c55b2a2cc1c97ee98de0012f6ed) deployed as release 20170911160135 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [2f612eca] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 5fd21f23586d2c55b2a2cc1c97ee98de0012f6ed) deployed as release 20170911160135 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [2f612eca] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 05:02:00 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [62ef05f5] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [62ef05f5] Command: /usr/bin/env mkdir -p /tmp
+  INFO [62ef05f5] Finished in 5.704 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [8a60aedf] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [8a60aedf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [8a60aedf] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [839a8064] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [839a8064] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [839a8064] 	33d92597e27ba1041b5c6c8dfeae35974ce6df2b	HEAD
+  INFO [839a8064] Finished in 1.102 seconds with exit status 0 (successful).
+  INFO [d4a61a66] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [d4a61a66] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [d4a61a66] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [248a66f5] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [248a66f5] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [248a66f5] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [3ca5e156] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [3ca5e156] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [3ca5e156] 	5fd21f23586d2c55b2a2cc1c97ee98de0012f6ed
+ DEBUG [3ca5e156] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [83ed3c46] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [83ed3c46] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [83ed3c46] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [969fd5b3] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [969fd5b3] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [969fd5b3] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [0d3c29d6] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [0d3c29d6] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [0d3c29d6] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [97c8b0c6] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [97c8b0c6] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [97c8b0c6] 	Fetching origin
+ DEBUG [97c8b0c6] 	From bitbucket.org:halayuba/jobsave55
+ DEBUG [97c8b0c6] 	   5fd21f2..33d9259  master     -> master
+  INFO [97c8b0c6] Finished in 0.773 seconds with exit status 0 (successful).
+ DEBUG [f7f64e3e] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [f7f64e3e] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [f7f64e3e] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [24d8f22d] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170912050207 as deploy@67.205.137.231
+ DEBUG [24d8f22d] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170912050207 )
+  INFO [24d8f22d] Finished in 0.137 seconds with exit status 0 (successful).
+  INFO [4d67d7b0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170912050207 as deploy@67.205.137.231
+ DEBUG [4d67d7b0] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170912050207 )
+  INFO [4d67d7b0] Finished in 0.290 seconds with exit status 0 (successful).
+ DEBUG [d2fb957c] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [d2fb957c] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [d2fb957c] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [695e45e7] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [695e45e7] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [695e45e7] 	33d92597e27ba1041b5c6c8dfeae35974ce6df2b
+ DEBUG [695e45e7] Finished in 0.137 seconds with exit status 0 (successful).
+ DEBUG [389884ff] Running if test ! -d /var/www/Code/jobsave55/releases/20170912050207; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170912050207'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [389884ff] Command: if test ! -d /var/www/Code/jobsave55/releases/20170912050207; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170912050207'" 1>&2; false; fi
+ DEBUG [389884ff] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [64bf8038] Running /usr/bin/env echo "33d92597e27ba1041b5c6c8dfeae35974ce6df2b" >> REVISION as deploy@67.205.137.231
+ DEBUG [64bf8038] Command: cd /var/www/Code/jobsave55/releases/20170912050207 && /usr/bin/env echo "33d92597e27ba1041b5c6c8dfeae35974ce6df2b" >> REVISION
+  INFO [64bf8038] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO [aad781f4] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170912050207 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [aad781f4] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170912050207 /var/www/Code/jobsave55/releases/current
+  INFO [aad781f4] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [dae2e251] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [dae2e251] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [dae2e251] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [3e9db290] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [3e9db290] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [3e9db290] 	20170910155442	20170910165547	20170911160135	20170912050207
+ DEBUG [3e9db290] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [6403b54f] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [6403b54f] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [6403b54f] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [eea5f8b4] Running /usr/bin/env echo "Branch master (at 33d92597e27ba1041b5c6c8dfeae35974ce6df2b) deployed as release 20170912050207 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [eea5f8b4] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 33d92597e27ba1041b5c6c8dfeae35974ce6df2b) deployed as release 20170912050207 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [eea5f8b4] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 03:02:28 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b1a295a9] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [b1a295a9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b1a295a9] Finished in 6.601 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [e69d3753] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [e69d3753] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [e69d3753] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [532593c3] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [532593c3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [532593c3] 	33d92597e27ba1041b5c6c8dfeae35974ce6df2b	HEAD
+  INFO [532593c3] Finished in 0.619 seconds with exit status 0 (successful).
+  INFO [a647ac8d] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [a647ac8d] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [a647ac8d] Finished in 0.195 seconds with exit status 0 (successful).
+ DEBUG [7fc5f2f8] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [7fc5f2f8] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [7fc5f2f8] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [c1bc458b] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [c1bc458b] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [c1bc458b] 	33d92597e27ba1041b5c6c8dfeae35974ce6df2b
+ DEBUG [c1bc458b] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [8a34c69b] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [8a34c69b] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [8a34c69b] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [19cfd796] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [19cfd796] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [19cfd796] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [ec4650d9] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [ec4650d9] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [ec4650d9] Finished in 0.144 seconds with exit status 0 (successful).
+  INFO [6b187f3b] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [6b187f3b] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6b187f3b] 	Fetching origin
+  INFO [6b187f3b] Finished in 0.744 seconds with exit status 0 (successful).
+ DEBUG [938e725a] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [938e725a] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [938e725a] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [86c5904b] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170913030236 as deploy@67.205.137.231
+ DEBUG [86c5904b] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170913030236 )
+  INFO [86c5904b] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [8eb24ef9] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170913030236 as deploy@67.205.137.231
+ DEBUG [8eb24ef9] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170913030236 )
+  INFO [8eb24ef9] Finished in 0.307 seconds with exit status 0 (successful).
+ DEBUG [80103d6a] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [80103d6a] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [80103d6a] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [a31dd9ad] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [a31dd9ad] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [a31dd9ad] 	33d92597e27ba1041b5c6c8dfeae35974ce6df2b
+ DEBUG [a31dd9ad] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [6e904b31] Running if test ! -d /var/www/Code/jobsave55/releases/20170913030236; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170913030236'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [6e904b31] Command: if test ! -d /var/www/Code/jobsave55/releases/20170913030236; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170913030236'" 1>&2; false; fi
+ DEBUG [6e904b31] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [44f60ec8] Running /usr/bin/env echo "33d92597e27ba1041b5c6c8dfeae35974ce6df2b" >> REVISION as deploy@67.205.137.231
+ DEBUG [44f60ec8] Command: cd /var/www/Code/jobsave55/releases/20170913030236 && /usr/bin/env echo "33d92597e27ba1041b5c6c8dfeae35974ce6df2b" >> REVISION
+  INFO [44f60ec8] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [2f3ea4b9] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170913030236 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [2f3ea4b9] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170913030236 /var/www/Code/jobsave55/releases/current
+  INFO [2f3ea4b9] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO [a25f5c83] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [a25f5c83] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [a25f5c83] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [dcf23d60] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [dcf23d60] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [dcf23d60] 	20170910155442	20170910165547	20170911160135	20170912050207	20170913030236
+ DEBUG [dcf23d60] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on 67.205.137.231
+  INFO No old releases (keeping newest 5) on 67.205.137.231
+ DEBUG [e8b0a87c] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [e8b0a87c] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [e8b0a87c] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [14b1df9a] Running /usr/bin/env echo "Branch master (at 33d92597e27ba1041b5c6c8dfeae35974ce6df2b) deployed as release 20170913030236 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [14b1df9a] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 33d92597e27ba1041b5c6c8dfeae35974ce6df2b) deployed as release 20170913030236 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [14b1df9a] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 03:32:03 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8e3169b4] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [8e3169b4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8e3169b4] Finished in 6.438 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [425e084d] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [425e084d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [425e084d] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO [aa882dde] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [aa882dde] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [aa882dde] 	54828c8a75fe3e0f200a330173076b750bf89e58	HEAD
+  INFO [aa882dde] Finished in 0.524 seconds with exit status 0 (successful).
+  INFO [448dae42] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [448dae42] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [448dae42] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [f2e89e86] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [f2e89e86] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [f2e89e86] Finished in 0.125 seconds with exit status 0 (successful).
+ DEBUG [e4651da1] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [e4651da1] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [e4651da1] 	33d92597e27ba1041b5c6c8dfeae35974ce6df2b
+ DEBUG [e4651da1] Finished in 0.137 seconds with exit status 0 (successful).
+ DEBUG [5e9a3483] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [5e9a3483] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [5e9a3483] Finished in 0.206 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [080e6601] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [080e6601] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [080e6601] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [b6ca7a73] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [b6ca7a73] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [b6ca7a73] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO [8aa55917] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [8aa55917] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8aa55917] 	Fetching origin
+ DEBUG [8aa55917] 	From bitbucket.org:halayuba/jobsave55
+ DEBUG [8aa55917] 	   33d9259..54828c8  master     -> master
+  INFO [8aa55917] Finished in 0.755 seconds with exit status 0 (successful).
+ DEBUG [aea80a53] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [aea80a53] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [aea80a53] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [862c54fc] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170913033211 as deploy@67.205.137.231
+ DEBUG [862c54fc] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20170913033211 )
+  INFO [862c54fc] Finished in 0.150 seconds with exit status 0 (successful).
+  INFO [1e39cd04] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170913033211 as deploy@67.205.137.231
+ DEBUG [1e39cd04] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20170913033211 )
+  INFO [1e39cd04] Finished in 0.261 seconds with exit status 0 (successful).
+ DEBUG [6d900085] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [6d900085] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [6d900085] Finished in 0.137 seconds with exit status 0 (successful).
+ DEBUG [031bc27c] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [031bc27c] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [031bc27c] 	54828c8a75fe3e0f200a330173076b750bf89e58
+ DEBUG [031bc27c] Finished in 0.134 seconds with exit status 0 (successful).
+ DEBUG [4670f03a] Running if test ! -d /var/www/Code/jobsave55/releases/20170913033211; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170913033211'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [4670f03a] Command: if test ! -d /var/www/Code/jobsave55/releases/20170913033211; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20170913033211'" 1>&2; false; fi
+ DEBUG [4670f03a] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [d0fc4f3f] Running /usr/bin/env echo "54828c8a75fe3e0f200a330173076b750bf89e58" >> REVISION as deploy@67.205.137.231
+ DEBUG [d0fc4f3f] Command: cd /var/www/Code/jobsave55/releases/20170913033211 && /usr/bin/env echo "54828c8a75fe3e0f200a330173076b750bf89e58" >> REVISION
+  INFO [d0fc4f3f] Finished in 0.140 seconds with exit status 0 (successful).
+  INFO [ed9901ae] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170913033211 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [ed9901ae] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20170913033211 /var/www/Code/jobsave55/releases/current
+  INFO [ed9901ae] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO [6e006248] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [6e006248] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [6e006248] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [c867c58b] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [c867c58b] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [c867c58b] 	20170910155442	20170910165547	20170911160135	20170912050207	20170913030236
+20170913033211
+ DEBUG [c867c58b] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 67.205.137.231
+  INFO [54829fbe] Running /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170910155442 as deploy@67.205.137.231
+ DEBUG [54829fbe] Command: /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170910155442
+  INFO [54829fbe] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [518baa1d] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [518baa1d] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [518baa1d] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [01a60d07] Running /usr/bin/env echo "Branch master (at 54828c8a75fe3e0f200a330173076b750bf89e58) deployed as release 20170913033211 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [01a60d07] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 54828c8a75fe3e0f200a330173076b750bf89e58) deployed as release 20170913033211 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [01a60d07] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-10-04 10:31:18 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e6c9d056] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [e6c9d056] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e6c9d056] Finished in 7.886 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [d10ed686] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [d10ed686] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [d10ed686] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [12259990] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [12259990] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [12259990] 	0e64428f3f855b06147fc3973f90679a51fdb35a	HEAD
+  INFO [12259990] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO [d08d7fc0] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [d08d7fc0] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [d08d7fc0] Finished in 0.199 seconds with exit status 0 (successful).
+ DEBUG [69cc98b5] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [69cc98b5] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [69cc98b5] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [f09a165e] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [f09a165e] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [f09a165e] 	54828c8a75fe3e0f200a330173076b750bf89e58
+ DEBUG [f09a165e] Finished in 0.140 seconds with exit status 0 (successful).
+ DEBUG [bb9142a7] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [bb9142a7] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [bb9142a7] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [76b64fca] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [76b64fca] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [76b64fca] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [d1b80788] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [d1b80788] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [d1b80788] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [1ed37c34] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [1ed37c34] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1ed37c34] 	Fetching origin
+ DEBUG [1ed37c34] 	From bitbucket.org:halayuba/jobsave55
+   54828c8..0e64428  master     -> master
+  INFO [1ed37c34] Finished in 1.418 seconds with exit status 0 (successful).
+ DEBUG [dbff547f] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [dbff547f] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [dbff547f] Finished in 0.148 seconds with exit status 0 (successful).
+  INFO [81fbdadf] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171004103128 as deploy@67.205.137.231
+ DEBUG [81fbdadf] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171004103128 )
+  INFO [81fbdadf] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO [1bbff725] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171004103128 as deploy@67.205.137.231
+ DEBUG [1bbff725] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171004103128 )
+  INFO [1bbff725] Finished in 0.263 seconds with exit status 0 (successful).
+ DEBUG [504f3b13] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [504f3b13] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [504f3b13] Finished in 0.139 seconds with exit status 0 (successful).
+ DEBUG [ae3442b1] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [ae3442b1] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ae3442b1] 	0e64428f3f855b06147fc3973f90679a51fdb35a
+ DEBUG [ae3442b1] Finished in 0.141 seconds with exit status 0 (successful).
+ DEBUG [c50a9b58] Running if test ! -d /var/www/Code/jobsave55/releases/20171004103128; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171004103128'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [c50a9b58] Command: if test ! -d /var/www/Code/jobsave55/releases/20171004103128; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171004103128'" 1>&2; false; fi
+ DEBUG [c50a9b58] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO [f3a63694] Running /usr/bin/env echo "0e64428f3f855b06147fc3973f90679a51fdb35a" >> REVISION as deploy@67.205.137.231
+ DEBUG [f3a63694] Command: cd /var/www/Code/jobsave55/releases/20171004103128 && /usr/bin/env echo "0e64428f3f855b06147fc3973f90679a51fdb35a" >> REVISION
+  INFO [f3a63694] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO [5ca25ec2] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171004103128 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [5ca25ec2] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171004103128 /var/www/Code/jobsave55/releases/current
+  INFO [5ca25ec2] Finished in 0.137 seconds with exit status 0 (successful).
+  INFO [02118f59] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [02118f59] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [02118f59] Finished in 0.149 seconds with exit status 0 (successful).
+ DEBUG [5abec3e3] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [5abec3e3] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [5abec3e3] 	20170910165547	20170911160135	20170912050207	20170913030236	20170913033211
+20171004103128
+ DEBUG [5abec3e3] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 67.205.137.231
+  INFO [5da50c87] Running /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170910165547 as deploy@67.205.137.231
+ DEBUG [5da50c87] Command: /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170910165547
+  INFO [5da50c87] Finished in 0.169 seconds with exit status 0 (successful).
+ DEBUG [3d2d3a27] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [3d2d3a27] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [3d2d3a27] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [6b66841e] Running /usr/bin/env echo "Branch master (at 0e64428f3f855b06147fc3973f90679a51fdb35a) deployed as release 20171004103128 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [6b66841e] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 0e64428f3f855b06147fc3973f90679a51fdb35a) deployed as release 20171004103128 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [6b66841e] Finished in 0.144 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-10-06 00:56:33 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3f1f4b1e] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [3f1f4b1e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3f1f4b1e] Finished in 5.842 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [e3554192] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [e3554192] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [e3554192] Finished in 0.148 seconds with exit status 0 (successful).
+  INFO [55eba6a9] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [55eba6a9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [55eba6a9] 	41917f3814a4029998974671ee5fa37f8cae6ea0	HEAD
+  INFO [55eba6a9] Finished in 0.563 seconds with exit status 0 (successful).
+  INFO [c191e523] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [c191e523] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [c191e523] Finished in 0.209 seconds with exit status 0 (successful).
+ DEBUG [aac2fa56] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [aac2fa56] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [aac2fa56] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [b2a3fa80] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [b2a3fa80] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [b2a3fa80] 	0e64428f3f855b06147fc3973f90679a51fdb35a
+ DEBUG [b2a3fa80] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [71bb8099] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [71bb8099] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [71bb8099] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [114bd167] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [114bd167] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [114bd167] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [73dfca07] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [73dfca07] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [73dfca07] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [22f8d95d] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [22f8d95d] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [22f8d95d] 	Fetching origin
+ DEBUG [22f8d95d] 	From bitbucket.org:halayuba/jobsave55
+   0e64428..41917f3  master     -> master
+  INFO [22f8d95d] Finished in 0.727 seconds with exit status 0 (successful).
+ DEBUG [aabd93f5] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [aabd93f5] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [aabd93f5] Finished in 0.150 seconds with exit status 0 (successful).
+  INFO [bb3acb3e] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171006005640 as deploy@67.205.137.231
+ DEBUG [bb3acb3e] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171006005640 )
+  INFO [bb3acb3e] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [9e668ae5] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171006005640 as deploy@67.205.137.231
+ DEBUG [9e668ae5] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171006005640 )
+  INFO [9e668ae5] Finished in 0.259 seconds with exit status 0 (successful).
+ DEBUG [d65afc0d] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [d65afc0d] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [d65afc0d] Finished in 0.140 seconds with exit status 0 (successful).
+ DEBUG [bab683d7] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [bab683d7] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [bab683d7] 	41917f3814a4029998974671ee5fa37f8cae6ea0
+ DEBUG [bab683d7] Finished in 0.140 seconds with exit status 0 (successful).
+ DEBUG [3ae403d4] Running if test ! -d /var/www/Code/jobsave55/releases/20171006005640; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171006005640'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [3ae403d4] Command: if test ! -d /var/www/Code/jobsave55/releases/20171006005640; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171006005640'" 1>&2; false; fi
+ DEBUG [3ae403d4] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [094c0de0] Running /usr/bin/env echo "41917f3814a4029998974671ee5fa37f8cae6ea0" >> REVISION as deploy@67.205.137.231
+ DEBUG [094c0de0] Command: cd /var/www/Code/jobsave55/releases/20171006005640 && /usr/bin/env echo "41917f3814a4029998974671ee5fa37f8cae6ea0" >> REVISION
+  INFO [094c0de0] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [438bc0d2] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171006005640 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [438bc0d2] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171006005640 /var/www/Code/jobsave55/releases/current
+  INFO [438bc0d2] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [e3dea625] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [e3dea625] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [e3dea625] Finished in 0.145 seconds with exit status 0 (successful).
+ DEBUG [76d0eec7] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [76d0eec7] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [76d0eec7] 	20170911160135	20170912050207	20170913030236	20170913033211	20171004103128
+20171006005640
+ DEBUG [76d0eec7] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 67.205.137.231
+  INFO [79040b5d] Running /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170911160135 as deploy@67.205.137.231
+ DEBUG [79040b5d] Command: /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170911160135
+  INFO [79040b5d] Finished in 0.334 seconds with exit status 0 (successful).
+ DEBUG [947c951a] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [947c951a] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [947c951a] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [d20a77b9] Running /usr/bin/env echo "Branch master (at 41917f3814a4029998974671ee5fa37f8cae6ea0) deployed as release 20171006005640 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [d20a77b9] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 41917f3814a4029998974671ee5fa37f8cae6ea0) deployed as release 20171006005640 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [d20a77b9] Finished in 0.144 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-10-18 19:34:06 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [da14f1e3] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [da14f1e3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [da14f1e3] Finished in 5.399 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [1388ef10] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [1388ef10] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [1388ef10] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [18b4ed6b] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [18b4ed6b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [18b4ed6b] 	6efceb668d2fecf8767696343be526aa3d1b90f1	HEAD
+  INFO [18b4ed6b] Finished in 0.592 seconds with exit status 0 (successful).
+  INFO [799cb236] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [799cb236] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [799cb236] Finished in 0.183 seconds with exit status 0 (successful).
+ DEBUG [fb3d1987] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [fb3d1987] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [fb3d1987] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [06e11f0a] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [06e11f0a] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [06e11f0a] 	41917f3814a4029998974671ee5fa37f8cae6ea0
+ DEBUG [06e11f0a] Finished in 0.126 seconds with exit status 0 (successful).
+ DEBUG [d76d796d] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [d76d796d] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [d76d796d] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [9189e65a] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [9189e65a] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [9189e65a] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO [ec2fa89b] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [ec2fa89b] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [ec2fa89b] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [5cc55d22] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [5cc55d22] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [5cc55d22] 	Fetching origin
+ DEBUG [5cc55d22] 	From bitbucket.org:halayuba/jobsave55
+   41917f3..6efceb6  master     -> master
+  INFO [5cc55d22] Finished in 1.581 seconds with exit status 0 (successful).
+ DEBUG [a95aeb6d] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [a95aeb6d] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [a95aeb6d] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [961db23c] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171018193413 as deploy@67.205.137.231
+ DEBUG [961db23c] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171018193413 )
+  INFO [961db23c] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [3f89485d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171018193413 as deploy@67.205.137.231
+ DEBUG [3f89485d] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171018193413 )
+  INFO [3f89485d] Finished in 0.219 seconds with exit status 0 (successful).
+ DEBUG [d742c241] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [d742c241] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [d742c241] Finished in 0.123 seconds with exit status 0 (successful).
+ DEBUG [64c48a82] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [64c48a82] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [64c48a82] 	6efceb668d2fecf8767696343be526aa3d1b90f1
+ DEBUG [64c48a82] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [b5ac5f60] Running if test ! -d /var/www/Code/jobsave55/releases/20171018193413; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171018193413'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [b5ac5f60] Command: if test ! -d /var/www/Code/jobsave55/releases/20171018193413; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171018193413'" 1>&2; false; fi
+ DEBUG [b5ac5f60] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [6e0eabfc] Running /usr/bin/env echo "6efceb668d2fecf8767696343be526aa3d1b90f1" >> REVISION as deploy@67.205.137.231
+ DEBUG [6e0eabfc] Command: cd /var/www/Code/jobsave55/releases/20171018193413 && /usr/bin/env echo "6efceb668d2fecf8767696343be526aa3d1b90f1" >> REVISION
+  INFO [6e0eabfc] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [f554528b] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171018193413 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [f554528b] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171018193413 /var/www/Code/jobsave55/releases/current
+  INFO [f554528b] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [d7c9c959] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [d7c9c959] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [d7c9c959] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [efd0a26d] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [efd0a26d] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [efd0a26d] 	20170912050207	20170913030236	20170913033211	20171004103128	20171006005640
+20171018193413
+ DEBUG [efd0a26d] Finished in 0.137 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 67.205.137.231
+  INFO [5a5d84d3] Running /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170912050207 as deploy@67.205.137.231
+ DEBUG [5a5d84d3] Command: /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170912050207
+  INFO [5a5d84d3] Finished in 0.313 seconds with exit status 0 (successful).
+ DEBUG [d415c037] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [d415c037] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [d415c037] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO [c149402b] Running /usr/bin/env echo "Branch master (at 6efceb668d2fecf8767696343be526aa3d1b90f1) deployed as release 20171018193413 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [c149402b] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 6efceb668d2fecf8767696343be526aa3d1b90f1) deployed as release 20171018193413 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [c149402b] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-06 01:05:19 +0000 cap production deply
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-06 01:05:44 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1e1abeef] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [1e1abeef] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1e1abeef] Finished in 8.103 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [85f0ec27] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [85f0ec27] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [85f0ec27] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [1772a9b8] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [1772a9b8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [1772a9b8] 	4ee5d1ed25c9b773a01b5062638b249cec31f5f4	HEAD
+  INFO [1772a9b8] Finished in 0.569 seconds with exit status 0 (successful).
+  INFO [c289ab97] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [c289ab97] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [c289ab97] Finished in 0.205 seconds with exit status 0 (successful).
+ DEBUG [ff2ba79a] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [ff2ba79a] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [ff2ba79a] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [65be436b] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [65be436b] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [65be436b] 	6efceb668d2fecf8767696343be526aa3d1b90f1
+ DEBUG [65be436b] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [ef9f4b40] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [ef9f4b40] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [ef9f4b40] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [749e19d7] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [749e19d7] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [749e19d7] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [56e737ca] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [56e737ca] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [56e737ca] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [445905d4] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [445905d4] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [445905d4] 	Fetching origin
+ DEBUG [445905d4] 	From bitbucket.org:halayuba/jobsave55
+   6efceb6..4ee5d1e  master     -> master
+  INFO [445905d4] Finished in 1.044 seconds with exit status 0 (successful).
+ DEBUG [959cfaaf] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [959cfaaf] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [959cfaaf] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [1f14643f] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171106010554 as deploy@67.205.137.231
+ DEBUG [1f14643f] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171106010554 )
+  INFO [1f14643f] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [1210d01d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171106010554 as deploy@67.205.137.231
+ DEBUG [1210d01d] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171106010554 )
+  INFO [1210d01d] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG [eb55c1ea] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [eb55c1ea] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [eb55c1ea] Finished in 0.135 seconds with exit status 0 (successful).
+ DEBUG [59b3d3ad] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [59b3d3ad] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [59b3d3ad] 	4ee5d1ed25c9b773a01b5062638b249cec31f5f4
+ DEBUG [59b3d3ad] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [156caa16] Running if test ! -d /var/www/Code/jobsave55/releases/20171106010554; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171106010554'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [156caa16] Command: if test ! -d /var/www/Code/jobsave55/releases/20171106010554; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171106010554'" 1>&2; false; fi
+ DEBUG [156caa16] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [5f9c972a] Running /usr/bin/env echo "4ee5d1ed25c9b773a01b5062638b249cec31f5f4" >> REVISION as deploy@67.205.137.231
+ DEBUG [5f9c972a] Command: cd /var/www/Code/jobsave55/releases/20171106010554 && /usr/bin/env echo "4ee5d1ed25c9b773a01b5062638b249cec31f5f4" >> REVISION
+  INFO [5f9c972a] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [ebaef164] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171106010554 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [ebaef164] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171106010554 /var/www/Code/jobsave55/releases/current
+  INFO [ebaef164] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [4d4030bb] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [4d4030bb] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [4d4030bb] Finished in 0.146 seconds with exit status 0 (successful).
+ DEBUG [427e74bf] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [427e74bf] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [427e74bf] 	20170913030236	20170913033211	20171004103128	20171006005640	20171018193413
+20171106010554
+ DEBUG [427e74bf] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 67.205.137.231
+  INFO [0ec305d8] Running /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170913030236 as deploy@67.205.137.231
+ DEBUG [0ec305d8] Command: /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170913030236
+  INFO [0ec305d8] Finished in 0.392 seconds with exit status 0 (successful).
+ DEBUG [c2a514fc] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [c2a514fc] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [c2a514fc] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO [2b1939c9] Running /usr/bin/env echo "Branch master (at 4ee5d1ed25c9b773a01b5062638b249cec31f5f4) deployed as release 20171106010554 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [2b1939c9] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 4ee5d1ed25c9b773a01b5062638b249cec31f5f4) deployed as release 20171106010554 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [2b1939c9] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-12 19:33:17 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d74ee1bd] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [d74ee1bd] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d74ee1bd] Finished in 6.421 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [610d60c7] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [610d60c7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [610d60c7] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [4179194b] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [4179194b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [4179194b] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b	HEAD
+  INFO [4179194b] Finished in 0.506 seconds with exit status 0 (successful).
+  INFO [48e5b58a] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [48e5b58a] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [48e5b58a] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [6e6e8d39] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [6e6e8d39] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [6e6e8d39] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [571f5418] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [571f5418] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [571f5418] 	4ee5d1ed25c9b773a01b5062638b249cec31f5f4
+ DEBUG [571f5418] Finished in 0.134 seconds with exit status 0 (successful).
+ DEBUG [dac9395a] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [dac9395a] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [dac9395a] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [6cf5696b] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [6cf5696b] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [6cf5696b] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [12efab91] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [12efab91] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [12efab91] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [f1924029] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [f1924029] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f1924029] 	Fetching origin
+ DEBUG [f1924029] 	From bitbucket.org:halayuba/jobsave55
+   4ee5d1e..7bd648c  master     -> master
+  INFO [f1924029] Finished in 0.792 seconds with exit status 0 (successful).
+ DEBUG [3f86caa3] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [3f86caa3] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [3f86caa3] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [0b2380a6] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171112193325 as deploy@67.205.137.231
+ DEBUG [0b2380a6] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171112193325 )
+  INFO [0b2380a6] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [70538e45] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171112193325 as deploy@67.205.137.231
+ DEBUG [70538e45] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171112193325 )
+  INFO [70538e45] Finished in 0.259 seconds with exit status 0 (successful).
+ DEBUG [a9c2a01d] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [a9c2a01d] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [a9c2a01d] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [aa040889] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [aa040889] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [aa040889] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b
+ DEBUG [aa040889] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [a80d882d] Running if test ! -d /var/www/Code/jobsave55/releases/20171112193325; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171112193325'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [a80d882d] Command: if test ! -d /var/www/Code/jobsave55/releases/20171112193325; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171112193325'" 1>&2; false; fi
+ DEBUG [a80d882d] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [e04f71d3] Running /usr/bin/env echo "7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b" >> REVISION as deploy@67.205.137.231
+ DEBUG [e04f71d3] Command: cd /var/www/Code/jobsave55/releases/20171112193325 && /usr/bin/env echo "7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b" >> REVISION
+  INFO [e04f71d3] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [8a1371bc] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171112193325 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [8a1371bc] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171112193325 /var/www/Code/jobsave55/releases/current
+  INFO [8a1371bc] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [3ac75544] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [3ac75544] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [3ac75544] Finished in 0.144 seconds with exit status 0 (successful).
+ DEBUG [d234b1cd] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [d234b1cd] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [d234b1cd] 	20170913033211	20171004103128	20171006005640	20171018193413	20171106010554
+20171112193325
+ DEBUG [d234b1cd] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 67.205.137.231
+  INFO [7857ac3d] Running /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170913033211 as deploy@67.205.137.231
+ DEBUG [7857ac3d] Command: /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20170913033211
+  INFO [7857ac3d] Finished in 0.300 seconds with exit status 0 (successful).
+ DEBUG [f944863e] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [f944863e] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [f944863e] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [fc66a7b2] Running /usr/bin/env echo "Branch master (at 7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b) deployed as release 20171112193325 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [fc66a7b2] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b) deployed as release 20171112193325 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [fc66a7b2] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-12 19:40:39 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [39ed8277] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [39ed8277] Command: /usr/bin/env mkdir -p /tmp
+  INFO [39ed8277] Finished in 12.214 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [8ee00018] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [8ee00018] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [8ee00018] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [939e3cdd] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [939e3cdd] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [939e3cdd] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b	HEAD
+  INFO [939e3cdd] Finished in 0.480 seconds with exit status 0 (successful).
+  INFO [72597a44] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [72597a44] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [72597a44] Finished in 0.194 seconds with exit status 0 (successful).
+ DEBUG [d8e2d735] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [d8e2d735] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [d8e2d735] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [60cda8fe] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [60cda8fe] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [60cda8fe] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b
+ DEBUG [60cda8fe] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [efcc9a8c] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [efcc9a8c] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [efcc9a8c] Finished in 0.147 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [007733ca] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [007733ca] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [007733ca] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [2b6672f5] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [2b6672f5] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [2b6672f5] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [98ad3a05] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [98ad3a05] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [98ad3a05] 	Fetching origin
+  INFO [98ad3a05] Finished in 0.570 seconds with exit status 0 (successful).
+ DEBUG [f258a5b5] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [f258a5b5] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [f258a5b5] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [ebbc2323] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171112194053 as deploy@67.205.137.231
+ DEBUG [ebbc2323] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171112194053 )
+  INFO [ebbc2323] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [f6e66272] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171112194053 as deploy@67.205.137.231
+ DEBUG [f6e66272] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171112194053 )
+  INFO [f6e66272] Finished in 0.273 seconds with exit status 0 (successful).
+ DEBUG [00aa4462] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [00aa4462] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [00aa4462] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [e954fd8a] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [e954fd8a] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e954fd8a] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b
+ DEBUG [e954fd8a] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [98d70aad] Running if test ! -d /var/www/Code/jobsave55/releases/20171112194053; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171112194053'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [98d70aad] Command: if test ! -d /var/www/Code/jobsave55/releases/20171112194053; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171112194053'" 1>&2; false; fi
+ DEBUG [98d70aad] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [13780eb4] Running /usr/bin/env echo "7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b" >> REVISION as deploy@67.205.137.231
+ DEBUG [13780eb4] Command: cd /var/www/Code/jobsave55/releases/20171112194053 && /usr/bin/env echo "7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b" >> REVISION
+  INFO [13780eb4] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [e5282d9c] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171112194053 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [e5282d9c] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171112194053 /var/www/Code/jobsave55/releases/current
+  INFO [e5282d9c] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [9992b29d] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [9992b29d] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [9992b29d] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [d02ed012] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [d02ed012] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [d02ed012] 	20171004103128	20171006005640	20171018193413	20171106010554	20171112193325
+20171112194053
+ DEBUG [d02ed012] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 67.205.137.231
+  INFO [4566ed77] Running /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20171004103128 as deploy@67.205.137.231
+ DEBUG [4566ed77] Command: /usr/bin/env rm -rf /var/www/Code/jobsave55/releases/20171004103128
+  INFO [4566ed77] Finished in 0.303 seconds with exit status 0 (successful).
+ DEBUG [a4253609] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [a4253609] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [a4253609] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [3a86f798] Running /usr/bin/env echo "Branch master (at 7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b) deployed as release 20171112194053 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [3a86f798] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b) deployed as release 20171112194053 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [3a86f798] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-12 19:48:10 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2f596992] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [2f596992] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2f596992] Finished in 6.063 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [e16d4641] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [e16d4641] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [e16d4641] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [2d67af6e] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [2d67af6e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [2d67af6e] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b	HEAD
+  INFO [2d67af6e] Finished in 0.542 seconds with exit status 0 (successful).
+  INFO [5103c5c2] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [5103c5c2] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+ DEBUG [5103c5c2] 	mkdir: 
+ DEBUG [5103c5c2] 	cannot create directory ‘/var/www/Code/jobsave55/shared’
+ DEBUG [5103c5c2] 	: Permission denied
+ DEBUG [5103c5c2] 	
+ DEBUG [5103c5c2] 	mkdir: 
+ DEBUG [5103c5c2] 	cannot create directory ‘/var/www/Code/jobsave55/releases’
+ DEBUG [5103c5c2] 	: Permission denied
+ DEBUG [5103c5c2] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-12 19:48:39 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8eb94c17] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [8eb94c17] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8eb94c17] Finished in 7.474 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [0fee532d] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [0fee532d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [0fee532d] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO [84b4ca70] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [84b4ca70] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [84b4ca70] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b	HEAD
+  INFO [84b4ca70] Finished in 0.475 seconds with exit status 0 (successful).
+  INFO [6ce7a68d] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [6ce7a68d] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [6ce7a68d] Finished in 0.206 seconds with exit status 0 (successful).
+ DEBUG [8aa1774c] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [8aa1774c] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [8aa1774c] Finished in 0.143 seconds with exit status 1 (failed).
+ DEBUG [f56f4c1e] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [f56f4c1e] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [f56f4c1e] Finished in 0.136 seconds with exit status 1 (failed).
+ DEBUG [ca8c0d96] Running if test ! -d /var/www/Code/jobsave55; then echo "Directory does not exist '/var/www/Code/jobsave55'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [ca8c0d96] Command: if test ! -d /var/www/Code/jobsave55; then echo "Directory does not exist '/var/www/Code/jobsave55'" 1>&2; false; fi
+ DEBUG [ca8c0d96] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO [de18b388] Running /usr/bin/env git clone --mirror git@bitbucket.org:halayuba/jobsave55.git /var/www/Code/jobsave55/repo as deploy@67.205.137.231
+ DEBUG [de18b388] Command: cd /var/www/Code/jobsave55 && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git clone --mirror git@bitbucket.org:halayuba/jobsave55.git /var/www/Code/jobsave55/repo )
+ DEBUG [de18b388] 	Cloning into bare repository '/var/www/Code/jobsave55/repo'...
+  INFO [de18b388] Finished in 4.546 seconds with exit status 0 (successful).
+ DEBUG [0ddc953d] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [0ddc953d] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [0ddc953d] Finished in 0.166 seconds with exit status 0 (successful).
+  INFO [b0f11ac0] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [b0f11ac0] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [b0f11ac0] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [20c21f06] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [20c21f06] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [20c21f06] 	Fetching origin
+  INFO [20c21f06] Finished in 0.466 seconds with exit status 0 (successful).
+ DEBUG [220df980] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [220df980] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [220df980] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [51bcf1b7] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171112194847 as deploy@67.205.137.231
+ DEBUG [51bcf1b7] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171112194847 )
+  INFO [51bcf1b7] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [40147c8a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171112194847 as deploy@67.205.137.231
+ DEBUG [40147c8a] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171112194847 )
+  INFO [40147c8a] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [c4c65c52] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [c4c65c52] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [c4c65c52] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [6e09f8ef] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [6e09f8ef] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6e09f8ef] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b
+ DEBUG [6e09f8ef] Finished in 0.135 seconds with exit status 0 (successful).
+ DEBUG [2ebc9bee] Running if test ! -d /var/www/Code/jobsave55/releases/20171112194847; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171112194847'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [2ebc9bee] Command: if test ! -d /var/www/Code/jobsave55/releases/20171112194847; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171112194847'" 1>&2; false; fi
+ DEBUG [2ebc9bee] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [715d1f21] Running /usr/bin/env echo "7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b" >> REVISION as deploy@67.205.137.231
+ DEBUG [715d1f21] Command: cd /var/www/Code/jobsave55/releases/20171112194847 && /usr/bin/env echo "7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b" >> REVISION
+  INFO [715d1f21] Finished in 0.133 seconds with exit status 0 (successful).
+  INFO [5eb23261] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171112194847 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [5eb23261] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171112194847 /var/www/Code/jobsave55/releases/current
+  INFO [5eb23261] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [2502ee16] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [2502ee16] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [2502ee16] Finished in 0.140 seconds with exit status 0 (successful).
+ DEBUG [691ec382] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [691ec382] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [691ec382] 	20171112194847
+ DEBUG [691ec382] Finished in 0.121 seconds with exit status 0 (successful).
+ DEBUG [036457f4] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [036457f4] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [036457f4] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [abcd0fc5] Running /usr/bin/env echo "Branch master (at 7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b) deployed as release 20171112194847 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [abcd0fc5] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b) deployed as release 20171112194847 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [abcd0fc5] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-14 05:34:09 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a1204f55] Running /usr/bin/env mkdir -p /tmp as deploy@67.205.137.231
+ DEBUG [a1204f55] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a1204f55] Finished in 8.281 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-dashemirates-production-vagrant.sh 100.0%
+  INFO [8f271b06] Running /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh as deploy@67.205.137.231
+ DEBUG [8f271b06] Command: /usr/bin/env chmod 700 /tmp/git-ssh-dashemirates-production-vagrant.sh
+  INFO [8f271b06] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [d2ea27ee] Running /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD as deploy@67.205.137.231
+ DEBUG [d2ea27ee] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:halayuba/jobsave55.git HEAD )
+ DEBUG [d2ea27ee] 	344ea32e4622cc7e4612c679770a2e3dba6b9dd5	HEAD
+  INFO [d2ea27ee] Finished in 0.569 seconds with exit status 0 (successful).
+  INFO [eebbfbd0] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [eebbfbd0] Command: /usr/bin/env mkdir -p /var/www/Code/jobsave55/shared /var/www/Code/jobsave55/releases
+  INFO [eebbfbd0] Finished in 0.197 seconds with exit status 0 (successful).
+ DEBUG [fc3513d3] Running [ -f /var/www/Code/jobsave55/current/REVISION ] as deploy@67.205.137.231
+ DEBUG [fc3513d3] Command: [ -f /var/www/Code/jobsave55/current/REVISION ]
+ DEBUG [fc3513d3] Finished in 0.127 seconds with exit status 0 (successful).
+ DEBUG [77d8b754] Running /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null as deploy@67.205.137.231
+ DEBUG [77d8b754] Command: /usr/bin/env cat /var/www/Code/jobsave55/current/REVISION 2>/dev/null
+ DEBUG [77d8b754] 	7bd648c8bc353d4648e561f82eaeaa5bc9f1da0b
+ DEBUG [77d8b754] Finished in 0.135 seconds with exit status 0 (successful).
+ DEBUG [205d6804] Running [ -f /var/www/Code/jobsave55/repo/HEAD ] as deploy@67.205.137.231
+ DEBUG [205d6804] Command: [ -f /var/www/Code/jobsave55/repo/HEAD ]
+ DEBUG [205d6804] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/Code/jobsave55/repo
+ DEBUG [6ad30fc8] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [6ad30fc8] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [6ad30fc8] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [e1438b5b] Running /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git as deploy@67.205.137.231
+ DEBUG [e1438b5b] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:halayuba/jobsave55.git )
+  INFO [e1438b5b] Finished in 0.148 seconds with exit status 0 (successful).
+  INFO [6f6b1734] Running /usr/bin/env git remote update --prune as deploy@67.205.137.231
+ DEBUG [6f6b1734] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6f6b1734] 	Fetching origin
+ DEBUG [6f6b1734] 	From bitbucket.org:halayuba/jobsave55
+   7bd648c..344ea32  master     -> master
+  INFO [6f6b1734] Finished in 0.947 seconds with exit status 0 (successful).
+ DEBUG [f4855a83] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [f4855a83] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [f4855a83] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [9df088eb] Running /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171114053419 as deploy@67.205.137.231
+ DEBUG [9df088eb] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/Code/jobsave55/releases/20171114053419 )
+  INFO [9df088eb] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [ad04ff17] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171114053419 as deploy@67.205.137.231
+ DEBUG [ad04ff17] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/Code/jobsave55/releases/20171114053419 )
+  INFO [ad04ff17] Finished in 0.201 seconds with exit status 0 (successful).
+ DEBUG [0614fe46] Running if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [0614fe46] Command: if test ! -d /var/www/Code/jobsave55/repo; then echo "Directory does not exist '/var/www/Code/jobsave55/repo'" 1>&2; false; fi
+ DEBUG [0614fe46] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [e8401c79] Running /usr/bin/env git rev-list --max-count=1 master as deploy@67.205.137.231
+ DEBUG [e8401c79] Command: cd /var/www/Code/jobsave55/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-dashemirates-production-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e8401c79] 	344ea32e4622cc7e4612c679770a2e3dba6b9dd5
+ DEBUG [e8401c79] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [44dd6667] Running if test ! -d /var/www/Code/jobsave55/releases/20171114053419; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171114053419'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [44dd6667] Command: if test ! -d /var/www/Code/jobsave55/releases/20171114053419; then echo "Directory does not exist '/var/www/Code/jobsave55/releases/20171114053419'" 1>&2; false; fi
+ DEBUG [44dd6667] Finished in 0.139 seconds with exit status 0 (successful).
+  INFO [7ec45b38] Running /usr/bin/env echo "344ea32e4622cc7e4612c679770a2e3dba6b9dd5" >> REVISION as deploy@67.205.137.231
+ DEBUG [7ec45b38] Command: cd /var/www/Code/jobsave55/releases/20171114053419 && /usr/bin/env echo "344ea32e4622cc7e4612c679770a2e3dba6b9dd5" >> REVISION
+  INFO [7ec45b38] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO [4536469f] Running /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171114053419 /var/www/Code/jobsave55/releases/current as deploy@67.205.137.231
+ DEBUG [4536469f] Command: /usr/bin/env ln -s /var/www/Code/jobsave55/releases/20171114053419 /var/www/Code/jobsave55/releases/current
+  INFO [4536469f] Finished in 0.134 seconds with exit status 0 (successful).
+  INFO [4f2c7ede] Running /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55 as deploy@67.205.137.231
+ DEBUG [4f2c7ede] Command: /usr/bin/env mv /var/www/Code/jobsave55/releases/current /var/www/Code/jobsave55
+  INFO [4f2c7ede] Finished in 0.148 seconds with exit status 0 (successful).
+ DEBUG [8375b14b] Running /usr/bin/env ls -x /var/www/Code/jobsave55/releases as deploy@67.205.137.231
+ DEBUG [8375b14b] Command: /usr/bin/env ls -x /var/www/Code/jobsave55/releases
+ DEBUG [8375b14b] 	20171112194847	20171114053419
+ DEBUG [8375b14b] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [9146f62a] Running if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi as deploy@67.205.137.231
+ DEBUG [9146f62a] Command: if test ! -d /var/www/Code/jobsave55/releases; then echo "Directory does not exist '/var/www/Code/jobsave55/releases'" 1>&2; false; fi
+ DEBUG [9146f62a] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [af02aaea] Running /usr/bin/env echo "Branch master (at 344ea32e4622cc7e4612c679770a2e3dba6b9dd5) deployed as release 20171114053419 by vagrant" >> /var/www/Code/jobsave55/revisions.log as deploy@67.205.137.231
+ DEBUG [af02aaea] Command: cd /var/www/Code/jobsave55/releases && /usr/bin/env echo "Branch master (at 344ea32e4622cc7e4612c679770a2e3dba6b9dd5) deployed as release 20171114053419 by vagrant" >> /var/www/Code/jobsave55/revisions.log
+  INFO [af02aaea] Finished in 0.129 seconds with exit status 0 (successful).
