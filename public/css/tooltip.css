@@ -1,0 +1,19 @@
+/*  CSS Document                             */
+/*  Written by Chris Converse for lynda.com  */
+
+/* Tooltip */
+
+#tooltip_container {
+	color: #fff;
+	position: absolute;
+	display: none;
+	padding: 20px;
+	max-width: 200px; /* need i.e. rule */
+	background-color: rgba(0,0,0,.85);
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+}
+
+.tooltip-source-html { display: none; }
+

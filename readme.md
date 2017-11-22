@@ -1,7 +1,7 @@
 ## Laravel Project - Job Save
 
 - Author: Simon Bashir
-- Version: 0.1.6
+- Version: 0.1.7
 - Release Date: Nov 19th, 2017
 - To see a hosted demo you can visit [jobsave.io](http://jobsave.io])
 

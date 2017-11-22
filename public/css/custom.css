@@ -16,6 +16,26 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
+/*@import url('https://fonts.googleapis.com/css?family=Oswald');*/
+/*
+font-family: 'Anton', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Patua One', cursive;
+font-family: 'Russo One', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Audiowide', cursive;
+font-family: 'Permanent Marker', cursive;
+
+logo #00D664 /#00A651
+tabs #00B86D
+is_required #23d160
+hero FAA444
+
+  jQuery:
+    HEADER/TOOLBAR>>          #FAA444
+    CLICKABLE/DEFAULT STATE>> #00D664
+
+*/
 .google_font_1{font-size: 2em; font-family: 'Patua One', sans-serif; margin-bottom: 0}
 .google_font_2{font-family: 'Oswald', sans-serif}
 .google_font_3{font-family: 'Permanent Marker', cursive;}
@@ -32,9 +52,18 @@
 .mgb_1{margin-bottom: 1em !important} .mgb_2{margin-bottom: 2em} .mgb_4{margin-bottom: 4em} .mgb_8{margin-bottom: 8em !important}
 .mgr_1{margin-right: 1em} .mgl_1{margin-left: 1em}
 .pda_1{padding: 1em !important}
+/*.flexme {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  display: flex;
+  align-items: center;
+}
+a.dropdown-toggle{font-size: 16px !important}*/
 
 .form_field_color{background-color: #e2eff3; height: 40px}
+/*div.form-group label{float: left}*/
 .form_label{text-align: left; font-family: 'Lato', 'Raleway', sans-serif; font-size: 20px; margin:10px 0 0 0; padding: 0}
+/*header{background: #333; color: #fff; padding: 10px 0; margin: 0}*/
 .seperator{ border-bottom: 2px solid #ddd; width: 100%; margin: 10px auto; }
 .border_center{
   box-sizing: border-box;
@@ -112,6 +141,7 @@ tr.notification a{text-decoration: none !important; font-size: .8em; font-weight
 ========================================*/
 .size18{font-size:18px !important}
 .size24{font-size:24px !important}
+.size36{font-size:36px !important}
 .css_icon{font-size:24px; color: white !important}
 
 /*======================================
@@ -244,6 +274,7 @@ dev.modal p{font-family:Verdana, Helvetica, Calibri, sans-serif, Arial !importan
 .login-box {width: 400px; height: 165px; padding: 20px; margin: auto; top: -165px; box-shadow: 0 0 10px #CCC; border-radius: 5px; position: relative; background-color: #F1F7ED}
 .image-group {margin-bottom: 10px;}
 .form-group .form-control {margin-left: 55px; width: 275px; height: 30px; padding: 0 5px 0 5px; font-size: 16px; border-radius: 5px; border: solid 1px #CCCCCC; color: #999;}
+/*.form-group .form-label {width: 50px; font-size: 18px; display: block; float: left; line-height: 30px; padding-left: 5px; color: #333;}*/
 .login-msg {border: solid 1px #bce8f1; text-align: center; line-height: 30px; margin-bottom: 10px; border-radius: 5px; color: rgba(58, 135, 173, 0.90); background-color: rgba(217, 237, 247, 0.99);}
 .login-msg.success {color: rgba(70, 136, 71, 0.96); background-color: rgba(223, 240, 216, 0.97); border-color: rgba(214, 233, 198, 0.98);}
 .login-msg.error {color: rgba(185, 74, 72, 0.98); background-color: rgba(242, 222, 222, 0.98); border-color: rgba(238, 211, 215, 0.98);}

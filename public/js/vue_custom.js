@@ -112,6 +112,25 @@ Vue.component('modal-view', {
  });
 
 /*   //====================
+   //== FORM FIELD: DATE
+ //==================== */
+ // Vue.component('form-date', {
+ //   props:['name', 'text', 'date'],
+ //   template: `
+ //         <div class="field has-addons">
+ //           <p class="control">
+ //             <a class="button is-static is-large">
+ //               {{ text }}
+ //             </a>
+ //           </p>
+ //           <p class="control">
+ //             <input :name="name" type="date" class="input is-large" :value="date">
+ //           </p>
+ //         </div>
+ //   `
+ // });
+
+/*   //====================
    //== FORM FIELD: CHECKBOX
  //==================== */
  Vue.component('form-checkbox', {
