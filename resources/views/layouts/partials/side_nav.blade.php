@@ -30,7 +30,7 @@
     <aside-menu klass="fa fa-building {{ side_nav('employers') }}" text="Employers" link="{{ url('employers') }}"></aside-menu>
     <aside-menu klass="fa fa-briefcase {{ side_nav('jobs') }}" text="Jobs" link="{{ url('jobs') }}"></aside-menu>
     <aside-menu klass="fa fa-clone {{ side_nav('applications') }}" text="Applications" link="{{ url('applications') }}"></aside-menu>
-    <aside-menu klass="icon-users {{ side_nav('interviews') }}" text="Interviews" link="{{ url('interviews') }}"></aside-menu>
+    <aside-menu klass="fa fa-users {{ side_nav('interviews') }}" text="Interviews" link="{{ url('interviews') }}"></aside-menu>
     <aside-menu klass="fa fa-handshake-o {{ side_nav('offers') }}" text="Offers" link="{{ url('offers') }}"></aside-menu>
   </ul>
 </aside>

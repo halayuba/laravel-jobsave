@@ -38,7 +38,7 @@ class Employer extends Model
 
     ///== DETERMINE IF DUPLICATE RECORD
     //====================
-    public function scopeGetDuplicate($query)
+    public function scopeIsDuplicate($query)
     {
         $query->where('name', request()->name)->where('user_id', auth()->id());
     }

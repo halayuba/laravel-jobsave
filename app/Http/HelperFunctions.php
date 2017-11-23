@@ -22,22 +22,12 @@ use Carbon\Carbon;
   function current_page($passed_value = '/')
   {
     $uri = request()->path(); //e.g., applications/create/59ecf885eeea5
-    // $array = ['resumes', 'employers', 'jobs', 'accounts', 'interviews', 'applications', 'offers'];
     $array = ['overview', 'home', '/'];
 
     if($passed_value == $uri ) return 'is-active';
     elseif($passed_value == 'overview' && str_contains($uri, $passed_value)) return 'is-active';
     elseif($passed_value == '/' && $uri == 'home') return 'is-active';
     elseif(!in_array($uri, $array) && str_contains($uri, $passed_value) && $passed_value == 'dashboard') return 'is-active';
-    // {
-    //   return ($passed_value == 'dashboard')? 'is-active' : '';
-    // }
-    // elseif(!in_array($passed_value, $array)) return 'is-active';
-    // elseif(in_array(starts_with($uri, $passed_value), $array))
-    // {
-    //   return ($passed_value == 'dashboard')? 'is-active' : '';
-    // }
-      // return ($passed_value == $uri)? 'is-active' : '';
   }
 
     //== SIDE NAVIGATION PANEL
@@ -45,7 +35,6 @@ use Carbon\Carbon;
   function side_nav($uri)
   {
     return starts_with(request()->path(), $uri)? 'is_active' : ''; //strstr
-    // return ends_with(request()->path(), $uri)? 'is_active' : '';
   }
 
    //== JOBS >> INDEX: SHOW LINK ONLY IF NAVIGATED FROM EMPLOYER PAGE
@@ -57,7 +46,6 @@ use Carbon\Carbon;
 
   function loop_errors($errors)
   {
-    // $result = '';
     $result = '<ul>';
     foreach ($errors->all() as $error) {
       $result .= '<li>'.$error.'</li>';
@@ -182,16 +170,6 @@ use Carbon\Carbon;
       return '<span class="tag is-warning">No response</span>';
     }
 
-     //== OVERVIEW: HAS AN OFFER BEEN RECEIVED
-    //====================
-    // function offer($val)
-    // {
-    //   if($val)
-    //   {
-    //     return '<span class="tag is-danger">Turned down</span>';
-    //   }
-    // }
-
      //== JOBS & INTERVIEW >> SET FILTER NAVIGATION CLASS
    //====================
     function set_nav_active($check)
@@ -241,7 +219,6 @@ use Carbon\Carbon;
         return $dt->format($format);
       }
       else return 'Not provided';
-  		// $dt->setTimezone(new DateTimeZone('America/Chicago'));
   	}
 
   // FIND TIME DIFFERENCE BETWEEN 2 DATES
@@ -254,7 +231,6 @@ use Carbon\Carbon;
     if($interval->days == 0) return "Both dates are the same" ;
 
     else return ($date2 > $date1)? "2nd Date is greater" : "1st Date is greater";
-    // return ($interval->days > 0)? "true" : "false";
   }
 
   // DATE 2 ON OR AFTER DATE 1

@@ -16,26 +16,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
-/*@import url('https://fonts.googleapis.com/css?family=Oswald');*/
-/*
-font-family: 'Anton', sans-serif;
-font-family: 'Orbitron', sans-serif;
-font-family: 'Patua One', cursive;
-font-family: 'Russo One', sans-serif;
-font-family: 'Righteous', cursive;
-font-family: 'Audiowide', cursive;
-font-family: 'Permanent Marker', cursive;
-
-logo #00D664 /#00A651
-tabs #00B86D
-is_required #23d160
-hero FAA444
-
-  jQuery:
-    HEADER/TOOLBAR>>          #FAA444
-    CLICKABLE/DEFAULT STATE>> #00D664
-
-*/
 .google_font_1{font-size: 2em; font-family: 'Patua One', sans-serif; margin-bottom: 0}
 .google_font_2{font-family: 'Oswald', sans-serif}
 .google_font_3{font-family: 'Permanent Marker', cursive;}
@@ -52,13 +32,6 @@ hero FAA444
 .mgb_1{margin-bottom: 1em !important} .mgb_2{margin-bottom: 2em} .mgb_4{margin-bottom: 4em} .mgb_8{margin-bottom: 8em !important}
 .mgr_1{margin-right: 1em} .mgl_1{margin-left: 1em}
 .pda_1{padding: 1em !important}
-/*.flexme {
-  display: -webkit-flex;
-  -webkit-align-items: center;
-  display: flex;
-  align-items: center;
-}
-a.dropdown-toggle{font-size: 16px !important}*/
 
 .form_field_color{background-color: #e2eff3; height: 40px}
 /*div.form-group label{float: left}*/
@@ -201,7 +174,6 @@ tr.notification a{text-decoration: none !important; font-size: .8em; font-weight
 ||||||||| SIDE NAV |||||||||
 ========================================*/
 .is_active{border-left: 10px solid #2553c1; padding-left: 5px}
-/*.is_active{background-color: #e8ded2;}*/
 
 /*======================================
 ||||||||| CHANGES TO DEFAULTS |||||||||

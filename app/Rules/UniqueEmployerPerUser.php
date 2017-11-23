@@ -27,7 +27,7 @@ class UniqueEmployerPerUser implements Rule
      */
     public function passes($attribute, $value)
     {
-        return !Employer::getDuplicate();
+      return Employer::isDuplicate($value)->get()->isEmpty();
     }
 
     /**
@@ -37,6 +37,6 @@ class UniqueEmployerPerUser implements Rule
      */
     public function message()
     {
-        return 'You have already created this employer before!';
+      return 'Employer exists already!';
     }
 }

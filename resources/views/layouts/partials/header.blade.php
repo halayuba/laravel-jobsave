@@ -39,7 +39,7 @@
           </a>
         @endif
         <a href="#" class="navbar-item is-tab">
-          <span class="icon"><i class="icon-user"></i></span>
+          <span class="icon"><i class="fa fa-user-o"></i></span>
           {{ Auth::user()->name }}
         </a>
         <a href="#" class="navbar-item is-tab"
