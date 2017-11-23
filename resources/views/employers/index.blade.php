@@ -71,7 +71,7 @@
                   <!-- EMPLOYER EMAIL -->
                   <div class="level-item">
                     <p class="heading">
-                      <i class="ion-email size18" title="{{ $employer->email }}"></i>
+                      <i class="fa fa-envelope-square size18" title="{{ $employer->email }}"></i>
                       {{ truncate_field($employer->email) }}
                     </p>
                   </div>
@@ -79,7 +79,7 @@
                   <!-- EMPLOYER PHONE -->
                   <div class="level-item">
                     <p class="heading">
-                      <i class="ion-ios-telephone size18"></i>
+                      <i class="fa fa-phone-square size18"></i>
                       {{ $employer->phone }}
                     </p>
                   </div>
@@ -87,7 +87,7 @@
                   <!-- EMPLOYER OFFICIAL WEBSITE -->
                   <div class="level-item">
                     <p class="heading">
-                      <i class="ion-earth size18"></i>
+                      <i class="fa fa-globe size18"></i>
                       @if($employer->website)
                         <a href="{{ $employer->website }}" class="is_link">{{ clean_url($employer->website) }}</a>
                       @endif
@@ -97,7 +97,7 @@
                   <!-- EMPLOYER LINKED-IN -->
                   <div class="level-item">
                     <p class="heading">
-                      <i class="ion-social-linkedin size18" title="Linked-in"></i>
+                      <i class="fa fa-linkedin-square size18" title="Linked-in"></i>
                       @if($employer->linkedin)
                         <a href="{{ $employer->linkedin }}" class="is_link">{{ clean_url($employer->linkedin) }}</a>
                       @endif
@@ -111,7 +111,7 @@
               <div class="has-text-centered">
                 <a href="{{ route('jobs.createSpecific', $employer->id) }}" class="button is-info is-outlined is-small" title="Define a new job opportunity posted by this employer">
                   <span class="icon">
-                    <i class="ion-briefcase"></i>
+                    <i class="fa fa-briefcase"></i>
                   </span> &nbsp;
                   Go to Job form
                 </a>
@@ -133,7 +133,7 @@
             <div>
               <a href="{{ route('employers.show', $employer->name) }}" class="button is-info" title="View the entire record">
                 <span class="icon is-small">
-                  <i class="ion-ios-glasses-outline size24"></i>
+                  <i class="fa fa-map-o size24"></i>
                 </span>
               </a>
             </div>
@@ -145,7 +145,7 @@
               <div>
                 <a href="{{ route('employers.statusUpdate', $employer->name) }}" class="button is-success" title="Activate employer">
                   <span class="icon is-small">
-                    <i class="icon-toggle-on size24"></i>
+                    <i class="fa fa-toggle-on size24"></i>
                   </span>
                 </a>
               </div>
@@ -156,7 +156,7 @@
               <div>
                 <a href="{{ route('employers.edit', $employer->name) }}" class="button is-warning" title="Edit employer">
                   <span class="icon is-small">
-                    <i class="ion-compose size24"></i>
+                    <i class="fa fa-pencil-square-o size24"></i>
                   </span>
                 </a>
               </div>
@@ -170,7 +170,7 @@
                   document.getElementById('delete-{{ $employer->id }}').submit();"
                 >
                   <span class="icon is-small">
-                    <i class="ion-trash-a size24"></i>
+                    <i class="fa fa-trash-o size24"></i>
                   </span>
                 </a>
                 <form id="delete-{{ $employer->id }}" action="{{ route('employers.destroy', $employer->name) }}" method="POST" class="is-hidden">

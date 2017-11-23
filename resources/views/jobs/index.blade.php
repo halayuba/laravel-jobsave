@@ -59,10 +59,10 @@
 
                 <!-- JOB TITLE / EMPLOYER -->
                 <p class="title is-4">
-                  <i class="icon-briefcase size18" aria-hidden="true"></i>
+                  <i class="fa fa-briefcase size18" aria-hidden="true"></i>
                   {{ $job->title }}
                   &nbsp;
-                  <i class="icon-at-sign size18"></i>
+                  <i class="fa fa-at size18"></i>
                   <a href="{{ route('employers.show', $job->employer->name )}}">
                     {{ $job->employer->name }}
                   </a>
@@ -71,7 +71,7 @@
                 <!-- JOB POSTER / DESCRIPTION -->
                 <p class="subtitle is-6 mgl_1">
                   @if($job->posted_by)
-                    <small><i class="ion-ios-people" title="Posted by"></i> {{ $job->posted_by }}</small><br>
+                    <small><i class="fa fa-users" title="Posted by"></i> {{ $job->posted_by }}</small><br>
                   @endif
                   {{ \Illuminate\Support\Str::words($job->description, 30) }}
                 </p>
@@ -82,7 +82,7 @@
                       <p class="heading">
                         <a title="Posted on 'where'">
                           <span class="icon">
-                            <i class="ion-monitor size18" ></i>
+                            <i class="fa fa-desktop size18" ></i>
                           </span>
                         </a>
                         @if(!empty($job->url))
@@ -96,7 +96,7 @@
                       <p class="heading">
                         <a title="Job was posted on 'date'">
                           <span class="icon">
-                            <i class="ion-calendar size18" ></i>
+                            <i class="fa fa-calendar-o size18" ></i>
                           </span>
                         </a>
                         {{ optional($job->date_posted)->toFormattedDateString() }}
@@ -106,7 +106,7 @@
                       <p class="heading">
                         <a title="Job location">
                           <span class="icon">
-                            <i class="ion-location size18"></i>
+                            <i class="fa fa-map-marker size18"></i>
                           </span>
                         </a>
                         {{ truncate_field($job->location) }}
@@ -116,7 +116,7 @@
                       <p class="heading">
                         <a title="Job seniority level">
                           <span class="icon">
-                            <i class="ion-ios-navigate-outline size18"></i>
+                            <i class="fa fa-location-arrow size18"></i>
                           </span>
                         </a>
                         {{ truncate_field($job->seniority_level) }}
@@ -126,7 +126,7 @@
                       <p class="heading">
                         <a title="Compensation / Salary">
                           <span class="icon">
-                            <i class="ion-cash size18"></i>
+                            <i class="fa fa-money size18"></i>
                           </span>
                         </a>
                         {{ truncate_field($job->compensation) }}
@@ -136,7 +136,7 @@
                       <p class="heading">
                         <a title="Employment Type">
                           <span class="icon">
-                            <i class="ion-clock size18"></i>
+                            <i class="fa fa-clock-o size18"></i>
                           </span>
                         </a>
                         {{ $job->employment_type->type }}
@@ -155,7 +155,7 @@
                  <div class="level-item">
                      <a title="Bookmarked as important" class="is_notpointer">
                        <span class="icon">
-                         <i class="ion-bookmark size24 {{ confirm_status($job->is_bookmarked) }}"></i>
+                         <i class="fa fa-bookmark size24 {{ confirm_status($job->is_bookmarked) }}"></i>
                        </span>
                      </a>
                  </div>
@@ -164,7 +164,7 @@
                  <div class="level-item">
                      <a title="An application has been submitted for this job" class="is_notpointer">
                        <span class="icon is-medium">
-                         <i class="ion-forward size24 {{ confirm_status($job->has_submitted) }}"></i>
+                         <i class="fa fa-external-link-square size24 {{ confirm_status($job->has_submitted) }}"></i>
                        </span>
                      </a>
                  </div>
@@ -174,11 +174,11 @@
                     @if($job->has_closed)
                        <a title="The status of this job opportunity was set to Closed" disabled>
                          <span class="icon is-medium">
-                             <i class="icon-toggle-off size24 is_inactive"></i>
+                             <i class="fa fa-toggle-off size24 is_inactive"></i>
                      @else
                        <a href="{{ route('jobs.statusUpdate', $job->identifier) }}" title="Update the status of this job opportunity to Closed" >
                          <span class="icon is-medium">
-                           <i class="icon-toggle-on size24"></i>
+                           <i class="fa fa-toggle-on size24"></i>
                      @endif
                          </span>
                        </a>
@@ -224,7 +224,7 @@
             <div>
               <a href="{{ route('jobs.show', $job->identifier) }}" class="button is-info" title="View">
                 <span class="icon is-small">
-                  <i class="ion-ios-glasses-outline size24"></i>
+                  <i class="fa fa-map-o size24"></i>
                 </span>
               </a>
             </div>
@@ -235,7 +235,7 @@
             <div>
               <a href="{{ route('jobs.edit', $job->identifier) }}" class="button is-warning" title="Edit">
                 <span class="icon is-small">
-                  <i class="ion-compose size24"></i>
+                  <i class="fa fa-pencil-square-o size24"></i>
                 </span>
               </a>
             </div>
@@ -249,7 +249,7 @@
                 document.getElementById('delete-{{$job->id}}').submit();"
               >
                 <span class="icon is-small">
-                  <i class="ion-trash-a size24"></i>
+                  <i class="fa fa-trash-o size24"></i>
                 </span>
               </a>
               <form id="delete-{{$job->id}}" action="{{ url('jobs/' . $job->identifier) }}" method="POST" class="is-hidden">
