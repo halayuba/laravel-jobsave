@@ -1,12 +1,27 @@
 $(function() {
 
-  var tooltips = $( "[title]" ).tooltip({
+  $( document ).tooltip({
     position: {
-      my: "left top",
-      at: "right+5 top-5",
-      collision: "none"
+      my: "center bottom-20",
+      at: "center top",
+      using: function( position, feedback ) {
+        $( this ).css( position );
+        $( "<div>" )
+          .addClass( "arrow" )
+          .addClass( feedback.vertical )
+          .addClass( feedback.horizontal )
+          .appendTo( this );
+      }
     }
   });
+
+  // var tooltips = $( "[title]" ).tooltip({
+  //   position: {
+  //     my: "left top",
+  //     at: "right+5 top-5",
+  //     collision: "none"
+  //   }
+  // });
 
 
   // $( "#dialog-message" ).dialog({

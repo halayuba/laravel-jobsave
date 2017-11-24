@@ -18,7 +18,7 @@
             <p class="card-header-title title is-4">
               <a href="{{ route('jobs.show', $job->identifier) }}">{{ $job->title }} </a>
               &nbsp;
-              <i class="ion-more"></i> &nbsp;&nbsp;
+              <i class="fa fa-ellipsis-h"></i> &nbsp;&nbsp;
               <a href="{{ route('employers.show', $job->employer->name) }}"> {{ $job->employer->name }}</a>
               @if($interview->is_canceled)
                 &nbsp; &nbsp;<span class="tag is-danger"><strong>Canceled</strong></span>
@@ -29,10 +29,10 @@
           </header>
           <div class="card-content">
             <div class="content">
-              <card-content klass="ion-android-calendar" label="Date of Interview" value="{{ $interview->date->toFormattedDateString() }}"></card-content>
-              <card-content klass="ion-android-alarm-clock" label="Time of Interview" value="{{ formatDateTime($interview->time, 'g:i a') }}"></card-content>
-              <card-content klass="ion-android-contacts" label="Interviewer(s)" value="{{ $interview->interviewer }}"></card-content>
-              <card-content klass="ion-happy" label="Type of the Interview" value="{{ $interview->interview_type->type }}"></card-content>
+              <card-content klass="fa fa-calendar" label="Date of Interview" value="{{ $interview->date->toFormattedDateString() }}"></card-content>
+              <card-content klass="fa fa-clock-o" label="Time of Interview" value="{{ formatDateTime($interview->time, 'g:i a') }}"></card-content>
+              <card-content klass="fa fa-id-badge" label="Interviewer(s)" value="{{ $interview->interviewer }}"></card-content>
+              <card-content klass="fa fa-microphone" label="Type of the Interview" value="{{ $interview->interview_type->type }}"></card-content>
             </div>
           </div>
 

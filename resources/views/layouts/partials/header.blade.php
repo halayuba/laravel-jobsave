@@ -27,15 +27,15 @@
         </a>
       @else
         @if($upcoming_interviews > 0)
-          <a href="{{ route('overview.upcoming-interviews') }}">
+          <a href="{{ route('overview.upcoming-interviews') }}" class="">
             <span class="icon is-big"><i class="fa fa-bullhorn css_icon"></i></span>
-            <span class="badge bg-success">{{ $upcoming_interviews }}</span>
+            <span class="tag is-success">{{ $upcoming_interviews }}</span>
           </a>
         @endif
         @if($offers > 0)
           <a href="{{ url('/offers') }}" class="mgl_1">
             <span class="icon is-big"><i class="fa fa-trophy css_icon"></i></span>
-            <span class="badge bg-success">{{ $offers }}</span>
+            <span class="tag is-success">{{ $offers }}</span>
           </a>
         @endif
         <a href="#" class="navbar-item is-tab">

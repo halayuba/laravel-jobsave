@@ -48,12 +48,12 @@
 
                 <!-- EMPLOYER NAME / JOB TITLE -->
                 <p class="title is-4">
-                  <i class="icon-at-sign size18" aria-hidden="true"></i>
+                  <i class="fa fa-at size18" aria-hidden="true"></i>
                   <a href="{{ route('employers.show', $offer->job->employer->name )}}">
                     {{ $offer->job->employer->name }}
                   </a>
                   &nbsp;
-                  <i class="icon-briefcase size18" aria-hidden="true"></i>
+                  <i class="fa fa-briefcase size18" aria-hidden="true"></i>
                   <a href="{{ route('jobs.show', $offer->job->identifier) }}">
                     {{ $offer->job->title }}
                   </a>
@@ -68,7 +68,7 @@
                 <div class="level-item">
                   <p class="heading">
                     <span class="icon">
-                      <i class="ion-cash size18" title="Offer amount"></i>
+                      <i class="fa fa-money size18" title="Offer amount"></i>
                     </span>
                     {{ $offer->amount }}
                   </p>
@@ -78,7 +78,7 @@
                 <div class="level-item">
                   <p class="heading">
                     <span class="icon">
-                      <i class="ion-android-calendar size18" title="Offer received on"></i>
+                      <i class="fa fa-calendar size18" title="Offer received on"></i>
                     </span>
                     {{ optional($offer->date)->toFormattedDateString() }}
                   </p>
@@ -87,7 +87,7 @@
                 <!-- DETAILS -->
                 <div class="level-item">
                   <p class="heading">
-                    <i class="icon-label size18" title="Offer details"></i>
+                    <i class="fa fa-tag size18" title="Offer details"></i>
                     <span title="{{ $offer->details }}">{{ truncate_field($offer->details) }}</span>
                   </p>
                 </div>
@@ -171,7 +171,7 @@
             <div>
               <a href="{{ route('offers.edit', $offer->id) }}" class="button is-warning" title="Edit">
                 <span class="icon is-small">
-                  <i class="ion-compose size24"></i>
+                  <i class="fa fa-pencil-square-o size24"></i>
                 </span>
               </a>
             </div>
@@ -185,7 +185,7 @@
                 document.getElementById('delete-{{ $offer->id }}').submit();"
               >
                 <span class="icon is-small">
-                  <i class="ion-trash-a size24"></i>
+                  <i class="fa fa-trash-o size24"></i>
                 </span>
               </a>
               <form id="delete-{{ $offer->id }}" action="{{ route('offers.destroy' , $offer->id) }}" method="POST" class="is-hidden">

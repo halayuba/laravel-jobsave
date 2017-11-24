@@ -16,7 +16,7 @@
         <div class="card">
           <header class="card-header">
             <p class="card-header-title title is-4">{{ $job->title}} &nbsp;
-              <i class="ion-more"></i> &nbsp;&nbsp;
+              <i class="fa fa-ellipsis-h"></i> &nbsp;&nbsp;
               <a href="{{ route('employers.show', $job->employer->name) }}"> {{ $job->employer->name }}</a>
 
               @if($job->has_closed)
@@ -30,32 +30,32 @@
           </header>
           <div class="card-content">
             <div class="content">
-              <card-content klass="ion-ios-location" label="Job Location" value="{{ $job->location }}"></card-content>
-              <card-content klass="ion-clock" label="Employment Type" value="{{ $job->employment_type->type }}"></card-content>
-              <card-content klass="ion-cash" label="Compensation" value="{{ $job->compensation }}"></card-content>
-              <card-content klass="ion-ios-navigate-outline" label="Seniority Level" value="{{ $job->seniority_level }}"></card-content>
-              <card-content klass="ion-calendar" label="Date Posted or Noticed" value="{{ $job->date_posted->toFormattedDateString() }}"></card-content>
+              <card-content klass="fa fa-map-marker" label="Job Location" value="{{ $job->location }}"></card-content>
+              <card-content klass="fa fa-clock-o" label="Employment Type" value="{{ $job->employment_type->type }}"></card-content>
+              <card-content klass="fa fa-money" label="Compensation" value="{{ $job->compensation }}"></card-content>
+              <card-content klass="fa fa-paper-plane" label="Seniority Level" value="{{ $job->seniority_level }}"></card-content>
+              <card-content klass="fa fa-calendar " label="Date Posted or Noticed" value="{{ $job->date_posted->toFormattedDateString() }}"></card-content>
 
               <!-- JOB URL & VENUE -->
                 @if(!empty($job->url))
                   <p>
                     <span class="tag is-light">
                       <span class="icon">
-                        <i class="ion-monitor size18"></i>
+                        <i class="fa fa-desktop size18"></i>
                       </span>
                       <small>Venue:</small>
                     </span>
                     <a href="{{ $job->url }}">{{ $job->venue->name }}</a>
                   </p>
                 @else
-                  <card-content klass="ion-monitor" label="Venue" value="{{ $job->venue->name }}"></card-content>
+                  <card-content klass="fa fa-desktop" label="Venue" value="{{ $job->venue->name }}"></card-content>
                 @endif
 
-              <card-content klass="ion-android-contact" label="Job Poster" value="{{ ($job->posted_by)? $job->posted_by : 'Not available'}}"></card-content>
-              <card-content klass="ion-bookmark" label="Bookmarked" value="{{ ($job->is_bookmarked)? 'Yes' : 'No' }}"></card-content>
-              <card-content klass="ion-forward" label="Application Submitted" value="{{ ($job->has_submitted)? 'Yes' : 'No' }}"></card-content>
-              <card-content klass="ion-pin" label="Job Closed" value="{{ ($job->has_closed)? 'Yes' : 'No' }}"></card-content>
-              <card-content klass="ion-image" label="File upload" value="{{ $filename }}"></card-content>
+              <card-content klass="fa fa-female" label="Job Poster" value="{{ ($job->posted_by)? $job->posted_by : 'Not available'}}"></card-content>
+              <card-content klass="fa fa-bookmark" label="Bookmarked" value="{{ ($job->is_bookmarked)? 'Yes' : 'No' }}"></card-content>
+              <card-content klass="fa fa-share" label="Application Submitted" value="{{ ($job->has_submitted)? 'Yes' : 'No' }}"></card-content>
+              <card-content klass="fa fa-window-close-o" label="Job Closed" value="{{ ($job->has_closed)? 'Yes' : 'No' }}"></card-content>
+              <card-content klass="fa fa-picture-o" label="File upload" value="{{ $filename }}"></card-content>
 
               <!-- //====================
                   //== EITHER SHOW IMAGE MODAL OR PERFORM DOWNLOAD DEPENDING ON TYPE OF IMAGE
@@ -63,7 +63,7 @@
              <!-- SHOW IMAGE MODAL -->
              @image($image)
                <a href="#" class="button is-primary is-outlined openImageModal" data-image="{{ $image['name'] }}" data-width="{{ $image['width'] }}" data-height="{{ $image['height'] }}" >
-                 <span class="icon"><i class="ion-eye"></i></span>&nbsp;
+                 <span class="icon"><i class="fa fa-map"></i></span>&nbsp;
                  View
                </a>
              @endimage
@@ -71,7 +71,7 @@
              <!-- DOWNLOAD PDF / DOC -->
              @download($image)
                <a href="{{ route('jobs.download', $job->identifier) }}" class="button is-primary is-outlined" >
-                 <span class="icon"><i class="ion-ios-download-outline"></i></span>&nbsp;
+                 <span class="icon"><i class="fa fa-download"></i></span>&nbsp;
                  Download
                </a>
              @enddownload
@@ -103,7 +103,7 @@
                  title="Delete"
                >
                  <span class="icon is-small">
-                   <i class="ion-trash-a size24"></i>
+                   <i class="fa fa-trash-o size24"></i>
                  </span>
                </a>
              @else

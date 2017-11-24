@@ -6,7 +6,7 @@
     <div class="dropdown">
       <button class="button is-large dropbtn">Create Content &nbsp; &nbsp;
         <span class="icon">
-          <i class="ion-chevron-down"></i>
+          <i class="fa fa-chevron-down"></i>
         </span>
       </button>
 

@@ -33,7 +33,7 @@
           {{ formatDateTime($job->interviews->last()->date, 'M j, Y') }}
           <a href="{{ url('interviews/'.$job->interviews->last()->id.'/jobs/'.$job->identifier) }}" class="css_a">
             <span class="icon">
-              <i class="icon-eye size24"></i>
+              <i class="fa fa-eye size24"></i>
             </span>
           </a>
           <br>

@@ -168,7 +168,7 @@ class AppServiceProvider extends ServiceProvider
        ///== INTERVIEWS: ZOOMING ON OFFERS SIMILAR TO interviewsWithPotentialOffers
        //====================
        \Blade::if('offers', function($interview){
-         if(!$interview->is_canceled && !$interview->is_unsuccessful && $interview->date < current_date())
+         if(!$interview->is_canceled && !$interview->is_unsuccessful && on_or_before($interview->date))
          {
            if(!$interview->job->offer) return true;
          }

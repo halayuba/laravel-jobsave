@@ -23,12 +23,12 @@
         </header>
         <div class="card-content">
           <div class="content">
-            <card-content klass="ion-ios-location" label="Address" value="{{ $employer->address }}"></card-content>
-            <card-content klass="ion-email" label="Email" value="{{ $employer->email }}"></card-content>
-            <card-content klass="ion-ios-telephone" label="Phone" value="{{ $employer->phone }}"></card-content>
-            <card-content klass="ion-earth" label="Website" value="{{ $employer->website }}"></card-content>
-            <card-content klass="ion-social-linkedin" label="Linked-in" value="{{ $employer->linkedin }}"></card-content>
-            <card-content klass="fa fa-building" label="Industry" value="{{ $employer->industry->name }}"></card-content>
+            <card-content klass="fa fa-map-marker" label="Address" value="{{ $employer->address }}"></card-content>
+            <card-content klass="fa fa-envelope-square" label="Email" value="{{ $employer->email }}"></card-content>
+            <card-content klass="fa fa-phone-square" label="Phone" value="{{ $employer->phone }}"></card-content>
+            <card-content klass="fa fa-globe" label="Website" value="{{ $employer->website }}"></card-content>
+            <card-content klass="fa fa-linkedin-square" label="Linked-in" value="{{ $employer->linkedin }}"></card-content>
+            <card-content klass="fa fa-building-o" label="Industry" value="{{ $employer->industry->name }}"></card-content>
           </div>
         </div>
         <footer class="card-footer">
@@ -45,7 +45,7 @@
                 <div class="has-text-centered">
                   <a href="{{ route('jobs.createSpecific', $employer->id) }}" class="button is-info is-outlined is-big" >
                     <span class="icon">
-                      <i class="ion-briefcase"></i>
+                      <i class="fa fa-briefcase"></i>
                     </span> &nbsp;
                     Go to Job form
                   </a>
@@ -58,12 +58,12 @@
           <footer class="card-footer">
             <a href="/employers?filter=archived" class="card-footer-item" title="Return">
               <span class="icon is-large">
-                <i class="ion-chevron-left size24"></i>
+                <i class="fa fa-chevron-left size24"></i>
               </span>
             </a>
             <a href="{{ route('employers.statusUpdate', $employer->name) }}" class="card-footer-item" title="Activate employer">
               <span class="icon is-large">
-                <i class="icon-toggle-on size24"></i>
+                <i class="fa fa-toggle-on size24"></i>
               </span>
             </a>
           </footer>
@@ -80,7 +80,7 @@
                  class="card-footer-item"
                >
                  <span class="icon is-small" title="Delete">
-                   <i class="ion-trash-a size24"></i>
+                   <i class="fa fa-trash-o size24"></i>
                  </span>
                </a>
              @else

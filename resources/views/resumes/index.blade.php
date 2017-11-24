@@ -40,7 +40,7 @@
             @downloadButton($resume)
               <a href="{{ route('resumes.download', $resume->title) }}" class="card-footer-item">
                 <span class="icon is-small" title="Download">
-                  <i class="ion-ios-download-outline size24"></i>
+                  <i class="fa fa-download size24"></i>
                 </span>
               </a>
             @else
@@ -58,7 +58,7 @@
                 class="card-footer-item"
               >
                 <span class="icon is-small" title="Delete">
-                  <i class="ion-trash-a size24"></i>
+                  <i class="fa fa-trash-o size24"></i>
                 </span>
               </a>
             @else

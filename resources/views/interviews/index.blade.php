@@ -52,12 +52,12 @@
 
                 <!-- EMPLOYER NAME / JOB TITLE -->
                 <p class="title is-4">
-                  <i class="icon-at-sign size18" aria-hidden="true"></i>
+                  <i class="fa fa-at size18" aria-hidden="true"></i>
                   <a href="{{ route('employers.show', $interview->job->employer->name )}}">
                     {{ $interview->job->employer->name }}
                   </a>
                   &nbsp;
-                  <i class="icon-briefcase size18" aria-hidden="true"></i>
+                  <i class="fa fa-briefcase size18" aria-hidden="true"></i>
                   <a href="{{ route('jobs.show', $interview->job->identifier) }}">
                     {{ $interview->job->title }}
                   </a>
@@ -70,21 +70,21 @@
                 <!-- INTERVIEWERS -->
                 <div class="level-item">
                   <p class="heading">
-                    <i class="ion-android-contacts size18" title="Interviewer(s)"></i>
+                    <i class="fa fa-user-secret size18" title="Interviewer(s)"></i>
                     {{ $interview->interviewer }}
                   </p>
                 </div>
                 <!-- INTERVIEW TYPE -->
                 <div class="level-item">
                   <p class="heading">
-                    <i class="ion-android-chat size18" title="Type of Interview?"></i>
+                    <i class="fa fa-comments size18" title="Type of Interview?"></i>
                     {{ $interview->interview_type->type }}
                   </p>
                 </div>
                 <!-- INTERVIEW DATE -->
                 <div class="level-item">
                   <p class="heading">
-                    <i class="ion-android-calendar size18" title="Date and Time of Interview"></i>
+                    <i class="fa fa-calendar-check-o size18" title="Date and Time of Interview"></i>
                     {{ optional($interview->date)->toFormattedDateString() .' @'. formatDateTime($interview->time, 'g:i a') }}
                   </p>
                 </div>
@@ -129,7 +129,7 @@
             <div>
               <a href="{{ route('interviews.edit', $interview->id) }}" class="button is-warning" title="Edit">
                 <span class="icon is-small">
-                  <i class="ion-compose size24"></i>
+                  <i class="fa fa-pencil-square-o size24"></i>
                 </span>
               </a>
             </div>
@@ -181,7 +181,7 @@
                 document.getElementById('delete-{{ $interview->id }}').submit();"
               >
                 <span class="icon is-small">
-                  <i class="ion-trash-a size24"></i>
+                  <i class="fa fa-trash-o size24"></i>
                 </span>
               </a>
               <form id="delete-{{ $interview->id }}" action="{{ route('interviews.destroy' , $interview->id) }}" method="POST" class="is-hidden">

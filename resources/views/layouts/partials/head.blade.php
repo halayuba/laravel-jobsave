@@ -10,7 +10,7 @@
 <meta name="Author" content="Simon Bashir [www.itproserve.com]" />
 
 <!-- IMPORTED FROM ASSAN -->
-<link href="{{ asset('vendor/assan/plugins/plugins.css') }}" rel="stylesheet">
+<!-- <link href="{{-- asset('vendor/assan/plugins/plugins.css') --}}" rel="stylesheet"> -->
 
 <!-- Styles -->
 <link rel="stylesheet" href="{{asset('css/bulma.css')}}" />
@@ -20,19 +20,16 @@
 <link rel="stylesheet" href="{{asset('css/jquery-ui.theme.min.css')}}" />
 
 <!-- FONTS -->
-<link href="{{ asset('vendor/assan/linearicons/fonts.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('css/vendor/ionicons.min.css')}}">
+<!-- <link href="{{-- asset('vendor/assan/linearicons/fonts.css') --}}" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="{{--asset('css/vendor/ionicons.min.css')--}}"> -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- CUSTOME STYLES -->
 <link rel="stylesheet" href="{{asset('css/custom.css')}}" />
 
 <link href="https://fonts.googleapis.com/css?family=Anton|Audiowide|Orbitron|Patua+One|Permanent+Marker|Righteous|Russo+One" rel="stylesheet">
-<link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}">
 
 @yield('css_file')
-
-<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <!-- Scripts -->
 <script>

@@ -85,7 +85,7 @@ Vue.component('modal-view', {
            <p class="control">
              <a>
                <span class="icon" :title="title">
-                 <i class="ion-information-circled size24"></i>
+                 <i class="fa fa-info-circle size24"></i>
                </span>
              </a>
            </p>
@@ -391,7 +391,7 @@ Vue.component('social-signin', {
           :href="link"
         >
            <span class="icon is-small" title="Edit">
-             <i class="ion-compose size24"></i>
+             <i class="fa fa-pencil-square-o size24"></i>
            </span>
          </a>
          `
@@ -408,7 +408,7 @@ Vue.component('social-signin', {
            >
               <a class="button is-static">
                 <span class="icon is-small">
-                  <i class="ion-trash-a size24"></i>
+                  <i class="fa fa-trash-o size24"></i>
                 </span>
               </a>
             </p>
