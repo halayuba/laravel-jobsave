@@ -6,7 +6,7 @@
       <p class="control has-icon">
         <input name="email" type="email" class="input is-large{{ $errors->has('email') ? ' is-danger' : '' }}" value="{{ $email or old('email') }}" placeholder="email address" required >
         <span class="icon">
-          <i class="ion-email"></i>
+          <i class="fa fa-envelope"></i>
         </span>
       </p>
       @if ($errors->has('email'))
@@ -20,7 +20,7 @@
       <p class="control has-icon">
         <input name="password" type="password" class="input is-large" placeholder="Password">
         <span class="icon">
-          <i class="ion-locked"></i>
+          <i class="fa fa-locked"></i>
         </span>
       </p>
       @if ($errors->has('password'))

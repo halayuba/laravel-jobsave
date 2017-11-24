@@ -9,7 +9,7 @@
             @focusin="removeMsg('name')"
           >
           <span class="icon">
-            <i class="ion-person"></i>
+            <i class="fa fa-user"></i>
           </span>
         </p>
       </div>
@@ -18,7 +18,7 @@
         <p class="control has-icon">
           <input name="email" class="input is-large{{ $errors->has('email') ? ' is-danger' : '' }}" type="email" value="{{ old('email') }}" placeholder="What's your email address" required>
           <span class="icon">
-            <i class="ion-email"></i>
+            <i class="fa fa-envelope"></i>
           </span>
         </p>
       </div>
@@ -27,7 +27,7 @@
         <p class="control has-icon">
           <input name="password" class="input is-large" type="password" placeholder="Choose a password with 6 characters" required>
           <span class="icon">
-            <i class="ion-locked"></i>
+            <i class="fa fa-lock"></i>
           </span>
         </p>
       </div>
@@ -36,7 +36,7 @@
         <p class="control has-icon">
           <input name="password_confirmation" class="input is-large" type="password" placeholder="Confirm Password" required>
           <span class="icon">
-            <i class="ion-locked"></i>
+            <i class="fa fa-lock"></i>
           </span>
         </p>
       </div>

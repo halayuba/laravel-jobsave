@@ -30,7 +30,7 @@
                       @focusin="removeMsg"
                     >
                     <span class="icon">
-                      <i class="ion-android-locate"></i>
+                      <i class="fa fa-building-o"></i>
                     </span>
                   </p>
                 </div>
@@ -47,7 +47,7 @@
                   <p class="control has-icon">
                     <input name="email" type="email" class="input is-large" value="{{ old('email') }}" placeholder="Employer email address">
                     <span class="icon">
-                      <i class="ion-email"></i>
+                      <i class="fa fa-envelope-square"></i>
                     </span>
                   </p>
                 </div>
@@ -57,7 +57,7 @@
                   <p class="control has-icon">
                     <input name="phone" type="phone" class="input is-large" value="{{ old('phone') }}" placeholder="Employer contact number">
                     <span class="icon">
-                      <i class="ion-ios-telephone"></i>
+                      <i class="fa fa-phone-square"></i>
                     </span>
                   </p>
                 </div>
@@ -67,7 +67,7 @@
                   <p class="control has-icon">
                     <input name="website" type="url" class="input is-large" value="{{ old('website') }}" placeholder="Employer Website">
                     <span class="icon">
-                      <i class="ion-ios-world"></i>
+                      <i class="fa fa-globe"></i>
                     </span>
                   </p>
                 </div>
@@ -77,7 +77,7 @@
                   <p class="control has-icon">
                     <input name="linkedin" type="url" class="input is-large" value="{{ old('linkedin') }}" placeholder="Employer Linked-in page">
                     <span class="icon">
-                      <i class="ion-social-linkedin"></i>
+                      <i class="fa fa-linkedin-square"></i>
                     </span>
                   </p>
                 </div>

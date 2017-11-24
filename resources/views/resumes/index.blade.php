@@ -27,11 +27,11 @@
           </header>
           <div class="card-content">
             <div class="content">
-              <card-content klass='ion-android-folder-open' label="Stored in folder" value="{{ valueOrText($resume->folder) }}"></card-content>
+              <card-content klass='fa fa-folder-o' label="Stored in folder" value="{{ valueOrText($resume->folder) }}"></card-content>
 
-              <card-content klass='ion-clock' label="Last Update" value="{{ optional($resume->last_update)->toFormattedDateString() }}"></card-content>
+              <card-content klass='fa fa-clock-o' label="Last Update" value="{{ optional($resume->last_update)->toFormattedDateString() }}"></card-content>
 
-              <card-content klass='ion-document-text' label="Resume" value="{{ ($resume->file !== NULL)? str_after($resume->file, 'public/resumes/') : 'not provided'  }}"></card-content>
+              <card-content klass='fa fa-file-text-o' label="Resume" value="{{ ($resume->file !== NULL)? str_after($resume->file, 'public/resumes/') : 'not provided'  }}"></card-content>
             </div>
           </div>
           <footer class="card-footer">
