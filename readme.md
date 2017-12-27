@@ -107,8 +107,8 @@ This project has just begun with many more new features to be added soon. If you
 ### Roadmap
 1. Using Laravel Task Scheduling to update the status of a job (and the associated submitted Application) to `Closed` after 30 days from the submission date.
 2. Use image manipulation for oversized images.
-3. Use google map for pointing to Employer / Job locations.
-4. Add a new section for keeping records of profesional references.
+3. Use Google map to point to the Employer and Job locations.
+4. Add a new section for keeping records of professional references.
 5. CRUD for all of the Lookup Tables
 6. Create a forum for community support
 
