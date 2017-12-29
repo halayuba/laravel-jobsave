@@ -97,22 +97,22 @@
 
         <!-- JOBS WITH UPCOMING INTERVIEWS -->
         @if(isset($jobsWithUpcomingInterviews))
-          @include('pages/partials/_upcoming')
+          @include('overviews.partials._upcoming')
         @endif
 
         <!-- JOBS WITH PAST INTERVIEWS -->
         @if(isset($jobsWithPastInterviews))
-          @include('pages/partials/_past')
+          @include('overviews.partials._past')
         @endif
 
         <!-- JOBS WITH NO INTERVIEWS -->
         @if(isset($jobsWithNoInterviews))
-          @include('pages/partials/_noInterviews')
+          @include('overviews.partials._noInterviews')
         @endif
 
         <!-- JOBS WITH NO SUCCESS -->
         @if(isset($jobsWithNoSuccess))
-          @include('pages/partials/_noSuccess')
+          @include('overviews.partials._noSuccess')
         @endif
 
       </div>

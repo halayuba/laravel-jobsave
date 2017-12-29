@@ -36,7 +36,7 @@
             <span class="tag is-danger">Unsuccessful</span><br>
           @endif
           {{ formatDateTime($job->date, 'M j, Y') }}
-            <a href="{{ url('interviews/'.$job->id.'/jobs/'.$job->identifier) }}" class="css_a">
+            <a href="{{ url('interviews/'.$job->interviewID.'/jobs/'.$job->jobID) }}" class="css_a">
               <span class="icon">
                 <i class="fa fa-eye size24"></i>
               </span>

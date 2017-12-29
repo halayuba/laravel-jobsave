@@ -27,7 +27,7 @@ class overviewController extends Controller
 
       $jobsWithNoSuccess = NULL;
 
-      return view('pages.overview', compact('jobsWithUpcomingInterviews', 'jobsWithPastInterviews', 'jobsWithNoInterviews', 'jobsWithNoSuccess'));
+      return view('overviews.overview', compact('jobsWithUpcomingInterviews', 'jobsWithPastInterviews', 'jobsWithNoInterviews', 'jobsWithNoSuccess'));
     }
 
     public function upcoming(Job $job)
@@ -35,7 +35,7 @@ class overviewController extends Controller
       $jobsWithUpcomingInterviews = Job::upcomingInterviewsWithSort()->get();
       // $jobs = $job->hasInterviews()->with(['employer', 'application', 'interviews'])->get();
       $jobsWithPastInterviews = $jobsWithNoInterviews = $jobsWithNoSuccess = NULL;
-      return view('pages.overview', compact('jobsWithUpcomingInterviews', 'jobsWithPastInterviews', 'jobsWithNoInterviews', 'jobsWithNoSuccess'));
+      return view('overviews.overview', compact('jobsWithUpcomingInterviews', 'jobsWithPastInterviews', 'jobsWithNoInterviews', 'jobsWithNoSuccess'));
     }
 
     public function old(Job $job)
@@ -43,20 +43,20 @@ class overviewController extends Controller
       $jobsWithPastInterviews = Job::oldInterviewsWithSort()->get();
       // $jobs = $job->oldInterviews()->with(['employer', 'application', 'interviews'])->get();
       $jobsWithUpcomingInterviews = $jobsWithNoInterviews = $jobsWithNoSuccess = NULL;
-      return view('pages.overview', compact('jobsWithPastInterviews', 'jobsWithUpcomingInterviews', 'jobsWithNoInterviews', 'jobsWithNoSuccess'));
+      return view('overviews.overview', compact('jobsWithPastInterviews', 'jobsWithUpcomingInterviews', 'jobsWithNoInterviews', 'jobsWithNoSuccess'));
     }
 
     // public function noInterviews(Job $job)
     // {
     //   $jobsWithNoInterviews = Job::submittedApplicationsWithNoInterviews();
     //   $jobsWithUpcomingInterviews = $jobsWithPastInterviews = NULL;
-    //   return view('pages.overview', compact('jobsWithNoInterviews', 'jobsWithUpcomingInterviews', 'jobsWithPastInterviews'));
+    //   return view('overviews.overview', compact('jobsWithNoInterviews', 'jobsWithUpcomingInterviews', 'jobsWithPastInterviews'));
     // }
 
     public function noSuccess(Job $job)
     {
       $jobsWithNoSuccess = Job::unsuccessfulApplications()->get();
       $jobsWithUpcomingInterviews = $jobsWithNoInterviews = $jobsWithPastInterviews = NULL;
-      return view('pages.overview', compact('jobsWithNoSuccess', 'jobsWithUpcomingInterviews', 'jobsWithPastInterviews', 'jobsWithNoInterviews'));
+      return view('overviews.overview', compact('jobsWithNoSuccess', 'jobsWithUpcomingInterviews', 'jobsWithPastInterviews', 'jobsWithNoInterviews'));
     }
 }

@@ -12,5 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(LookupTablesSeeder::class);
+        $this->call(ResumeSeeder::class);
+        $this->call(EmployerSeeder::class);
+        $this->call(JobSeeder::class);
+        $this->call(ApplicationSeeder::class);
+        $this->call(InterviewSeeder::class);
+        $this->call(OfferSeeder::class);
     }
 }

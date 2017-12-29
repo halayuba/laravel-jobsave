@@ -591,6 +591,24 @@ Vue.component('alert-nobtn', {
         `
 });
 
+/* //====================
+  //== BULMA ALERT MSG - USING SLOT
+ //==================== */
+Vue.component('alert-msg', {
+  props:['klass'],
+  template: `
+          <div class="columns" v-show="true">
+            <div class="column">
+              <div class="notification"
+                :class="klass"
+              >
+                <slot></slot>
+              </div>
+            </div>
+          </div>
+        `
+});
+
 new Vue({
   el: "#wrapper",
   data: {

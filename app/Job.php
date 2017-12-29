@@ -91,16 +91,15 @@ class Job extends Model
     //====================
     public function scopeOldInterviewsWithSort($query)
     {
-      $query->select('jobs.title', 'jobs.location', 'employers.name', 'applications.submitted_on', 'applications.has_turned_down', 'interviews.date', 'interviews.time', 'interviews.is_canceled', 'interviews.is_unsuccessful', 'offers.id', 'offers.date as offerDate', 'offers.is_accepted', 'offers.is_archived')
-            ->join('applications', 'jobs.id', '=', 'applications.job_id')
-            ->join('employers', 'jobs.employer_id', '=', 'employers.id')
-            ->join('interviews', 'jobs.id', '=', 'interviews.job_id')
-            ->leftJoin('offers', 'jobs.id', '=', 'offers.job_id')
-            ->where('jobs.user_id', auth()->id())
-            ->where('interviews.date', '<', current_date())
-            ->orderBy('interviews.date', 'desc');
-
-    }
+        $query->select('jobs.identifier as jobID', 'jobs.title', 'jobs.location', 'employers.name', 'applications.submitted_on', 'applications.has_turned_down', 'interviews.id as interviewID', 'interviews.date', 'interviews.time', 'interviews.is_canceled', 'interviews.is_unsuccessful', 'offers.id as offerID', 'offers.date as offerDate', 'offers.is_accepted', 'offers.is_archived')
+              ->join('applications', 'jobs.id', '=', 'applications.job_id')
+              ->join('employers', 'jobs.employer_id', '=', 'employers.id')
+              ->join('interviews', 'jobs.id', '=', 'interviews.job_id')
+              ->leftJoin('offers', 'jobs.id', '=', 'offers.job_id')
+              ->where('jobs.user_id', auth()->id())
+              ->where('interviews.date', '<', current_date())
+              ->orderBy('interviews.date', 'desc');
+      }
 
     ///== OVERVIEW
     //====================

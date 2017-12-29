@@ -18,7 +18,8 @@ class LookupTablesSeeder extends Seeder
        (4, 'Part-time'),
        (5, 'Temporary'),
        (6, 'Freelance'),
-       (7, 'Remote')
+       (7, 'Remote'),
+       (8, 'Internship')
      ");
 
       //INTERVIEW TYPES
@@ -72,7 +73,7 @@ class LookupTablesSeeder extends Seeder
        (12, 'General Services'),
        (13, 'Media / Publishing / Broadcasting'),
        (14, 'Mechanical / Industrial Engineering'),
-       (15, 'Defense'),
+       (15, 'Government / Defense'),
        (16, 'Internet / Online Marketplace'),
        (17, 'Computer Software'),
        (18, 'Staffing / Recruiting'),

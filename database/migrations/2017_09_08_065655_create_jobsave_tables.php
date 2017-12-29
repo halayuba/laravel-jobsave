@@ -120,7 +120,6 @@ class CreateJobsaveTables extends Migration
            $table->time('time');
            $table->string('interviewer', 255)->nullable();
            $table->text('notes')->nullable();
-           // $table->boolean('is_active')->default(); // INTERVIEW THAT IS UPCOMING AND HAS NOT BEEN CANCELED OR ACRCHIVED
            $table->boolean('is_canceled')->default(false); // INTERVIEW THAT HAS BEEN CANCELED
            $table->boolean('is_unsuccessful')->default(0); // INTERVIEW WAS NOT SUCCESSFUL OR DETERMINED NOT A GOOD FIT
            $table->integer('job_id')->unsigned();
