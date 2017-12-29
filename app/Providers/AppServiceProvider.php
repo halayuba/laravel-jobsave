@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
 
       ///== HEADER >> UPCOMING INTERVIEWS ICON
       //====================
-      view()->composer(['pages.overview', 'layouts.partials.header'], function($view)
+      view()->composer(['overviews.overview', 'layouts.partials.header'], function($view)
       {
         $upcoming_interviews = \App\Interview::upcomingInterviewsIcon()->count();
         $view->with(compact('upcoming_interviews'));
@@ -49,13 +49,13 @@ class AppServiceProvider extends ServiceProvider
 
       ///== HEADER >> OFFERS ICON
       //====================
-      view()->composer(['pages.overview', 'layouts.partials.header'], function($view)
+      view()->composer(['overviews.overview', 'layouts.partials.header'], function($view)
       {
         $offers = \App\Offer::offersIcon()->count();
         $view->with(compact('offers'));
       });
 
-      view()->composer('pages.overview', 'App\Http\ViewComposers\OverviewFilters@defaultView');
+      view()->composer('overviews.overview', 'App\Http\ViewComposers\OverviewFilters@defaultView');
 
          //== CUSTOM BLADE
        //====================

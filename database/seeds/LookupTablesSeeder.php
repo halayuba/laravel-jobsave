@@ -102,7 +102,7 @@ class LookupTablesSeeder extends Seeder
      $admin[] = [
        'id' => 1,
        'name' => 'Admin',
-       'email' => 'admin@email.com',
+       'email' => 'admin@admin.com',
        'password' => bcrypt('admin'),
        'is_active' => true,
        'remember_token' => str_random(10),
