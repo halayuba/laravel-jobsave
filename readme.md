@@ -9,7 +9,7 @@
 Personal organizer for professional job hunters.
 Coded in `Laravel 5.5`, Job Save is an open-source web application with a simple objective - to help job hunters organize and manage the main steps carried out during the process of searching for a new job. The focus here is on you as a job seeker to keep records about employers, jobs, applications submitted, interviews, and offers. Job Save attempts to give you a snapshot or an overview of the essential pieces of information or activities related to your job search.
 
-Check out the screenshots below to learn the basic workflow.
+Check out the screenshots below to learn the basic workflow or visit <a href="http://jobsave.io/dashboard">Workflow </a>.
 
 ### Basic Features
 For some of us finding a new job is not a lot of work (relatively speaking) and even switching jobs does not take much time or effort. However, for those who experience a lot of difficulties keeping track of everything about their job search endeavors or may have a hard time remembering details about what are all the jobs that they have been applying for and with whom, when were the submission dates for those job applications, was there an upcoming interview scheduled, how many interviews were completed thus far and what do the notes say about how they went, and so on.
@@ -17,6 +17,8 @@ For some of us finding a new job is not a lot of work (relatively speaking) and 
 Undoubtedly, there are numerous tools out there to help job seekers improve their chances for getting a job. Job Save, however, is different with a much basic tenet of serving as your personal assistant in keeping records of everything important that revolves around your job search - in the process keeping you informed and organized.
 
 ### Screen Shots
+For a quick general view of how Job Save works visit <a href="http://jobsave.io/dashboard" >Workflow </a>
+
 #### Resume
 ![Define a resume](http://albums.c1st.net/uploads/big/8f79eeeef9cd10206bd9b9e83274009f.png)
 > Define a resume: usually, most job seekers would have one single resume but in case you have multiple variations of the main resume or if you have skills in more than one field then you can create records for all your resumes.

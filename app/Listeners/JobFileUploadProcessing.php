@@ -7,8 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 use App\Repositories\ProcessFileUpload;
-use App\Job;
-use App\Upload;
+use App\{Job, Upload};
 
 class JobFileUploadProcessing
 {

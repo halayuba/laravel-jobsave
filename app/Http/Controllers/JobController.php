@@ -5,14 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\JobRequest;
 use Illuminate\Support\Facades\Storage;
 // use App\Events\FileWasUploadedToJob;
-use App\Repositories\RetrieveFileUpload;
-use App\Repositories\ProcessJobHasClosed;
-use App\Job;
-use App\Employer;
-use App\Upload;
-// use Gate;
-use App\Http\Responses\JobStoreResponse;
-use App\Http\Responses\JobUpdateResponse;
+use App\Repositories\{RetrieveFileUpload, ProcessJobHasClosed};
+use App\{Job, Employer, Upload};
+use App\Http\Responses\{JobStoreResponse, JobUpdateResponse};
 
 class JobController extends Controller
 {
@@ -22,11 +17,6 @@ class JobController extends Controller
  //==================== */
     public function index()
     {
-      //   $jobs = Job::filter(request(['filter']))
-      //   ->with(['employer', 'venue', 'employment_type'])->latest()->paginate(8);
-      //
-      // return view("jobs.index", compact('jobs'));
-
       if(request(['filter']))
       {
         $jobs = Job::jobFilters(request(['filter']))
@@ -35,7 +25,7 @@ class JobController extends Controller
       }
       else
       {
-        $jobs = Job::currentJobs()->with(['employer', 'venue', 'employment_type'])->paginate(8);
+        $jobs = Job::current()->with(['employer', 'venue', 'employment_type'])->paginate(8);
       }
       return view("jobs.index", compact('jobs'));
 
@@ -170,9 +160,8 @@ class JobController extends Controller
  //==================== */
     public function indexByEmployer(Employer $employer)
     {
-      $jobs = $employer->jobs; //USING "->current()->get()" DOES NOT WORK???
-      // $jobs = $jobs->where('has_closed', false)->get(); //COME BACK DOES NOT WORK???
-      $jobs = $jobs->load('venue', 'employment_type', 'employer'); //USING "->current()->get()" DOES NOT WORK???
+      $jobs = $employer->jobs;
+      $jobs = $jobs->load('venue', 'employment_type', 'employer');
       return view("jobs.index", compact('jobs'));
     }
 }

@@ -29,10 +29,10 @@
 
             <div class="level-right">
               <p class="level-item has-text-centered">
-                <a href="/jobs" class="button {{ set_nav_active('') }}">Latest jobs</a>
+                <a href="/jobs" class="button {{ set_nav_active('') }}">All active jobs</a>
               </p>
               <p class="level-item has-text-centered">
-                <a href="/jobs?filter=all-active" class="button {{ set_nav_active('all-active') }}">All active jobs</a>
+                <a href="/jobs?filter=current" class="button {{ set_nav_active('current') }}">Latest jobs</a>
               </p>
               <p class="level-item has-text-centered">
                 <a href="/jobs?filter=bookmarked" class="button {{ set_nav_active('bookmarked') }}">Bookmarked</a>
@@ -57,14 +57,16 @@
             <div class="media-content">
               <div class="content">
 
-                <!-- JOB TITLE / EMPLOYER -->
+                <!-- EMPLOYER / JOB TITLE -->
                 <p class="title is-4">
-                  <i class="fa fa-briefcase size18" aria-hidden="true"></i>
-                  {{ $job->title }}
-                  &nbsp;
-                  <i class="fa fa-at size18"></i>
+                  <i class="icon-at-sign size18"></i>
                   <a href="{{ route('employers.show', $job->employer->name )}}">
                     {{ $job->employer->name }}
+                  </a>
+                  &nbsp;
+                  <i class="icon-briefcase size18" aria-hidden="true"></i>
+                  <a href="{{ route('jobs.show', $job->identifier) }}">
+                    {{ $job->title }}
                   </a>
                 </p>
 

@@ -7,12 +7,13 @@
       <div class="columns">
         <div class="column is-4 is-offset-4">
           <div class="content">
-           
-           <alert-msg klass="is-info">
-              If this is your first time using this tool and you'd prefer to begin by working with a system already populated with dummy data then
-              <a href="{{ route('login') }}">Login</a> with the following Admin credentials <strong>(email: admin@admin.com - password: admin)</strong>.
-            </alert-msg>
-            
+
+            <alert-msg klass="is-info">
+               If this is your first time using this tool, and to avoid a blank dashboard after your initial login, you can begin by working with a pre populated system with example contents:
+               <a href="{{ route('login') }}">Login</a> with the following Admin credentials <strong>(email: admin@admin.com - password: admin)</strong>. For a quick general view of how Job Save works click
+               <a href="{{ url('/dashboard') }}">Workflow</a>
+             </alert-msg>
+
             <h1 class="title is-1 has-text-centered">
               Register
             </h1>

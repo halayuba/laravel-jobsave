@@ -23,7 +23,6 @@ Route::group(['middleware'=>'auth'], function(){
    Route::get('/upcoming-interviews', 'OverviewController@upcoming')->name('overview.upcoming-interviews');
    Route::get('/old-interviews', 'OverviewController@old')->name('overview.old-interviews');
    Route::get('/no-success', 'OverviewController@noSuccess')->name('overview.no-success');
-  //  Route::get('/no-interviews', 'OverviewController@noInterviews')->name('no-interviews');
  });
 
    //== RESUMES

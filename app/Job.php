@@ -171,7 +171,7 @@ class Job extends Model
     {
         $query->where('title', request()->title)->where('location', request()->location)->where('user_id', auth()->id())->where('id', '!=', $id);
     }
-    
+
     ///== LATEST JOBS GT LAST WEEK
     //====================
     public function scopeCurrentJobs($query)
@@ -205,11 +205,11 @@ class Job extends Model
         elseif($filters['filter'] == 'not-submitted'){
           $query->openJobs();
         }
-        elseif($filters['filter'] == 'all-active'){
-          $query->current();
+        elseif($filters['filter'] == 'current'){
+          $query->currentJobs();
         }
       }
-      else $query->currentJobs();
+      else $query->current();
     }
 
     ///== FILTERS FOR APPLICATION CONTROLLER

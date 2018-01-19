@@ -29,7 +29,7 @@ class JobStoreResponse implements Responsable
          ->with(flash_message('is-warning', 'This seem to be a duplicate record or at least has a job title that already exist for the same employer!'));
       }
 
-        //== DATE VALIDATION: "LAST_UPDATE" FIELD
+        //== DATE VALIDATION: "DATE_POSTED" FIELD
       //====================
        if(Gate::denies('acceptable_date', $request->date_posted))
        {
@@ -44,7 +44,7 @@ class JobStoreResponse implements Responsable
       $request = request()->except(['file', 'checkbox']);
       $request['identifier'] = uniqid();
       $request['is_bookmarked'] = $bookmarked;
-      $request['job_role_id'] = 1; //temporary
+      $request['job_role_id'] = 1; //temporary - LEFT UNTIL NEXT UPDATE
 
         //== CHECK IF A FILE UPLOAD IS INCLUDED WITH THE FORM
        //====================

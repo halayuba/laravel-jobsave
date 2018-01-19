@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Events\FileWasUploadedToResume;
-use App\Resume;
-use App\Upload;
-use App\Http\Responses\ResumeStoreResponse;
-use App\Http\Responses\ResumeUpdateResponse;
+use App\{Resume, Upload};
+use App\Http\Responses\{ResumeStoreResponse, ResumeUpdateResponse};
 use App\Repositories\ValidateFileUpload;
 
 class ResumeController extends Controller
