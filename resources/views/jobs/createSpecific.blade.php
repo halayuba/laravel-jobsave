@@ -68,7 +68,7 @@
                 <p class="control has-icon">
                   <input name="url" type="url" class="input is-large" value="{{ old('url') }}" placeholder="Link to job posting" >
                   <span class="icon">
-                    <i class="ion-link"></i>
+                    <i class="fa fa-link"></i>
                   </span>
                 </p>
               </div>
@@ -108,7 +108,7 @@
                 <p class="control has-icon">
                   <input name="compensation" type="text" class="input is-large" value="{{ old('compensation') }}" placeholder="Compensation - this can include numbers and any additional details" >
                   <span class="icon">
-                    <i class="ion-social-usd"></i>
+                    <i class="fa fa-usd"></i>
                   </span>
                 </p>
               </div>
@@ -118,7 +118,7 @@
                 <p class="control has-icon">
                   <input name="posted_by" type="text" class="input is-large" value="{{ old('posted_by') }}" placeholder="(if known) employee who posted this job?">
                   <span class="icon">
-                    <i class="ion-ios-people"></i>
+                    <i class="fa fa-female"></i>
                   </span>
                 </p>
               </div>

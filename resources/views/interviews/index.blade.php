@@ -145,7 +145,7 @@
               </span>
             </a>
           @else
-            <a class="button is-info" title="Disabled because this interview has occurred already in the past and therefore can not be canceled anymore or the status of this interview is set to either unsuccessful or canceled" disabled>
+            <a class="button is-info" title="Disabled because either this interview has occurred already in the past and therefore can not be canceled anymore or the status of this interview is set to either unsuccessful or canceled" disabled>
               <span class="icon is-small">
                 <i class="fa fa-calendar-times-o" aria-hidden="true" size24></i>
               </span>
@@ -164,7 +164,7 @@
                </span>
              </a>
            @else
-             <a class="button is_color3_d" title="Disabled because this interview is in the future and has not occurred yet or the status of this interview is set to either unsuccessful or canceled" disabled>
+             <a class="button is_color3_d" title="Disabled because either this interview is in the future and has not occurred yet or the status of this interview is set to either unsuccessful or canceled" disabled>
                <span class="icon is-small">
                  <i class="fa fa-thumbs-o-down" aria-hidden="true" size24></i>
                </span>
