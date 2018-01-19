@@ -59,12 +59,12 @@
 
                 <!-- EMPLOYER / JOB TITLE -->
                 <p class="title is-4">
-                  <i class="icon-at-sign size18"></i>
+                  <i class="fa fa-at size18" aria-hidden="true"></i>
                   <a href="{{ route('employers.show', $job->employer->name )}}">
                     {{ $job->employer->name }}
                   </a>
                   &nbsp;
-                  <i class="icon-briefcase size18" aria-hidden="true"></i>
+                  <i class="fa fa-briefcase size18" aria-hidden="true"></i>
                   <a href="{{ route('jobs.show', $job->identifier) }}">
                     {{ $job->title }}
                   </a>

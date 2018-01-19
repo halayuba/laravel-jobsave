@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="navbar-brand">
     <a class="navbar-item is-tab" href="http://jobsave.io">
-      <img src="{{ asset('img/logo.png') }}" alt="Job Save" width="192" height="70">
+      Job Save
     </a>
   </div>
 

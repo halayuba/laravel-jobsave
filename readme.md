@@ -1,7 +1,7 @@
 ## Laravel Project - Job Save
 
 - Author: Simon Bashir
-- Version: 0.1.7
+- Version: 0.1.8
 - Release Date: Nov 19th, 2017
 - To see a hosted demo you can visit [jobsave.io](http://jobsave.io])
 
@@ -62,19 +62,19 @@ Job Save requires Laravel v5.5 (not tested with other versions).
 ~~~
     composer install
 ~~~
-* Create a new database. The example below uses MYSQL (replace the * with the associated value)
+* Create a new database. The example below uses MYSQL (replace between * your-value * with the desired values)
 ~~~
-    mysql -u*username -p*password
-    CREATE DATABASE *db_name;
+    mysql -u*username* -p*password*
+    CREATE DATABASE *db_name*;
 ~~~
 * Update .env to your specific needs (replace the * with the associated value)
 ~~~
     cp .env.example .env
     nano .env
     DB_HOST=localhost
-    DB_DATABASE=*db_name
-    DB_USERNAME=*username
-    DB_PASSWORD=*password
+    DB_DATABASE=*db_name*
+    DB_USERNAME=*username*
+    DB_PASSWORD=*password*
 ~~~
 * (optional) In the same .env you need to set the following values if you would like to take advantage of the notification component
 ~~~
