@@ -1,0 +1,173 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.form_label {
+  @apply uppercase tracking-wide font-semibold text-gray-600 ;
+}
+.form_input {
+  @apply mt-2 px-3 py-2 w-full bg-gray-100 text-gray-600 border-b border-gray-400 leading-normal rounded ;
+}
+.form_input:focus {
+  @apply outline-none;
+}
+.form_textarea {
+  @apply mt-2 px-4 py-3 w-full bg-gray-100 text-gray-600 border-b border-gray-400 leading-tight appearance-none block rounded ;
+}
+.form_textarea:focus {
+  @apply bg-white border-gray-500 outline-none ;
+}
+.form_btn {
+  @apply mt-8 p-3 w-full uppercase font-bold bg-blue-400 text-lg text-blue-200 rounded-b-lg ;
+}
+.form_btn:hover {
+  @apply bg-blue-500 text-blue-100 ;
+}
+.btn_cancel {
+  @apply text-center align-middle select-none cursor-pointer inline-block mb-0 bg-transparent border border-gray-400 text-gray-700 font-semibold text-lg rounded leading-tight px-4 py-2 ;
+}
+ .btn_cancel:hover {
+   @apply bg-gray-300;
+ }
+.btn_new {
+  @apply text-center align-middle select-none cursor-pointer inline-block mb-0 bg-blue-500 border border-gray-400 text-white font-semibold text-lg rounded leading-tight px-4 py-2 shadow ;
+}
+.btn_new:hover {
+   @apply bg-blue-600;
+ }
+.btn_wide {
+  @apply text-center align-middle select-none cursor-pointer inline-block mb-0 bg-blue-400 text-white font-semibold text-lg rounded leading-relaxed px-10 py-2 shadow ;
+}
+.btn_wide:hover {
+   @apply bg-blue-500;
+ }
+ .btn_icon {
+  @apply text-center align-middle select-none cursor-pointer inline-block m-0 bg-blue-400 text-white font-semibold text-lg rounded-lg px-4 py-2 shadow ;
+}
+.btn_icon:hover {
+   @apply bg-blue-500;
+ }
+ .btn_base {
+  @apply text-center align-middle select-none cursor-pointer inline-block mb-0 border border-gray-400 text-white font-semibold text-lg rounded leading-tight px-4 py-2 shadow ;
+}
+.alert {
+  @apply bg-yellow-800 border-l-4 border-yellow-400 text-yellow-600 ;
+}
+.alert-no-records {
+  @apply mx-auto max-w-xl bg-yellow-600 p-6 text-yellow-200 text-lg tracking-wide shadow ;
+}
+.tbl_header {
+  @apply font-semibold tracking-wide leading-loose border-b-2 border-blue-500 ;
+}
+.page_header {
+ @apply text-3xl text-blue-500 font-bold tracking-wide leading-loose py-6 text-center ;
+}
+.page_sub_header {
+ @apply text-xl text-indigo-500 font-medium py-4 block text-center ;
+}
+.menu_item {
+  @apply text-gray-100 px-3 py-4 text-center border-b-2 border-transparent flex items-center ;
+}
+.menu_item:hover {
+  @apply bg-gray-700 border-red-500 ;
+}
+.card {
+  @apply mt-2 bg-white rounded-lg shadow py-2 ;
+}
+.card_header {
+  @apply px-6 border-l-4 border-yellow-500 text-gray-700 text-xl ;
+}
+.card_header_current {
+  @apply px-6 border-l-4 border-green-500 text-gray-700 text-xl ;
+}
+.minicard {
+  @apply mt-2 bg-white rounded-lg shadow p-4 text-gray-600 ;
+}
+.wall {
+  @apply px-4 max-h-screen border-l border-gray-300 ;
+}
+.stats {
+  @apply w-64 bg-white py-8 flex flex-col justify-center items-center shadow ;
+}
+.svg_a_tag {
+  @apply mb-2 ml-4 text-gray-600 px-1 py-1 text-center border border-gray-300 ;
+}
+.svg_a_tag:hover {
+  @apply border-blue-400 text-blue-400 ;
+}
+.svg_pic {
+  @apply w-12 h-12 fill-current inline-block ;
+}
+.gradient {
+  text-shadow: 2px 2px .3em #7A1453
+}
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox .checkmark:after {
+  left: 9px;
+  top: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.custom-label input:checked + svg {
+    display: block !important;
+}
+.sub-menu {
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+}
+#toggle:checked + .menu {
+  display: block
+}
+
+/* //====================
+ //== CHEK BOX : http://www.dynamicdrive.com/style/csslibrary/item/css3_checkbox_and_radio_button_replacements/
+//==================== */
+input[type="checkbox"].css3checkbox{
+ display: none;
+}
+
+label.toggler{ /* checkbox label */
+ display: block;
+ position: relative;
+ padding-left: 32px; /* space to the left of label text */
+ padding-top: 4px;
+ cursor: pointer;
+}
+
+label.toggler::before{ /* flat box */
+ content: '';
+ display: block;
+ position: absolute;
+ width: 25px;
+ height: 25px;
+ background: #c4d7e0 ; /* B1E5EF */
+ box-shadow: 0 0 3px #BFDEFC inset;
+ left: 0;
+ top: 0;
+}
+
+label.toggler::after{ /* check mark inside flat box*/
+ content: '\f00c'; /* fontAwesome icon font unicode. See http://fortawesome.github.io/Font-Awesome/cheatsheet/ for others */
+ position:absolute;
+ left: 3px;
+ top: 3px;
+ font: bold 18px FontAwesome;
+ color: #6D82B4; /* 1B4977 */
+ width: 0; /* hide check mark initially */
+ text-shadow: 0 0 2px #eee;
+ overflow: hidden;
+}
+
+input[type="checkbox"]:checked + label.toggler::after{ /* check mark when checkbox is checked */
+ transition: width 0.2s; /* CSS3 transition on width property */
+ width: 25px; /* expand check mark to show it. Value should reflect that of container box */
+}
