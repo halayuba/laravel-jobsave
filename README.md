@@ -10,7 +10,7 @@ Coded in `Laravel v8.32`, Job Save is a demo project.
 Personal organizer for professional job hunters. Job Save is an open-source web application with a simple objective - to help job hunters organize and manage the main steps being carried out during the process of searching for a new job. The focus here is on you as a job seeker to keep records about application submissions and interviews. Job Save attempts to give you a snapshot or an overview of the essential pieces of information or activities related to your job search.
 
 ### Basic Features
-1. This is a "demo" project but the additional sql file "Jobs.sql" contains "real" activities abuot my application submissions for this month.
+1. This is a "demo" project but the additional sql file "Jobs.sql" contains "real" activities about my application submissions for this month.
 2. This demo project shows variety of many techniques for creating API-based projects with Laravel/Vuejs/Tailwind.
 3. This project is under development and therefore may contain bugs, incomplete features, or broken "responsive" design.
 4. This project does not focus on Authentication and Authorizations (roles & permissions).
