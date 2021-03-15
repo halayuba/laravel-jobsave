@@ -1,62 +1,72 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Laravel Vuejs Tailwind - Job Save
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- Author: Simon Bashir
+- Version: 0.1
+- Release Date: Mar 15, 2021
+- A hosted demo will be published soon
 
-## About Laravel
+### Brief Description
+Coded in `Laravel v8.32`, Job Save is a demo project.
+Personal organizer for professional job hunters. Job Save is an open-source web application with a simple objective - to help job hunters organize and manage the main steps being carried out during the process of searching for a new job. The focus here is on you as a job seeker to keep records about application submissions and interviews. Job Save attempts to give you a snapshot or an overview of the essential pieces of information or activities related to your job search.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Basic Features
+1. This is a "demo" project but the additional sql file "Jobs.sql" contains "real" activities abuot my application submissions for this month.
+2. This demo project shows variety of many techniques for creating API-based projects with Laravel/Vuejs/Tailwind.
+3. This project is under development and therefore may contain bugs, incomplete features, or broken "responsive" design.
+4. This project does not focus on Authentication and Authorizations (roles & permissions).
+5. No image upload is used in this demo project (however, I do have another similar project but only focused on library books with image handling that I plan to push up soon).
+6. Some "Form validation" and flash messaging are used in this project.
+7. Laravel Breeze is used.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Screen Shots
+Coming soon
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### Disclaimer
+Job Save is just for demo. Although it is a work in progress with more features to come, I offer no active support and I do not guarantee the stability of the code so be cautious not to use in any production environment.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Setup Instructions
+```
+Job Save requires Laravel v8.32 (not tested with other versions).
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+* Clone this repository to your local drive
+~~~
+    git clone https://github.com/halayuba/laravel-jobsave.git
+~~~
+* Install the composer dependencies: go to the folder that contains the download and run this command
+~~~
+    composer install
+~~~
+* Create a new database. The example below uses MYSQL (replace the * with the associated value)
+~~~
+    mysql -u*username -p*password
+    CREATE DATABASE *db_name;
+~~~
+* Update .env to your specific needs (replace the * with the associated value)
+~~~
+    cp .env.example .env
+    nano .env
+    DB_HOST=localhost
+    DB_DATABASE=*db_name
+    DB_USERNAME=*username
+    DB_PASSWORD=*password
+~~~
+* Run all migrations to create and populate the database tables
+~~~
+    php artisan migrate --seed
+~~~
+* Run the following artisan commands
+~~~
+    npm install && npm run dev
+~~~
+* Update the values in "baseUrl.js"
+* An additional sql file "Jobs.sql" is included
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+### Maintainers & Contributors
+- Simon Bashir (Designer and Developer)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### License
+The project is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
