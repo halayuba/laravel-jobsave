@@ -13418,6 +13418,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -13517,12 +13521,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     changeFieldType: function changeFieldType(value) {
       this.inputFiedFlag = value;
     }
-  }),
-  mounted: function mounted() {// console.log(this.interview.id)
-    // console.log(this.interview.submission.id)
-    // console.log(moment(this.interview.date).format("MM-DD-YYYY"))
-    // console.log(moment(this.interview.date).format("YYYY-MM-DD"))
-  }
+  })
 });
 
 /***/ }),
@@ -57352,9 +57351,9 @@ var render = function() {
           attrs: {
             name: "edit-submission-interview-modal",
             adaptive: true,
-            width: "50%",
-            height: "auto",
-            classes: "bg-white rounded-lg p-4 shadow-sm"
+            width: "90%",
+            maxWidth: 650,
+            height: "auto"
           }
         },
         [
@@ -58414,7 +58413,7 @@ var render = function() {
         "h3",
         {
           staticClass:
-            "text-center my-2 lg:my-4 md:text-xl lg:text-2xl text-indigo-500 font-bold"
+            "text-center my-4 text-xl lg:text-2xl text-indigo-500 font-bold"
         },
         [_vm._v("Edit Interview Details")]
       ),
@@ -58422,7 +58421,7 @@ var render = function() {
       _c(
         "form",
         {
-          staticClass: "p-4",
+          staticClass: "p-4 overflow-y-scroll",
           on: {
             submit: function($event) {
               $event.preventDefault()
@@ -58436,12 +58435,15 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "w-full mt-2 sm:mt-4 flex items-baseline bg-gray-100 px-2"
+                  "w-full sm:mt-4 flex items-baseline bg-gray-100 px-2"
               },
               [
                 _c(
                   "h3",
-                  { staticClass: "text-2xl text-gray-700 leading-loose" },
+                  {
+                    staticClass:
+                      "sm:text-2xl text-gray-700 font-semibold leading-loose"
+                  },
                   [_vm._v(_vm._s(_vm.interview.submission.company))]
                 ),
                 _vm._v(" "),
@@ -58639,155 +58641,190 @@ var render = function() {
             _c("div", { staticClass: "w-full mt-2 sm:mt-4" }, [
               _c("label", { staticClass: "form_label" }, [_vm._v("Status")]),
               _vm._v(" "),
-              _c("div", { staticClass: "flex items-center mt-2" }, [
-                _c(
-                  "div",
-                  { staticClass: "p-2 border border-gray-300 rounded" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.status,
-                          expression: "form.status"
-                        }
-                      ],
-                      attrs: { type: "radio", id: "one", value: "Canceled" },
-                      domProps: {
-                        checked: _vm._q(_vm.form.status, "Canceled")
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "w-full flex flex-col sm:flex-row sm:items-center mt-2"
+                },
+                [
+                  _c("div", { staticClass: "w-full flex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "flex-grow p-2 border border-gray-300 sm:rounded"
                       },
-                      on: {
-                        change: function($event) {
-                          return _vm.$set(_vm.form, "status", "Canceled")
-                        }
-                      }
-                    }),
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.status,
+                              expression: "form.status"
+                            }
+                          ],
+                          attrs: {
+                            type: "radio",
+                            id: "one",
+                            value: "Canceled"
+                          },
+                          domProps: {
+                            checked: _vm._q(_vm.form.status, "Canceled")
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.$set(_vm.form, "status", "Canceled")
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "ml-1 text-gray-700",
+                            attrs: { for: "one" }
+                          },
+                          [_vm._v("Canceled")]
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
-                      "label",
+                      "div",
                       {
-                        staticClass: "ml-1 text-gray-700",
-                        attrs: { for: "one" }
+                        staticClass:
+                          "flex-grow sm:ml-2 p-2 border border-gray-300 sm:rounded"
                       },
-                      [_vm._v("Canceled")]
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.status,
+                              expression: "form.status"
+                            }
+                          ],
+                          attrs: {
+                            type: "radio",
+                            id: "two",
+                            value: "Completed"
+                          },
+                          domProps: {
+                            checked: _vm._q(_vm.form.status, "Completed")
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.$set(_vm.form, "status", "Completed")
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "ml-1 text-gray-700",
+                            attrs: { for: "two" }
+                          },
+                          [_vm._v("Completed")]
+                        )
+                      ]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "ml-2 p-2 border border-gray-300 rounded" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.status,
-                          expression: "form.status"
-                        }
-                      ],
-                      attrs: { type: "radio", id: "two", value: "Completed" },
-                      domProps: {
-                        checked: _vm._q(_vm.form.status, "Completed")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-full mt-2 sm:mt-0 flex" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "flex-grow sm:ml-2 p-2 border border-gray-300 sm:rounded"
                       },
-                      on: {
-                        change: function($event) {
-                          return _vm.$set(_vm.form, "status", "Completed")
-                        }
-                      }
-                    }),
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.status,
+                              expression: "form.status"
+                            }
+                          ],
+                          attrs: {
+                            type: "radio",
+                            id: "three",
+                            value: "Rescheduled"
+                          },
+                          domProps: {
+                            checked: _vm._q(_vm.form.status, "Rescheduled")
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.$set(_vm.form, "status", "Rescheduled")
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "ml-1 text-gray-700",
+                            attrs: { for: "three" }
+                          },
+                          [_vm._v("Rescheduled")]
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
-                      "label",
+                      "div",
                       {
-                        staticClass: "ml-1 text-gray-700",
-                        attrs: { for: "two" }
+                        staticClass:
+                          "flex-grow sm:ml-2 p-2 border border-gray-300 sm:rounded"
                       },
-                      [_vm._v("Completed")]
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.status,
+                              expression: "form.status"
+                            }
+                          ],
+                          attrs: {
+                            type: "radio",
+                            id: "four",
+                            value: "Upcoming"
+                          },
+                          domProps: {
+                            checked: _vm._q(_vm.form.status, "Upcoming")
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.$set(_vm.form, "status", "Upcoming")
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "ml-1 text-gray-700",
+                            attrs: { for: "four" }
+                          },
+                          [_vm._v("Upcoming")]
+                        )
+                      ]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "ml-2 p-2 border border-gray-300 rounded" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.status,
-                          expression: "form.status"
-                        }
-                      ],
-                      attrs: {
-                        type: "radio",
-                        id: "three",
-                        value: "Rescheduled"
-                      },
-                      domProps: {
-                        checked: _vm._q(_vm.form.status, "Rescheduled")
-                      },
-                      on: {
-                        change: function($event) {
-                          return _vm.$set(_vm.form, "status", "Rescheduled")
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      {
-                        staticClass: "ml-1 text-gray-700",
-                        attrs: { for: "three" }
-                      },
-                      [_vm._v("Rescheduled")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "ml-2 p-2 border border-gray-300 rounded" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.status,
-                          expression: "form.status"
-                        }
-                      ],
-                      attrs: { type: "radio", id: "four", value: "Upcoming" },
-                      domProps: {
-                        checked: _vm._q(_vm.form.status, "Upcoming")
-                      },
-                      on: {
-                        change: function($event) {
-                          return _vm.$set(_vm.form, "status", "Upcoming")
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      {
-                        staticClass: "ml-1 text-gray-700",
-                        attrs: { for: "four" }
-                      },
-                      [_vm._v("Upcoming")]
-                    )
-                  ]
-                )
-              ])
+                  ])
+                ]
+              )
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "flex mt-12" }, [
+          _c("div", { staticClass: "flex mt-8 sm:mt-12" }, [
             _c(
               "button",
               {
@@ -58865,9 +58902,9 @@ var render = function() {
           attrs: {
             name: "add-submission-interview-modal",
             adaptive: true,
-            width: "50%",
-            height: "auto",
-            classes: "bg-white rounded-lg p-4 shadow-sm"
+            width: "90%",
+            maxWidth: 650,
+            height: "auto"
           }
         },
         [

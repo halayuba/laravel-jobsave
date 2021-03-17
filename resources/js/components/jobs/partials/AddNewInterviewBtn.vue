@@ -9,7 +9,7 @@
     </div> <!-- ADD NEW Resource -->
 
     <!-- MODAL -->
-    <modal name="add-submission-interview-modal" :adaptive="true" width="50%" height="auto" classes="bg-white rounded-lg p-4 shadow-sm">
+    <modal name="add-submission-interview-modal" :adaptive="true" width="90%" :maxWidth="650" height="auto">
       <add-submission-interview-modal :submissions="filteredSubmissions" />
     </modal> <!-- MODAL -->
   </div>

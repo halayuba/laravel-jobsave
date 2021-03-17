@@ -7,10 +7,10 @@
       :errors="errors"
     />
 
-    <h3 class="text-center my-2 lg:my-4 md:text-xl lg:text-2xl text-indigo-500 font-bold">Edit Interview Details</h3>
+    <h3 class="text-center my-4 text-xl lg:text-2xl text-indigo-500 font-bold">Edit Interview Details</h3>
 
     <!-- FORM -->
-    <form class="p-4"
+    <form class="p-4 overflow-y-scroll"
       @submit.prevent="formSubmit"
     >
 
@@ -18,8 +18,8 @@
     <div class="w-full flex flex-col">
 
       <!-- COMPANY / LOCATION -->
-      <div class="w-full mt-2 sm:mt-4 flex items-baseline bg-gray-100 px-2">
-        <h3 class="text-2xl text-gray-700 leading-loose">{{ interview.submission.company }}</h3>
+      <div class="w-full sm:mt-4 flex items-baseline bg-gray-100 px-2">
+        <h3 class="sm:text-2xl text-gray-700 font-semibold leading-loose">{{ interview.submission.company }}</h3>
         <h5 class="text-gray-600 ml-2"> - {{ interview.submission.location }}</h5>
       </div> <!-- COMPANY / LOCATION -->
 
@@ -88,22 +88,26 @@
       <!-- STATUS -->
       <div class="w-full mt-2 sm:mt-4">
         <label class="form_label">Status</label>
-        <div class="flex items-center mt-2">
-          <div class="p-2 border border-gray-300 rounded">
-            <input type="radio" id="one" value="Canceled" v-model="form.status">
-            <label for="one" class="ml-1 text-gray-700">Canceled</label>
+        <div class="w-full flex flex-col sm:flex-row sm:items-center mt-2">
+          <div class="w-full flex">
+            <div class="flex-grow p-2 border border-gray-300 sm:rounded">
+              <input type="radio" id="one" value="Canceled" v-model="form.status">
+              <label for="one" class="ml-1 text-gray-700">Canceled</label>
+            </div>
+            <div class="flex-grow sm:ml-2 p-2 border border-gray-300 sm:rounded">
+              <input class="" type="radio" id="two" value="Completed" v-model="form.status">
+              <label for="two" class="ml-1 text-gray-700">Completed</label>
+            </div>
           </div>
-          <div class="ml-2 p-2 border border-gray-300 rounded">
-            <input class="" type="radio" id="two" value="Completed" v-model="form.status">
-            <label for="two" class="ml-1 text-gray-700">Completed</label>
-          </div>
-          <div class="ml-2 p-2 border border-gray-300 rounded">
-            <input class="" type="radio" id="three" value="Rescheduled" v-model="form.status">
-            <label for="three" class="ml-1 text-gray-700">Rescheduled</label>
-          </div>
-          <div class="ml-2 p-2 border border-gray-300 rounded">
-            <input class="" type="radio" id="four" value="Upcoming" v-model="form.status">
-            <label for="four" class="ml-1 text-gray-700">Upcoming</label>
+          <div class="w-full mt-2 sm:mt-0 flex">
+            <div class="flex-grow sm:ml-2 p-2 border border-gray-300 sm:rounded">
+              <input class="" type="radio" id="three" value="Rescheduled" v-model="form.status">
+              <label for="three" class="ml-1 text-gray-700">Rescheduled</label>
+            </div>
+            <div class="flex-grow sm:ml-2 p-2 border border-gray-300 sm:rounded">
+              <input class="" type="radio" id="four" value="Upcoming" v-model="form.status">
+              <label for="four" class="ml-1 text-gray-700">Upcoming</label>
+            </div>
           </div>
 
         </div>
@@ -112,7 +116,7 @@
     </div> <!-- FORM FIELDS CONTAINER -->
 
     <!-- BUTTONS -->
-    <div class="flex mt-12">
+    <div class="flex mt-8 sm:mt-12">
 
       <!-- CANCEL -->
       <button class="flex-1 btn_cancel mr-2" type="button"
@@ -224,12 +228,6 @@ export default {
     },
 
   },
-  mounted(){
-    // console.log(this.interview.id)
-    // console.log(this.interview.submission.id)
-    // console.log(moment(this.interview.date).format("MM-DD-YYYY"))
-    // console.log(moment(this.interview.date).format("YYYY-MM-DD"))
-  }
 
 }
 </script>
