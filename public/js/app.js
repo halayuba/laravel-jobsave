@@ -12431,7 +12431,7 @@ __webpack_require__.r(__webpack_exports__);
     submissionWithInterview: function submissionWithInterview() {
       var _this = this;
 
-      if (this.submission.interviews.length) {
+      if (this.submission.interviews) {
         this.submission.interviews.map(function (interview) {
           if (interview.status === 'Upcoming') {
             _this.upcomingInterviewFullRecord = interview;
@@ -12441,19 +12441,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       }
-    } // submissionWithUpcomingInterview(){
-    //   if(this.submission.interviews.length){
-    //     this.submission.interviews.map(interview => {
-    //       if(interview.status === 'Upcoming'){
-    //         this.upcomingInterview = interview
-    //         return true
-    //       } else return false
-    //     })
-    //
-    //   } else return false
-    //
-    // }
-
+    }
   },
   methods: {
     toggleShowNoteFlag: function toggleShowNoteFlag(val) {
@@ -12496,6 +12484,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
 //
 //
 //
@@ -14433,7 +14424,12 @@ vue__WEBPACK_IMPORTED_MODULE_7__.default.use(vue_toastr__WEBPACK_IMPORTED_MODULE
 });
 /* == vue-js-modal == */
 
-vue__WEBPACK_IMPORTED_MODULE_7__.default.use((vue_js_modal__WEBPACK_IMPORTED_MODULE_2___default()));
+vue__WEBPACK_IMPORTED_MODULE_7__.default.use((vue_js_modal__WEBPACK_IMPORTED_MODULE_2___default()), {
+  dynamicDefault: {
+    draggable: true,
+    resizable: true
+  }
+});
 /* == FOCUS IN FIELDS == */
 
 vue__WEBPACK_IMPORTED_MODULE_7__.default.directive("focus", {
@@ -57014,7 +57010,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "w-full flex justify-end items-center px-2" },
+    {
+      staticClass:
+        "w-full flex justify-around sm:justify-end items-center sm:px-2 mt-4 sm:mt-0"
+    },
     [
       _vm.submission.status != "Unsuccessful"
         ? _c(
@@ -57392,181 +57391,196 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex w-5/6" }, [
-    _c(
-      "div",
-      { staticClass: "mt-2 w-1/6 text-sm font-light text-gray-700 xl:pl-1" },
-      [
-        _vm._v(
-          "\n    " +
-            _vm._s(_vm._f("formatDate")(_vm.submission.created_at)) +
-            "\n  "
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "mt-2 pl-4 w-2/6" }, [
-      _c("div", { staticClass: "text-sm text-gray-900 flex items-center" }, [
-        _c("span", { class: _vm.statusIndicator }),
+  return _c(
+    "div",
+    { staticClass: "flex flex-col sm:flex-row w-full sm:w-5/6 px-4 sm:px-0" },
+    [
+      _c(
+        "div",
+        {
+          staticClass:
+            "mt-2 w-full sm:w-1/6 text-sm font-light text-gray-700 xl:pl-1"
+        },
+        [
+          _vm._v(
+            "\n    " +
+              _vm._s(_vm._f("formatDate")(_vm.submission.created_at)) +
+              "\n  "
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-2 sm:pl-4 w-full sm:w-2/6" }, [
+        _c("div", { staticClass: "text-sm text-gray-900 flex items-center" }, [
+          _c("span", { class: _vm.statusIndicator }),
+          _vm._v(" "),
+          _c("span", { staticClass: "ml-1" }, [
+            _vm._v(_vm._s(_vm.submission.company))
+          ])
+        ]),
         _vm._v(" "),
-        _c("span", { staticClass: "ml-1" }, [
-          _vm._v(_vm._s(_vm.submission.company))
+        _c("div", { staticClass: "text-sm text-gray-500" }, [
+          _vm._v(_vm._s(_vm.submission.location))
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-sm text-gray-500" }, [
-        _vm._v(_vm._s(_vm.submission.location))
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mt-2 pl-4 w-3/6 text-sm text-gray-700" }, [
-      _c("div", { staticClass: "flex flex-col" }, [
-        _c("div", { staticClass: "flex" }, [
-          _c("span", [_vm._v(_vm._s(_vm.submission.position))]),
-          _vm._v(" "),
-          _vm.submission.url
-            ? _c(
-                "a",
-                { attrs: { target: "_blank", href: _vm.submission.url } },
-                [
-                  _c("icon", {
-                    staticClass:
-                      "w-4 h-4 fill-current text-indigo-400 hover:text-indigo-500 inline-block ml-1",
-                    attrs: { name: "link" }
-                  })
-                ],
-                1
-              )
-            : _vm._e()
-        ]),
-        _vm._v(" "),
-        _vm.submission.note
-          ? _c("div", { staticClass: "flex items-center" }, [
-              _c(
-                "picture",
-                {
-                  staticClass: "cursor-pointer",
-                  on: {
-                    click: function($event) {
-                      return _vm.toggleShowNoteFlag(_vm.submission.id)
-                    }
-                  }
-                },
-                [
-                  _c("icon", {
-                    staticClass:
-                      "w-5 h-5 fill-current text-indigo-400 hover:text-indigo-500",
-                    attrs: { name: "note2" }
-                  })
-                ],
-                1
-              ),
+      _c(
+        "div",
+        { staticClass: "mt-2 sm:pl-4 w-full sm:w-3/6 text-sm text-gray-700" },
+        [
+          _c("div", { staticClass: "flex flex-col" }, [
+            _c("div", { staticClass: "flex" }, [
+              _c("span", [_vm._v(_vm._s(_vm.submission.position))]),
               _vm._v(" "),
-              _vm.showNoteFlag == _vm.submission.id
-                ? _c("span", { staticClass: "ml-1 text-xs font-light" }, [
-                    _vm._v(_vm._s(_vm.submission.note))
-                  ])
-                : _vm._e()
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.upcomingInterviewFullRecord
-          ? _c("div", { staticClass: "mt-1 flex flex-col" }, [
-              _c("div", { staticClass: "flex items-center" }, [
-                _c(
-                  "picture",
-                  {
-                    staticClass: "cursor-pointer",
-                    on: {
-                      click: function($event) {
-                        return _vm.toggleShowInterviewFlag(_vm.submission.id)
-                      }
-                    }
-                  },
-                  [
-                    _c("icon", {
-                      staticClass:
-                        "w-5 h-5 fill-current text-indigo-400 hover:text-indigo-500",
-                      attrs: { name: "calendar" }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "ml-1" }, [
-                  _vm._v(_vm._s(_vm.upcomingInterviewFullRecord.dateTime))
-                ])
-              ]),
-              _vm._v(" "),
-              _vm.showInterviewFlag == _vm.submission.id
+              _vm.submission.url
                 ? _c(
-                    "div",
-                    { staticClass: "flex flex-col mt-2 bg-gray-200 p-2" },
+                    "a",
+                    { attrs: { target: "_blank", href: _vm.submission.url } },
                     [
-                      _c(
+                      _c("icon", {
+                        staticClass:
+                          "w-4 h-4 fill-current text-indigo-400 hover:text-indigo-500 inline-block ml-1",
+                        attrs: { name: "link" }
+                      })
+                    ],
+                    1
+                  )
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _vm.submission.note
+              ? _c("div", { staticClass: "flex items-center" }, [
+                  _c(
+                    "picture",
+                    {
+                      staticClass: "cursor-pointer",
+                      on: {
+                        click: function($event) {
+                          return _vm.toggleShowNoteFlag(_vm.submission.id)
+                        }
+                      }
+                    },
+                    [
+                      _c("icon", {
+                        staticClass:
+                          "w-5 h-5 fill-current text-indigo-400 hover:text-indigo-500",
+                        attrs: { name: "note2" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm.showNoteFlag == _vm.submission.id
+                    ? _c("span", { staticClass: "ml-1 text-xs font-light" }, [
+                        _vm._v(_vm._s(_vm.submission.note))
+                      ])
+                    : _vm._e()
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.upcomingInterviewFullRecord
+              ? _c("div", { staticClass: "mt-1 flex flex-col" }, [
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c(
+                      "picture",
+                      {
+                        staticClass: "cursor-pointer",
+                        on: {
+                          click: function($event) {
+                            return _vm.toggleShowInterviewFlag(
+                              _vm.submission.id
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _c("icon", {
+                          staticClass:
+                            "w-5 h-5 fill-current text-indigo-400 hover:text-indigo-500",
+                          attrs: { name: "calendar" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "ml-1" }, [
+                      _vm._v(_vm._s(_vm.upcomingInterviewFullRecord.dateTime))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm.showInterviewFlag == _vm.submission.id
+                    ? _c(
                         "div",
-                        { staticClass: "flex items-baseline" },
+                        { staticClass: "flex flex-col mt-2 bg-gray-200 p-2" },
                         [
-                          _c("icon", {
-                            staticClass: "w-4 h-4 fill-current text-gray-600",
-                            attrs: { name: "users" }
-                          }),
-                          _vm._v(" "),
                           _c(
-                            "span",
-                            {
-                              staticClass:
-                                "text-gray-700 text-sm tracking-tight ml-2"
-                            },
-                            [
-                              _vm._v(
-                                _vm._s(
-                                  _vm.upcomingInterviewFullRecord.interviewer
-                                )
-                              )
-                            ]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _vm.submission.interviews[0].notes
-                        ? _c(
                             "div",
-                            { staticClass: "mt-1 flex items-center" },
+                            { staticClass: "flex items-baseline" },
                             [
                               _c("icon", {
                                 staticClass:
-                                  "w-6 h-6 fill-current text-gray-600",
-                                attrs: { name: "note" }
+                                  "w-4 h-4 fill-current text-gray-600",
+                                attrs: { name: "users" }
                               }),
                               _vm._v(" "),
                               _c(
                                 "span",
                                 {
                                   staticClass:
-                                    "text-gray-700 text-sm tracking-tight leading-none ml-1 flex-wrap"
+                                    "text-gray-700 text-sm tracking-tight ml-2"
                                 },
                                 [
                                   _vm._v(
                                     _vm._s(
-                                      _vm.upcomingInterviewFullRecord.notes
+                                      _vm.upcomingInterviewFullRecord
+                                        .interviewer
                                     )
                                   )
                                 ]
                               )
                             ],
                             1
-                          )
-                        : _vm._e()
-                    ]
-                  )
-                : _vm._e()
-            ])
-          : _vm._e()
-      ])
-    ])
-  ])
+                          ),
+                          _vm._v(" "),
+                          _vm.submission.interviews[0].notes
+                            ? _c(
+                                "div",
+                                { staticClass: "mt-1 flex items-center" },
+                                [
+                                  _c("icon", {
+                                    staticClass:
+                                      "w-6 h-6 fill-current text-gray-600",
+                                    attrs: { name: "note" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "text-gray-700 text-sm tracking-tight leading-none ml-1 flex-wrap"
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.upcomingInterviewFullRecord.notes
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            : _vm._e()
+                        ]
+                      )
+                    : _vm._e()
+                ])
+              : _vm._e()
+          ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -57614,7 +57628,7 @@ var render = function() {
         "div",
         { staticClass: "mt-4 bg-gray-300 p-4" },
         [
-          _c("table-header"),
+          _c("table-header", { staticClass: "hidden sm:flex" }),
           _vm._v(" "),
           _c(
             "div",
@@ -57634,24 +57648,33 @@ var render = function() {
                         ]
                       },
                       [
-                        _c("submission", { attrs: { submission: submission } }),
-                        _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "mt-2 w-1/6 flex justify-end" },
+                          { staticClass: "flex flex-col sm:flex-row w-full" },
                           [
-                            _c("actions", {
-                              attrs: { submission: submission },
-                              on: {
-                                recordInterview: _vm.displayInterviewModal,
-                                editSubmission: _vm.displayEditSubmissionModal
-                              }
-                            })
+                            _c("submission", {
+                              attrs: { submission: submission }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "mt-2 w-full sm:w-1/6" },
+                              [
+                                _c("actions", {
+                                  attrs: { submission: submission },
+                                  on: {
+                                    recordInterview: _vm.displayInterviewModal,
+                                    editSubmission:
+                                      _vm.displayEditSubmissionModal
+                                  }
+                                })
+                              ],
+                              1
+                            )
                           ],
                           1
                         )
-                      ],
-                      1
+                      ]
                     )
                   : _c("div", { staticClass: "alert-no-records" }, [
                       _vm._v(
@@ -57666,9 +57689,9 @@ var render = function() {
                   attrs: {
                     name: "add-interview-modal",
                     adaptive: true,
-                    width: "50%",
-                    height: "auto",
-                    classes: "bg-white rounded-lg p-4 shadow-sm"
+                    width: "90%",
+                    maxWidth: 650,
+                    height: "auto"
                   }
                 },
                 [
@@ -57685,9 +57708,9 @@ var render = function() {
                   attrs: {
                     name: "edit-submission-form-modal",
                     adaptive: true,
-                    width: "50%",
-                    height: "auto",
-                    classes: "bg-white rounded-lg p-4 shadow-sm"
+                    width: "90%",
+                    maxWidth: 650,
+                    height: "auto"
                   }
                 },
                 [

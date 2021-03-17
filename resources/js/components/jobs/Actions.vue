@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-end items-center px-2">
+  <div class="w-full flex justify-around sm:justify-end items-center sm:px-2 mt-4 sm:mt-0">
 
     <!-- UNSUCCESSFUL -->
     <a href="#" title="Update as unsuccessful"

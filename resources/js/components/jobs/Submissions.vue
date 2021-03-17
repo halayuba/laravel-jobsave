@@ -18,7 +18,7 @@
     <div class="mt-4 bg-gray-300 p-4">
 
       <!-- TABLE HEADER -->
-      <table-header />
+      <table-header class="hidden sm:flex" />
 
       <!-- CONTENT -->
       <div class="mt-4 bg-gray-100 p-2 shadow-cc">
@@ -28,16 +28,19 @@
           v-if="result.length"
           :class="[ index === result.length - 1 ? '' : 'border-b border-gray-200' ]"
         >
+          <div class="flex flex-col sm:flex-row w-full">
+
             <submission :submission="submission" />
 
             <!-- ACTIONS -->
-            <div class="mt-2 w-1/6 flex justify-end">
+            <div class="mt-2 w-full sm:w-1/6">
               <actions
                 :submission="submission"
                 @recordInterview="displayInterviewModal"
                 @editSubmission="displayEditSubmissionModal"
               />
             </div>
+          </div>
 
         </div>
 
@@ -48,12 +51,12 @@
         </div>
 
         <!-- MODAL: AddInterviewModal -->
-        <modal name="add-interview-modal" :adaptive="true" width="50%" height="auto" classes="bg-white rounded-lg p-4 shadow-sm">
+        <modal name="add-interview-modal" :adaptive="true" width="90%" :maxWidth="650" height="auto">
           <AddInterviewModal :submissionId="submissionId" />
         </modal> <!-- MODAL -->
 
         <!-- MODAL: EditSubmissionFormModal -->
-        <modal name="edit-submission-form-modal" :adaptive="true" width="50%" height="auto" classes="bg-white rounded-lg p-4 shadow-sm">
+        <modal name="edit-submission-form-modal" :adaptive="true" width="90%" :maxWidth="650" height="auto">
           <EditSubmissionFormModal :submission="submissionRecord" />
         </modal> <!-- MODAL -->
 

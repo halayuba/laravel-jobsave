@@ -1,12 +1,12 @@
 <template>
-  <div class="flex w-5/6">
+  <div class="flex flex-col sm:flex-row w-full sm:w-5/6 px-4 sm:px-0">
     <!-- DATE CREATED -->
-    <div class="mt-2 w-1/6 text-sm font-light text-gray-700 xl:pl-1">
+    <div class="mt-2 w-full sm:w-1/6 text-sm font-light text-gray-700 xl:pl-1">
       {{ submission.created_at | formatDate }}
     </div>
 
     <!-- COMPANY / LOCATION -->
-    <div class="mt-2 pl-4 w-2/6">
+    <div class="mt-2 sm:pl-4 w-full sm:w-2/6">
       <div class="text-sm text-gray-900 flex items-center">
 
         <!-- STATUS INDICATORS -->
@@ -19,7 +19,7 @@
     </div>
 
     <!-- POSITION -->
-    <div class="mt-2 pl-4 w-3/6 text-sm text-gray-700">
+    <div class="mt-2 sm:pl-4 w-full sm:w-3/6 text-sm text-gray-700">
       <div class="flex flex-col">
         <div class="flex">
           <span>{{ submission.position }}</span>

@@ -21,7 +21,7 @@ Vue.use(Toastr, {
 })
 
 /* == vue-js-modal == */
-Vue.use(VModal)
+Vue.use(VModal, { dynamicDefault: { draggable: true, resizable: true } })
 
 /* == FOCUS IN FIELDS == */
 Vue.directive("focus", {

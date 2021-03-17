@@ -17,7 +17,6 @@ Route::apiResource('jobs', SubmissionController::class);
 Route::prefix('jobs')->group(function(){
   Route::put('/{job}/unsuccessful', [SubmissionController::class, 'updateToUnsuccessful']);
   Route::post('/{job}/interview', [SubmissionController::class, 'storeInterviewDetail']);
-  // Route::post('/{job}/interview', [InterviewController::class, 'store']);
 });
 
 Route::prefix('interviews')->group(function(){
