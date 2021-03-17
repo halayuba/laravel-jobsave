@@ -121,7 +121,7 @@ import moment from 'moment'
         }
       },
       submissionWithInterview(){
-        if(this.submission.interviews.length){
+        if(this.submission.interviews){
           this.submission.interviews.map(interview => {
             if(interview.status === 'Upcoming'){
               this.upcomingInterviewFullRecord = interview
@@ -132,18 +132,6 @@ import moment from 'moment'
           })
         }
       }
-      // submissionWithUpcomingInterview(){
-      //   if(this.submission.interviews.length){
-      //     this.submission.interviews.map(interview => {
-      //       if(interview.status === 'Upcoming'){
-      //         this.upcomingInterview = interview
-      //         return true
-      //       } else return false
-      //     })
-      //
-      //   } else return false
-      //
-      // }
 
     },
     methods: {
