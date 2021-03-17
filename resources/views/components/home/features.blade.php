@@ -14,7 +14,7 @@
         <div class="flex flex-wrap justify-around">
 
           <!-- Simple Dashboard -->
-          <div class="flex items-center">
+          <div class="flex flex-col xm:flex-row items-center">
             <x-svg.banners type="dashboard" />
             <div class="pl-5">
               <h4 class="font_family_nunito text-base md:text-lg text-gray-900 leading-tight mb-2">Simple Dashboard</h4>
@@ -25,7 +25,7 @@
           </div>
 
           <!-- Concise Overview -->
-          <div class="flex items-center mt-8">
+          <div class="flex flex-col xm:flex-row items-center mt-8">
             <x-svg.banners type="overview" />
             <div class="pl-5">
               <h4 class="font_family_nunito text-base md:text-lg text-gray-900 leading-tight mb-2">Concise Overview</h4>
@@ -36,7 +36,7 @@
           </div>
 
           <!-- Emphasis on Functionality -->
-          <div class="flex items-center mt-8">
+          <div class="flex flex-col xm:flex-row items-center mt-8">
             <x-svg.banners type="functionality" />
             <div class="pl-5">
               <h4 class="font_family_nunito text-base md:text-lg text-gray-900 leading-tight mb-2">Emphasis on Functionality</h4>
@@ -47,7 +47,7 @@
           </div>
 
           <!-- Features -->
-          <div class="flex items-center mt-8">
+          <div class="flex flex-col xm:flex-row items-center mt-8">
             <x-svg.banners type="ideas" />
             <div class="pl-5">
               <h4 class="font_family_nunito text-base md:text-lg text-gray-900 leading-tight mb-2">Features</h4>
