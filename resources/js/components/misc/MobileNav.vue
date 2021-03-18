@@ -16,10 +16,12 @@
 
     <transition name="fade" appear>
     <!-- MENU LINKS -->
-    <div class="dropdown-menu absolute mt-4 px-4 w-full sm:w-1/2 md:w-1/3 bg-white rounded-lg shadow-cc py-3 text-gray-600 z-50 left-0 sm:right-0"
+    <div class="dropdown-menu absolute mt-4 px-2 w-full sm:w-1/2 md:w-1/3 bg-white rounded-lg py-3 text-gray-600 z-50 left-0 sm:right-0 shadow-cc"
       v-show="isOpen"
     >
-      <slot></slot>
+      <div class="ring-4 ring-indigo-500 ring-opacity-50 ring-offset-2 ring-offset-indigo-100">
+        <slot></slot>
+      </div>
     </div>
     </transition>
 
