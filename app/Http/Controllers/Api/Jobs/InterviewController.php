@@ -12,7 +12,9 @@ class InterviewController extends Controller
 {
   public function index()
   {
-    $interviews = Interview::with('submission')->get();
+    $interviews = Interview::with('submission')
+                  ->orderBy('submission_id')
+                  ->get();
 
     return InterviewResource::collection($interviews);
   }

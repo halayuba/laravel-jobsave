@@ -136,7 +136,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import ErrorAlert from '../../misc/ErrorAlert'
+import ErrorAlert from '@/misc/ErrorAlert'
 import moment from 'moment'
 
 export default {
