@@ -10,8 +10,8 @@
     <h3 class="font_family_berkshire text-2xl md:text-5xl text-gray-800 leading-relaxed tracking-widest mb-4">Join the newsletter</h3>
 
     <div class="container mx-auto px-4 xl:px-12 flex justify-center">
-      <picture class="w-16 h-auto ">
-        <x-svg.icons type="me2" />
+      <picture class="w-16 h-auto inline-block">
+        <img src="{{ asset('images/me.jpg') }}" alt="Simon">
       </picture>
       <div class="flex-1 ml-2 xl:ml-4 text-left">
         <p class="text-gray-700">If you're interested in receiving updates on the latest development then please sign up so you can get details about all new upcoming features.</p>
