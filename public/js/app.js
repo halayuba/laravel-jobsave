@@ -13734,6 +13734,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -13756,6 +13765,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
     submissions: 'jobs/submissions'
   })), {}, {
+    formHasOneField: function formHasOneField() {
+      return this.form.company !== '' || this.form.location !== '' || this.form.position !== '';
+    },
     formSubmitIsReady: function formSubmitIsReady() {
       return this.form.company !== '' && this.form.location !== '' && this.form.position !== '';
     },
@@ -14766,7 +14778,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context3.abrupt("return", Promise.resolve(response.data));
 
               case 10:
-                commit("STORE_SUBMISSION", payload);
+                dispatch('getJobSubmissions');
+                /* == A BETTER SOLUTION == */
+                // commit("STORE_SUBMISSION", payload);
+
                 return _context3.abrupt("return", Promise.resolve(response));
 
               case 12:
@@ -59077,7 +59092,7 @@ var render = function() {
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "mt-4 flex justify-between" }, [
+            _c("div", { staticClass: "mt-6 flex justify-between" }, [
               _c("div", { staticClass: "flex items-center" }, [
                 _c(
                   "a",
@@ -59114,15 +59129,29 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "mt-4 text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-blue-500 text-white font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow",
-                  class: _vm.btnState
-                },
-                [_vm._v("Save")]
-              )
+              _c("div", { staticClass: "flex " }, [
+                _vm.formHasOneField
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow",
+                        on: { click: _vm.resetFields }
+                      },
+                      [_vm._v("Clear")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "ml-4 text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-logo text-white font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow",
+                    class: _vm.btnState
+                  },
+                  [_vm._v("Save")]
+                )
+              ])
             ])
           ]
         )
@@ -59300,11 +59329,9 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "w-1/6 pl-2" }, [_vm._v("Date")]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-2/6 pl-4" }, [
-          _vm._v("Company / Location")
-        ]),
+        _c("div", { staticClass: "w-2/6" }, [_vm._v("Company / Location")]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-2/6 pl-4" }, [_vm._v("Position")]),
+        _c("div", { staticClass: "w-2/6" }, [_vm._v("Position")]),
         _vm._v(" "),
         _c("div", { staticClass: "w-1/6 text-right" }, [
           _vm._v("Perform Action")

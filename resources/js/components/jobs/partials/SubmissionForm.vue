@@ -44,7 +44,7 @@
             ></textarea>
           </div>
         </div>
-        <div class="mt-4 flex justify-between">
+        <div class="mt-6 flex justify-between">
           <div class="flex items-center">
             <!-- LINK -->
             <a href="#" class="rounded-sm bg-indigo-500 hover:bg-indigo-400 text-white px-2 py-1 ml-1" title="URL"
@@ -59,10 +59,20 @@
               <font-awesome-icon icon="sticky-note" />
             </a> <!-- NOTES -->
           </div>
-          <!-- SAVE BUTTON -->
-          <button class="mt-4 text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-blue-500 text-white font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow"
-            :class="btnState"
-          >Save</button>
+
+          <!-- BUTTONS -->
+          <div class="flex">
+            <!-- CANCEL BUTTON -->
+            <button class="text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow"
+              @click="resetFields"
+              v-if="formHasOneField"
+            >Clear</button>
+
+            <!-- SAVE BUTTON -->
+            <button class="ml-4 text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-logo text-white font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow"
+              :class="btnState"
+            >Save</button>
+          </div>
         </div>
       </form>
     </div>
@@ -94,6 +104,9 @@
       ...mapGetters({
         submissions: 'jobs/submissions'
       }),
+      formHasOneField(){
+        return this.form.company !== '' || this.form.location !== '' || this.form.position !== ''
+      },
       formSubmitIsReady(){
         return this.form.company !== '' && this.form.location !== '' && this.form.position !== ''
       },

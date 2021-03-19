@@ -5,10 +5,10 @@
     <div class="w-1/6 pl-2">Date</div>
 
     <!-- SECOND COLUMN -->
-    <div class="w-2/6 pl-4">Company / Location</div>
+    <div class="w-2/6">Company / Location</div>
 
     <!-- THIRD COLUMN -->
-    <div class="w-2/6 pl-4">Position</div>
+    <div class="w-2/6">Position</div>
 
     <!-- FORTH -->
     <div class="w-1/6 text-right">Perform Action</div>

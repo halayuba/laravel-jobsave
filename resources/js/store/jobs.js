@@ -160,11 +160,9 @@ export default {
                 if(response.data.status === 409){
                   return Promise.resolve(response.data)
                 } else {
-                  commit("STORE_SUBMISSION", payload);
+                  dispatch('getJobSubmissions')
                   return Promise.resolve(response);
                 }
-                // commit("SET_SUBMISSIONS", response.data.data); /* == COULD BE USED IF RETURNING EVERYTHING FROM THE CONTROLLER == */
-                // dispatch('getJobSubmissions') /* == A BETTER SOLUTION == */
             } catch (error) {
                 return Promise.reject(error);
             }
