@@ -5,15 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{HomeController, NewsletterController};
 use App\Http\Controllers\Jobs\{SubmissionController, InterviewController};
 
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
 Route::redirect('/', '/home');
 
 Route::prefix('home')->group(function(){

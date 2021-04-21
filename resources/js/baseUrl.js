@@ -1,4 +1,4 @@
 export default {
-  jobSubmissionsApiUrl: 'http://lvb-jobsave.test/api/jobs',
-  jobInterviewsApiUrl: 'http://lvb-jobsave.test/api/interviews',
+  jobSubmissionsApiUrl: 'http://jobsave.test/api/jobs',
+  jobInterviewsApiUrl: 'http://jobsave.test/api/interviews',
 }
