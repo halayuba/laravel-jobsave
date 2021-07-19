@@ -1,7 +1,7 @@
 ## Laravel Vuejs Tailwind - Job Save
 
 - Author: Simon Bashir
-- Version: 0.1
+- Version: 0.2
 - Release Date: Mar 15, 2021 (updated Jul 19, 2021)
 - To see a hosted demo you can visit [jobsave.io](http://www.jobsave.io)
 
@@ -69,7 +69,7 @@ Job Save requires Laravel v8.32 (not tested with other versions).
     jobInterviewsApiUrl: 'http://{url}/api/interviews',
     authApiUrl: 'http://{url}/api/auth/user',
 ~~~
-* An optional sql file "Jobs.sql" is included as an example
+* An optional sql files "interviews.sql" and "submissions.sql" are included as seeders in the "extra" folder (under "obsave/database/seeders/extra") that you can import manually if decided to use.
 
 ### Maintainers & Contributors
 - Simon Bashir
