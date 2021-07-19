@@ -168,9 +168,7 @@ export default {
 
   },
   mounted () {
-    if (this.interview.notes.length > 100) {
-      console.log('LARGE');
-    }
+
   }
 }
 </script>
