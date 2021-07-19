@@ -6,14 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Jobs\Submission;
+use App\Models\User;
 use App\Http\Resources\Jobs\{SubmissionResource, SubmissionCollection};
 
 class SubmissionController extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
+    /* == FOR THE DEMO: IF NO ONE IS SIGNED IN THEN ASSUME THE ADMIN IS SIGNED IN == */
+    $user = $request->user() ?: User::find(1);
+
     /* == FIND APPLICATION SUBMISSIONS THAT HAVE UPCOMING INTERVIEWS == */
-    $submissionsWithUpcomingInterviews = Submission::upcomingInterviews()->get();
+    $submissionsWithUpcomingInterviews = $user->submissions()->upcomingInterviews()->get();
 
     /* == (NOT NEEDED) FIND APPLICATION SUBMISSIONS THAT ENDED UP WITH INTERVIEWS == */
     // $submissionsWithInterviews = Submission::setUpInterviews()->get();
@@ -22,7 +26,7 @@ class SubmissionController extends Controller
     // $submissionsWithNoInterview = Submission::doesntHave('interviews')->latest()->get();
 
     /* == GET ALL SUBMISSION WITH PAST OR NO INTERVIEWS == */
-    $submissionsWithPastOrNoInterviews = Submission::submissionsWithPastOrNoInterviews()->get();
+    $submissionsWithPastOrNoInterviews = $user->submissions()->submissionsWithPastOrNoInterviews()->get();
 
     /* == CHECK IF NOT EMPTY THEN SHOW FIRST THE SUBMISSIONS THAT HAVE UPCOMING INTERVIEWS == */
     $submissions = $submissionsWithUpcomingInterviews->isNotEmpty() ?
@@ -40,10 +44,11 @@ class SubmissionController extends Controller
     */
   }
 
-   //== STORE A JOB SUBMISSION
+  //== STORE A JOB SUBMISSION
   //====================
   public function store(Request $request)
   {
+
     $attributes = request()->validate([
       'company' => 'required',
       'location' => 'required',
@@ -51,21 +56,19 @@ class SubmissionController extends Controller
     ]);
 
     /* == CONFIRM NOT A DUPLICATE ENTRY == */
-    if(Submission::findDuplicateRecord()->exists())
-    {
+    if (Submission::findDuplicateRecord()->exists()) {
       return response()->json([
         'status' => 409,
         'message' => "Conflict. This is a duplicate entry"
       ]);
-    }
-    else
-    {
-      Submission::create($attributes + [
+    } else {
+      request()->user()->submissions()->create($attributes + [
         'url' => $request->url,
         'note' => $request->note
       ]);
 
       // return SubmissionResource::collection(Submission::latest()->get());
+
       /* == SHOULD USE THE SAME TECHNIQUE USED IN THE INDEX ABOVE BUT THIS IS A DEMMO PROJECT == */
       return response()->json([
         'status' => 200,
@@ -75,7 +78,7 @@ class SubmissionController extends Controller
     }
   }
 
-   //== UPDATE A JOB SUBMISSION
+  //== UPDATE A JOB SUBMISSION
   //====================
   public function update(Request $request, Submission $job)
   {
@@ -86,22 +89,19 @@ class SubmissionController extends Controller
     ]);
 
     /* == CONFIRM NOT A DUPLICATE ENTRY == */
-    if($job->NotUniqueForUpdate())
-    {
+    if ($job->NotUniqueForUpdate()) {
       return response()->json([
         'status' => 409,
         'message' => "Conflict. This is a duplicate entry"
       ]);
-    }
-    else
-    {
+    } else {
       $job->update($attributes + [
         'url' => $request->url,
         'note' => $request->note
       ]);
 
-    // return SubmissionResource::collection(Submission::latest()->get());
-    /* == SHOULD USE THE SAME TECHNIQUE USED IN THE INDEX ABOVE BUT THIS IS A DEMMO PROJECT == */
+      // return SubmissionResource::collection(Submission::latest()->get());
+      /* == SHOULD USE THE SAME TECHNIQUE USED IN THE INDEX ABOVE BUT THIS IS A DEMMO PROJECT == */
       return response()->json([
         'status' => 200,
         'message' => "OK"
@@ -124,8 +124,7 @@ class SubmissionController extends Controller
   public function destroy(Request $request, Submission $job)
   {
     /* == IS THE JOB SUBMISSION TO BE DELETED HAS INTERVIEWS (AND OFFERS) == */
-    if( $job->interviews )
-    {
+    if ($job->interviews) {
       $job->interviews->map->delete();
     }
 
@@ -137,7 +136,7 @@ class SubmissionController extends Controller
     // if( request()->wantsJson() ) return [ 'redirect' => '/jobs' ];
   }
 
-   //== STORE DETAILS ABOUT AN INTERVIEW
+  //== STORE DETAILS ABOUT AN INTERVIEW
   //====================
   public function storeInterviewDetail(Request $request, Submission $job)
   {

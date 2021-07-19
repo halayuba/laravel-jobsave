@@ -20,7 +20,8 @@ class CreateSubmissionsTable extends Migration
             $table->string('position');
             $table->string('url')->nullable();
             $table->text('note')->nullable();
-            $table->enum('status', ['Unsuccessful', 'Offer', 'No Feedback'])->default('No Feedback');
+            $table->enum('status', ['Unsuccessful', 'Withdrawn', 'No Feedback'])->default('No Feedback');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

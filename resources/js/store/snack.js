@@ -3,7 +3,7 @@ let defaults = {
   state: '',
   time: 2000,
   delay: 50,
-  redirect: '/resources'
+  redirect: 'jobs'
 }
 
 export default {
@@ -14,29 +14,29 @@ export default {
     bg: null
   },
   getters: {
-    snack(state) {
+    snack (state) {
       return state.snack
     },
-    bg(state) {
+    bg (state) {
       return state.bg
     },
-    redirect(state) {
+    redirect (state) {
       return state.redirect
     }
   },
   mutations: {
-    SET_SNACK_TEXT(state, text) {
+    SET_SNACK_TEXT (state, text) {
       state.snack = text
     },
-    SET_SNACK_BG(state, bg) {
+    SET_SNACK_BG (state, bg) {
       state.bg = bg
     },
-    SET_SNACK_REDIRECT(state, redirect) {
+    SET_SNACK_REDIRECT (state, redirect) {
       state.redirect = redirect
     }
   },
   actions: {
-    snack( {commit}, options ) {
+    snack ({ commit }, options) {
       options = { ...defaults, ...options }
 
       setTimeout(() => {

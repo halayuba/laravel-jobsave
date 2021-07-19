@@ -118,9 +118,7 @@ export default {
             state.submissions.splice(submissionIndex, 1);
         },
         DELETE_INTERVIEW(state, interviewId) {
-            let key = state.interviews.findIndex(
-                item => item.id === interviewId
-            );
+            let key = state.interviews.findIndex(interview => interview.id === interviewId);
             state.interviews.splice(key, 1);
         }
     },
@@ -130,18 +128,18 @@ export default {
     actions: {
         /* == ALL JOB SUBMISSIONS == */
         async getJobSubmissions({ commit }) {
-            try {
-                let response = await axios.get(baseUrl.jobSubmissionsApiUrl);
-                commit("SET_SUBMISSIONS", response.data.data);
-                commit("SET_UPCOMING_INTERVIEWS", response.data.count);
-                commit("SET_TOTAL_SUBMISSIONS_THIS_WEEK", response.data.count);
-                commit("SET_SUBMISSIONS_HAVE_INTERVIEWS", response.data.count);
-                commit("SET_COMPLETED_INTERVIEWS", response.data.count);
-                commit("SET_FILTERED_SUBMISSIONS", response.data.count);
-                return Promise.resolve(response.data.data);
-            } catch (error) {
-                return Promise.reject(error);
-            }
+          try {
+              let response = await axios.get(baseUrl.jobSubmissionsApiUrl);
+              commit("SET_SUBMISSIONS", response.data.data);
+              commit("SET_UPCOMING_INTERVIEWS", response.data.count);
+              commit("SET_TOTAL_SUBMISSIONS_THIS_WEEK", response.data.count);
+              commit("SET_SUBMISSIONS_HAVE_INTERVIEWS", response.data.count);
+              commit("SET_COMPLETED_INTERVIEWS", response.data.count);
+              commit("SET_FILTERED_SUBMISSIONS", response.data.count);
+              return Promise.resolve(response.data.data);
+          } catch (error) {
+              return Promise.reject(error);
+          }
         },
         /* == ALL JOB INTERVIEWS == */
         async getJobInterviews({ commit }) {
@@ -160,7 +158,9 @@ export default {
                 if(response.data.status === 409){
                   return Promise.resolve(response.data)
                 } else {
-                  dispatch('getJobSubmissions')
+                  dispatch('getJobSubmissions') /* == A BETTER SOLUTION == */
+                  // commit("STORE_SUBMISSION", payload);
+                  // commit("SET_SUBMISSIONS", response.data.data); /* == COULD BE USED IF RETURNING EVERYTHING FROM THE CONTROLLER == */
                   return Promise.resolve(response);
                 }
             } catch (error) {
@@ -171,7 +171,7 @@ export default {
         async storeInterviewDetail({ commit, dispatch }, { submissionId, payload }) {
             try {
                 let response = await axios.post(`${baseUrl.jobSubmissionsApiUrl}/${submissionId}/interview`, payload);
-                commit("SET_SUBMISSIONS", response.data.data);
+                dispatch('getJobSubmissions')
                 return Promise.resolve(response);
             } catch (error) {
                 return Promise.reject(error);
@@ -226,20 +226,23 @@ export default {
           }
         },
         /* == REMOVE A JOB SUBMISSION == */
-        async removeJobSubmission({ commit }, submissionId) {
+        async removeJobSubmission({ commit, dispatch }, submissionId) {
             try {
                 let response = await axios.delete(`${baseUrl.jobSubmissionsApiUrl}/${submissionId}`);
                 commit("DELETE_SUBMISSION", submissionId);
+                dispatch('getJobSubmissions')
                 return Promise.resolve(response);
             } catch (error) {
                 return Promise.reject(error);
             }
         },
         /* == REMOVE A JOB SUBMISSION == */
-        async removeJobInterview({ commit }, interviewId) {
+        async removeJobInterview({ commit, dispatch }, interviewId) {
             try {
                 let response = await axios.delete(`${baseUrl.jobInterviewsApiUrl}/${interviewId}`);
                 commit("DELETE_INTERVIEW", interviewId);
+                dispatch('getJobInterviews')
+                dispatch('getJobSubmissions')
                 return Promise.resolve(response);
             } catch (error) {
                 return Promise.reject(error);

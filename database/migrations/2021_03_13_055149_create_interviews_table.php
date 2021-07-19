@@ -21,6 +21,7 @@ class CreateInterviewsTable extends Migration
             $table->text('notes')->nullable();
             $table->enum('status', ['Canceled', 'Completed', 'Rescheduled', 'Upcoming'])->default('Upcoming');
             $table->foreignId('submission_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

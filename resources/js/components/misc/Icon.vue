@@ -2,15 +2,15 @@
   <div>
     <svg v-if="name == 'search'" viewBox="0 0 446.25 446.25"><title>Search</title><path d="M318.75 280.5h-20.4l-7.649-7.65c25.5-28.05 40.8-66.3 40.8-107.1C331.5 73.95 257.55 0 165.75 0S0 73.95 0 165.75 73.95 331.5 165.75 331.5c40.8 0 79.05-15.3 107.1-40.8l7.65 7.649v20.4L408 446.25 446.25 408l-127.5-127.5zm-153 0C102 280.5 51 229.5 51 165.75S102 51 165.75 51 280.5 102 280.5 165.75s-51 114.75-114.75 114.75z"/></svg>
 
-    <svg v-else-if="name == 'checkbox'" viewBox="0 0 459 459"><title>Task completed</title><path d="M124.95 181.05l-35.7 35.7L204 331.5l255-255-35.7-35.7L204 260.1l-79.05-79.05zM408 408H51V51h255V0H51C22.95 0 0 22.95 0 51v357c0 28.05 22.95 51 51 51h357c28.05 0 51-22.95 51-51V204h-51v204z"/></svg>
+    <svg v-else-if="name == 'checkbox'" viewBox="0 0 459 459"><title>Completed</title><path d="M124.95 181.05l-35.7 35.7L204 331.5l255-255-35.7-35.7L204 260.1l-79.05-79.05zM408 408H51V51h255V0H51C22.95 0 0 22.95 0 51v357c0 28.05 22.95 51 51 51h357c28.05 0 51-22.95 51-51V204h-51v204z"/></svg>
 
     <svg v-else-if="name == 'check'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
 
     <svg v-else-if="name == 'clear'" viewBox="0 0 512 512" ><title>Task incomplete</title><path d="M256 90c44.3 0 86 17.3 117.4 48.6C404.7 170 422 211.7 422 256s-17.3 86-48.6 117.4C342 404.7 300.3 422 256 422s-86-17.3-117.4-48.6C107.3 342 90 300.3 90 256s17.3-86 48.6-117.4C170 107.3 211.7 90 256 90m0-42C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"/><path d="M360 330.9L330.9 360 256 285.1 181.1 360 152 330.9l74.9-74.9-74.9-74.9 29.1-29.1 74.9 74.9 74.9-74.9 29.1 29.1-74.9 74.9z"/></svg>
 
-    <svg v-else-if="name == 'edit2'" viewBox="0 0 24 24" width="24" height="24"><title>Edit Task</title><path class="heroicon-ui" d="M6.3 12.3l10-10a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-10 10a1 1 0 0 1-.7.3H7a1 1 0 0 1-1-1v-4a1 1 0 0 1 .3-.7zM8 16h2.59l9-9L17 4.41l-9 9V16zm10-2a1 1 0 0 1 2 0v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h6a1 1 0 0 1 0 2H4v14h14v-6z"/></svg>
+    <svg v-else-if="name == 'edit2'" viewBox="0 0 24 24" width="24" height="24"><title>Edit</title><path class="heroicon-ui" d="M6.3 12.3l10-10a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-10 10a1 1 0 0 1-.7.3H7a1 1 0 0 1-1-1v-4a1 1 0 0 1 .3-.7zM8 16h2.59l9-9L17 4.41l-9 9V16zm10-2a1 1 0 0 1 2 0v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h6a1 1 0 0 1 0 2H4v14h14v-6z"/></svg>
 
-    <svg v-else-if="name == 'delete2'" viewBox="0 0 24 24" width="24" height="24"><title>Delete Task</title><path class="heroicon-ui" d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h5a1 1 0 0 1 0 2h-1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8H3a1 1 0 1 1 0-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1z"/></svg>
+    <svg v-else-if="name == 'delete2'" viewBox="0 0 24 24" width="24" height="24"><title>Delete</title><path class="heroicon-ui" d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h5a1 1 0 0 1 0 2h-1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8H3a1 1 0 1 1 0-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1z"/></svg>
 
     <svg v-else-if="name == 'plus'" viewBox="0 0 17 17" class="w-4 h-4 fill-current text-gray-600 inline-block"><path d="M16 9H9v7H8V9H1V8h7V1h1v7h7v1z"/></svg>
 

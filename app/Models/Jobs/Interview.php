@@ -9,23 +9,32 @@ use Carbon\Carbon;
 
 class Interview extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $casts = ['date' => 'date:Y-m-d', 'time' => 'datetime:h:i A'];
+  protected $casts = ['date' => 'date:Y-m-d', 'time' => 'datetime:h:i A'];
 
-    public function getInterviewDateTimeAttribute()
-    {
-      return $this->date->format('m/d/y') . ' @ ' . $this->time->format('h:i A');
-    }
+  public static function boot()
+  {
+    parent::boot();
+    static::creating(function ($interview) {
+      if ($interview->date->lt(Carbon::today()->toDateString())) $interview->status = "Completed";
+      else $interview->status = "Upcoming";
+    });
+  }
 
-    public function completed()
-    {
-      return $this->update([
-        'status' => 'Completed'
-      ]);
-    }
+  public function getInterviewDateTimeAttribute()
+  {
+    return $this->date->format('m/d/y') . ' @ ' . $this->time->format('h:i A');
+  }
 
-    /*
+  public function completed()
+  {
+    return $this->update([
+      'status' => 'Completed'
+    ]);
+  }
+
+  /*
     CONCEPTUAL WORKFLOW (INITIAL THOUGHTS AND NEED TO BE VALIDATED)
     - recording a new submission will have initial status:
         * submission: "Pending Feedback"
@@ -57,16 +66,21 @@ class Interview extends Model
         * interview: "Completed"
     */
 
-    public function scopeCompletedInterviews($query)
-    {
-        $query->where('status', "Completed");
-    }
+  public function scopeCompletedInterviews($query)
+  {
+    $user = auth()->user() ?: User::find(1);
 
-    /* //====================
+    $query->where([
+      ['status', "Completed"],
+      ['user', $user->id]
+    ]);
+  }
+
+  /* //====================
       //== RELATIONSHIPS
      //==================== */
-     public function submission()
-     {
-         return $this->belongsTo(Submission::class);
-     }
+  public function submission()
+  {
+    return $this->belongsTo(Submission::class);
+  }
 }

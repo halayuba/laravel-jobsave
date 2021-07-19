@@ -9,23 +9,30 @@
       <AddNewInterviewBtn />
     </div>
 
-    <div class="flex flex-col sm:flex-row flex-wrap sm:space-x-4 lg:space-x-5 xl:space-x-6 p-4">
+    <div
+      class="flex flex-col sm:flex-row flex-wrap sm:space-x-4 lg:space-x-5 xl:space-x-6 p-4"
+      v-if="interviews.length"
+    >
 
-      <interview class=""
+      <interview
         v-for="interview in interviews"
         :key="interview.id"
-        v-if="interviews.length"
         :interview="interview"
+        :auth="auth"
         @editInterview="displayEditInterviewModal"
       />
 
     </div>
 
     <!-- MODAL: EditSubmissionInterviewModal -->
-    <modal name="edit-submission-interview-modal" :adaptive="true" width="90%" :maxWidth="650" height="auto">
-      <edit-submission-interview-modal
-        :interview="interviewRecord"
-      />
+    <modal
+      name="edit-submission-interview-modal"
+      :adaptive="true"
+      width="90%"
+      :maxWidth="650"
+      height="auto"
+    >
+      <edit-submission-interview-modal :interview="interviewRecord" />
     </modal> <!-- MODAL -->
 
   </div>
@@ -39,44 +46,38 @@ import Interview from './Interview'
 import EditSubmissionInterviewModal from './modals/EditSubmissionInterviewModal'
 // import moment from 'moment'
 
-  export default {
-    data() {
-      return {
-        interviewRecord: ''
-      }
-    },
-    components:{
-      SubmissionsSummary,
-      AddNewInterviewBtn,
-      Interview,
-      EditSubmissionInterviewModal
-    },
-    computed: {
-      ...mapGetters({
-        interviews: 'jobs/interviews',
-      })
-    },
-    methods: {
-      ...mapActions({
-        // getJobSubmissions: 'jobs/getJobSubmissions',
-        getJobInterviews: 'jobs/getJobInterviews',
-      }),
-      displayEditInterviewModal(val){
-        // console.log(val)
-        this.interviewRecord = val
-        this.$modal.show('edit-submission-interview-modal')
-      }
-    },
-    mounted() {
-      // this.getJobSubmissions()
-      this.getJobInterviews()
-      // console.log(this.interview.date)
-      // var d = new Date(this.interview.date)
-      // console.log(d.getDate())
-      // d.getHours();
-      // console.log(moment().local())
-      // console.log(moment().utcOffset(this.interview.time))
-      // console.log(moment().format())
+export default {
+  data () {
+    return {
+      interviewRecord: ''
     }
+  },
+  components: {
+    SubmissionsSummary,
+    AddNewInterviewBtn,
+    Interview,
+    EditSubmissionInterviewModal
+  },
+  computed: {
+    ...mapGetters({
+      interviews: 'jobs/interviews',
+      auth: 'auth/auth'
+    })
+  },
+  methods: {
+    ...mapActions({
+      userAuth: 'auth/userAuth',
+      // getJobSubmissions: 'jobs/getJobSubmissions',
+      getJobInterviews: 'jobs/getJobInterviews',
+    }),
+    displayEditInterviewModal (val) {
+      this.interviewRecord = val
+      this.$modal.show('edit-submission-interview-modal')
+    }
+  },
+  mounted () {
+    this.userAuth()
+    this.getJobInterviews()
   }
+}
 </script>
