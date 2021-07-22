@@ -69,7 +69,7 @@ Job Save requires Laravel v8.32 (not tested with other versions).
     jobInterviewsApiUrl: 'http://{url}/api/interviews',
     authApiUrl: 'http://{url}/api/auth/user',
 ~~~
-* An optional sql files "interviews.sql" and "submissions.sql" are included as seeders in the "extra" folder (under "obsave/database/seeders/extra") that you can import manually if decided to use.
+* An optional sql files "interviews.sql" and "submissions.sql" are included as seeders in the "extra" folder (under "jobsave/database/seeders/extra") that you can import manually if prefer to see seeder data for job submissions and interviews.
 
 ### Maintainers & Contributors
 - Simon Bashir
