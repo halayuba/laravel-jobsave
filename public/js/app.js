@@ -12216,11 +12216,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   }),
-  mounted: function mounted() {
-    if (this.interview.notes.length > 100) {
-      console.log('LARGE');
-    }
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -12602,6 +12598,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -12635,14 +12636,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Submission: _Submission__WEBPACK_IMPORTED_MODULE_1__.default
   },
   computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_8__.mapGetters)({
-    submissions: 'jobs/submissions'
+    submissions: 'jobs/submissions',
+    auth: 'auth/auth'
   })), {}, {
     jobSubmissionsComp: function jobSubmissionsComp() {
       return this.jobsubmissions.length == 0 || this.jobsubmissions.length == null;
     }
   }),
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_8__.mapActions)({
-    getJobSubmissions: 'jobs/getJobSubmissions'
+    getJobSubmissions: 'jobs/getJobSubmissions',
+    userAuth: 'auth/userAuth'
   })), {}, {
     quickSearch: function quickSearch(val) {
       /* == PERFORM IF THERE ARE RECORDS TO SEARCH THROUGH IN THE FIRST PLACE == */
@@ -12690,6 +12693,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getJobSubmissions();
       this.result = this.submissions;
     }
+
+    this.userAuth();
   },
   watch: {
     submissions: function submissions() {
@@ -13915,6 +13920,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -13930,6 +13959,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         note: ''
       }
     };
+  },
+  props: {
+    auth: {
+      required: true
+    }
   },
   components: {
     ErrorAlert: _misc_ErrorAlert__WEBPACK_IMPORTED_MODULE_0__.default
@@ -13958,7 +13992,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     submit: function submit() {
       var _this = this;
 
-      if (this.formSubmitIsReady) {
+      if (!this.auth) {
+        this.$toastr.w('No user logged in');
+        setTimeout(function () {
+          location = '/login';
+        }, 2000);
+      } else if (this.formSubmitIsReady) {
         /* == CHECK IF THE SUBMISSION IS A DUPLICATE (HAD PREVIOUSLY BEEN STORED) == */
         var flagExist = this.submissions.some(function (item) {
           return item.company.toLowerCase() == _this.form.company.toLowerCase() && item.position.toLowerCase() == _this.form.position.toLowerCase();
@@ -57992,7 +58031,7 @@ var render = function() {
     "div",
     { staticClass: "px-2 md:container md:mx-auto md:px-4 xl:px-8" },
     [
-      _c("submission-form"),
+      _c("submission-form", { attrs: { auth: _vm.auth } }),
       _vm._v(" "),
       _c("submissions-summary"),
       _vm._v(" "),
@@ -58016,13 +58055,13 @@ var render = function() {
             [
               _c("table-header", { staticClass: "hidden sm:flex" }),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "mt-4 bg-gray-100 p-2 shadow-cc" },
-                [
-                  _vm._l(_vm.result, function(submission, index) {
-                    return _vm.result
-                      ? _c(
+              _vm.result
+                ? _c(
+                    "div",
+                    { staticClass: "mt-4 bg-gray-100 p-2 shadow-cc" },
+                    [
+                      _vm._l(_vm.result, function(submission, index) {
+                        return _c(
                           "div",
                           {
                             key: submission.id,
@@ -58044,70 +58083,72 @@ var render = function() {
                                   attrs: { submission: submission }
                                 }),
                                 _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "mt-2 w-full sm:w-1/6" },
-                                  [
-                                    _c("actions", {
-                                      attrs: { submission: submission },
-                                      on: {
-                                        recordInterview:
-                                          _vm.displayInterviewModal,
-                                        editSubmission:
-                                          _vm.displayEditSubmissionModal
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
+                                _vm.auth
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "mt-2 w-full sm:w-1/6" },
+                                      [
+                                        _c("actions", {
+                                          attrs: { submission: submission },
+                                          on: {
+                                            recordInterview:
+                                              _vm.displayInterviewModal,
+                                            editSubmission:
+                                              _vm.displayEditSubmissionModal
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e()
                               ],
                               1
                             )
                           ]
                         )
-                      : _vm._e()
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "modal",
-                    {
-                      attrs: {
-                        name: "add-interview-modal",
-                        adaptive: true,
-                        width: "90%",
-                        maxWidth: 650,
-                        height: "auto"
-                      }
-                    },
-                    [
-                      _c("AddInterviewModal", {
-                        attrs: { submissionId: _vm.submissionId }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "modal",
+                        {
+                          attrs: {
+                            name: "add-interview-modal",
+                            adaptive: true,
+                            width: "90%",
+                            maxWidth: 650,
+                            height: "auto"
+                          }
+                        },
+                        [
+                          _c("AddInterviewModal", {
+                            attrs: { submissionId: _vm.submissionId }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "modal",
+                        {
+                          attrs: {
+                            name: "edit-submission-form-modal",
+                            adaptive: true,
+                            width: "90%",
+                            maxWidth: 650,
+                            height: "auto"
+                          }
+                        },
+                        [
+                          _c("EditSubmissionFormModal", {
+                            attrs: { submission: _vm.submissionRecord }
+                          })
+                        ],
+                        1
+                      )
                     ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "modal",
-                    {
-                      attrs: {
-                        name: "edit-submission-form-modal",
-                        adaptive: true,
-                        width: "90%",
-                        maxWidth: 650,
-                        height: "auto"
-                      }
-                    },
-                    [
-                      _c("EditSubmissionFormModal", {
-                        attrs: { submission: _vm.submissionRecord }
-                      })
-                    ],
-                    1
+                    2
                   )
-                ],
-                2
-              )
+                : _vm._e()
             ],
             1
           )

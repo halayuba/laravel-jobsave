@@ -1,8 +1,8 @@
 ## Laravel Vuejs Tailwind - Job Save
 
 - Author: Simon Bashir
-- Version: 0.2
-- Release Date: Mar 15, 2021 (updated Jul 19, 2021)
+- Version: 0.3
+- Release Date: Mar 15, 2021 (updated Jul 22, 2021)
 - To see a hosted demo you can visit [jobsave.io](http://www.jobsave.io)
 
 ### Brief Description
@@ -53,7 +53,7 @@ Job Save requires Laravel v8.32 (not tested with other versions).
 ~~~
 * Run all migrations to create and populate the database tables
 ~~~
-    php artisan migrate
+    php artisan migrate --seed
 ~~~
 * Allow files to be overwritten by giving write permissions as the following
 ~~~

@@ -2,7 +2,7 @@
   <div class="px-2 md:container md:mx-auto md:px-4 xl:px-8">
 
     <!-- SUBMISSION FORM -->
-    <submission-form />
+    <submission-form :auth="auth" />
 
     <!-- SUMMARY -->
     <submissions-summary />
@@ -25,10 +25,12 @@
       <table-header class="hidden sm:flex" />
 
       <!-- CONTENT -->
-      <div class="mt-4 bg-gray-100 p-2 shadow-cc">
+      <div
+        class="mt-4 bg-gray-100 p-2 shadow-cc"
+        v-if="result"
+      >
         <div
           class="flex pb-2 hover:bg-gray-200"
-          v-if="result"
           v-for="submission, index in result"
           :key="submission.id"
           :class="[ index === result.length - 1 ? '' : 'border-b border-gray-200' ]"
@@ -38,7 +40,10 @@
             <submission :submission="submission" />
 
             <!-- ACTIONS -->
-            <div class="mt-2 w-full sm:w-1/6">
+            <div
+              class="mt-2 w-full sm:w-1/6"
+              v-if="auth"
+            >
               <actions
                 :submission="submission"
                 @recordInterview="displayInterviewModal"
@@ -116,7 +121,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      submissions: 'jobs/submissions'
+      submissions: 'jobs/submissions',
+      auth: 'auth/auth'
     }),
     jobSubmissionsComp () {
       return this.jobsubmissions.length == 0 || this.jobsubmissions.length == null
@@ -126,6 +132,7 @@ export default {
   methods: {
     ...mapActions({
       getJobSubmissions: 'jobs/getJobSubmissions',
+      userAuth: 'auth/userAuth',
     }),
     quickSearch (val) {
       /* == PERFORM IF THERE ARE RECORDS TO SEARCH THROUGH IN THE FIRST PLACE == */
@@ -177,6 +184,8 @@ export default {
       this.getJobSubmissions()
       this.result = this.submissions
     }
+
+    this.userAuth()
   },
   watch: {
     submissions () {
