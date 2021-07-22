@@ -11,4 +11,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/resources/js/misc/Sanctum.vue
+/resources/js/components/misc/Sanctum.vue
