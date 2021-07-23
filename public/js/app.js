@@ -12450,6 +12450,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -12458,7 +12492,8 @@ __webpack_require__.r(__webpack_exports__);
       showInterviewFlag: '',
       upcomingInterviewFlag: false,
       completedInterviewFlag: false,
-      upcomingInterviewFullRecord: ''
+      upcomingInterviewFullRecord: '',
+      title: 'Unsuccessful submission'
     };
   },
   props: {
@@ -12487,8 +12522,10 @@ __webpack_require__.r(__webpack_exports__);
           if (interview.status === 'Upcoming') {
             _this.upcomingInterviewFullRecord = interview;
             _this.upcomingInterviewFlag = true;
+            _this.title = "Upcoming Interview";
           } else if (interview.status === 'Completed') {
             _this.completedInterviewFlag = true;
+            _this.title = "Interview Completed";
           }
         });
       }
@@ -57855,7 +57892,10 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "mt-2 sm:pl-4 w-full sm:w-2/6" }, [
         _c("div", { staticClass: "text-sm text-gray-900 flex items-center" }, [
-          _c("span", { class: _vm.statusIndicator }),
+          _c("span", {
+            class: _vm.statusIndicator,
+            attrs: { title: _vm.title }
+          }),
           _vm._v(" "),
           _c("span", { staticClass: "ml-1" }, [
             _vm._v(_vm._s(_vm.submission.company))
@@ -57924,10 +57964,33 @@ var render = function() {
             _vm.upcomingInterviewFullRecord
               ? _c("div", { staticClass: "mt-1 flex flex-col" }, [
                   _c("div", { staticClass: "flex items-center" }, [
+                    !_vm.showInterviewFlag
+                      ? _c(
+                          "picture",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.toggleShowInterviewFlag(
+                                  _vm.submission.id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _c("icon", {
+                              staticClass:
+                                "w-6 h-6 fill-current text-indigo-400 cursor-pointer",
+                              attrs: { name: "arrow-down" }
+                            })
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c(
                       "picture",
                       {
-                        staticClass: "cursor-pointer",
+                        staticClass: "ml-1 cursor-pointer",
                         on: {
                           click: function($event) {
                             return _vm.toggleShowInterviewFlag(
