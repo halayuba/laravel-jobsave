@@ -13,7 +13,6 @@
       class="flex flex-col sm:flex-row flex-wrap sm:space-x-4 lg:space-x-5 xl:space-x-6 p-4"
       v-if="interviews.length"
     >
-
       <interview
         v-for="interview in interviews"
         :key="interview.id"
@@ -21,7 +20,6 @@
         :auth="auth"
         @editInterview="displayEditInterviewModal"
       />
-
     </div>
 
     <!-- MODAL: EditSubmissionInterviewModal -->

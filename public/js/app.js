@@ -11957,6 +11957,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -11969,8 +11989,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: {
     /* == SUBMISSION HAS AN UPCOMING INTERVIEW == */
-    hasNoUpcomingInterview: function hasNoUpcomingInterview() {
-      return this.submission.interviews[0].status !== 'Upcoming';
+    hasUpcomingInterview: function hasUpcomingInterview() {
+      return this.submission.interviews.some(function (interview) {
+        return interview.status === "Upcoming";
+      });
     },
 
     /* == SUBMISSION NOT UNSUCCESSFUL == */
@@ -11981,7 +12003,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     /* == RECORD AN INTERVIEW IF: SUBMISSION NOT UNSUCCESSFUL | SUBMISSION HAS AN UPCOMING INTERVIEW == */
     recordAnInterviewCondition: function recordAnInterviewCondition() {
       if (this.submission.interviews && this.submission.interviews.length) {
-        return this.submissionNotUnsuccessful && this.hasNoUpcomingInterview;
+        return this.submissionNotUnsuccessful && !this.hasUpcomingInterview;
       } else {
         return this.submissionNotUnsuccessful;
       }
@@ -12050,6 +12072,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -12243,8 +12266,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -57560,7 +57581,7 @@ var render = function() {
     _c(
       "a",
       {
-        staticClass: "mt-6 px-6 text-gray-600 text-sm",
+        staticClass: "mt-6 px-6 text-gray-600 text-xs",
         attrs: { href: _vm.interview.submission.url }
       },
       [_vm._v("\n    " + _vm._s(_vm.interview.submission.position) + "\n  ")]
@@ -57610,7 +57631,7 @@ var render = function() {
             [
               _c("icon", {
                 staticClass: "w-6 h-6 fill-current text-gray-600 flex-shrink-0",
-                attrs: { name: "note" }
+                attrs: { name: "note", title: _vm.interview.notes }
               }),
               _vm._v(" "),
               _c(

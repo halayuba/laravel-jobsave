@@ -12,7 +12,7 @@
 
     <!-- POSITION -->
     <a
-      class="mt-6 px-6 text-gray-600 text-sm"
+      class="mt-6 px-6 text-gray-600 text-xs"
       :href="interview.submission.url"
     >
       {{ interview.submission.position }}
@@ -47,6 +47,7 @@
         <icon
           name="note"
           class="w-6 h-6 fill-current text-gray-600 flex-shrink-0"
+          :title="interview.notes"
         />
         <span class="text-gray-700 text-xs tracking-tight leading-none ml-1 flex-wrap truncate">{{ interview.notes }}</span>
       </div>

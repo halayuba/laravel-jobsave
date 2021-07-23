@@ -30,15 +30,27 @@ class Submission extends Model
   }
 
   /* == STAT SUMMARY (IN "SubmissionCollection") == */
-  /* == GET ALL SUBMISSIONS THAT [DO NOT HAVE INTERVIEWS AND ARE NOT "UNSUCCESSFUL" OR HAVE "OFFERS" USED] FOR "AddSubmissionInterviewModal" == */
+  /* == GET ALL SUBMISSIONS THAT:
+          1. WHERE THE SUBMISSION IS WITHIN A MONTH
+          2. WHERE SUBMISSION STATUS IS NOT "UNSUCCESSFUL" OR "WITHDRAWN" (IE. "NO FEEDBACK")
+          3. DO NOT HAVE INTERVIEWS
+          4. OR WITH INTERVIEWS BUT NOT "UPCOMING"
+          USED FOR USE IN "AddSubmissionInterviewModal" ==
+    */
   public function scopeFilteredSubmissions($query)
   {
     /* == FOR THE DEMO: IF NO ONE IS SIGNED IN THEN ASSUME THE ADMIN IS SIGNED IN == */
     $userId = auth()->user() ? auth()->user()->id : 1;
 
-    $query->doesntHave('interviews')
+    $query->where('created_at', '>=', $this->monthAgo())
+      ->where('status', 'No Feedback')
       ->where('user_id', $userId)
-      ->where('status', 'No Feedback');
+      ->where(function ($query) {
+        $query->doesntHave('interviews');
+        $query->OrWhereHas('interviews', function (Builder $query) {
+          $query->where('status', '!=', 'Upcoming');
+        });
+      });
   }
 
   /* == STAT SUMMARY (IN "SubmissionCollection") == */
@@ -108,6 +120,11 @@ class Submission extends Model
   public function lastWeek()
   {
     return Carbon::today()->setTimezone('America/Chicago')->subWeek()->toDateString();
+  }
+
+  public function monthAgo()
+  {
+    return Carbon::today()->setTimezone('America/Chicago')->subWeek(4)->toDateString();
   }
 
   public function currentDate()
