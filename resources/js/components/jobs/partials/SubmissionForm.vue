@@ -42,6 +42,7 @@
             v-if="showFlag == 'link'"
           >
             <input
+              type="url"
               class="w-full block pl-4 py-3 bg-gray-900 rounded-l-sm text-white placeholder-gray-400 focus:bg-gray-100 focus:text-gray-900 focus:placeholder-gray-600 focus:outline-none"
               placeholder="URL"
               v-model="form.url"

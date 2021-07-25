@@ -12184,6 +12184,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -12870,6 +12888,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -12881,6 +12923,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         date: '',
         time: '',
         interviewer: '',
+        url: '',
         notes: ''
       }
     };
@@ -12945,6 +12988,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.date = '';
       this.form.time = '';
       this.form.interviewer = '';
+      this.form.url = '';
       this.form.notes = '';
       this.$modal.hide('add-interview-modal');
     },
@@ -13083,6 +13127,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -13094,6 +13163,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         date: '',
         time: '',
         interviewer: '',
+        url: '',
         note: '',
         submissionId: '' // submission_id: this.submission.id,
 
@@ -13162,6 +13232,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.date = '';
       this.form.time = '';
       this.form.interviewer = '';
+      this.form.url = '';
       this.form.note = '';
       this.form.submissionId = '';
       this.$modal.hide('add-submission-interview-modal');
@@ -13612,6 +13683,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -13627,6 +13709,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         date: moment__WEBPACK_IMPORTED_MODULE_1___default()(this.interview.date).format("MM-DD-YYYY"),
         time: moment__WEBPACK_IMPORTED_MODULE_1___default()(this.interview.time).format("h:mm:ss"),
         interviewer: this.interview.interviewer,
+        url: this.interview.url,
         notes: this.interview.notes,
         submissionId: this.interview.submission.id,
         status: this.interview.status
@@ -13706,6 +13789,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.date = '';
       this.form.time = '';
       this.form.interviewer = '';
+      this.form.url = '';
       this.form.notes = '';
       this.form.submissionId = '';
       this.$modal.hide('edit-submission-interview-modal');
@@ -13897,6 +13981,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -57598,7 +57683,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card w-64" }, [
+  return _c("div", { staticClass: "card w-full sm:w-64" }, [
     _c("div", { staticClass: "mt-2 flex justify-between items-center" }, [
       _c("div", { staticClass: "flex items-center" }, [
         _c(
@@ -57661,6 +57746,29 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _vm.interview.url
+        ? _c("div", { staticClass: "mt-4 flex items-center" }, [
+            _c(
+              "a",
+              { attrs: { target: "_blank", href: _vm.interview.url } },
+              [
+                _c("icon", {
+                  staticClass:
+                    "w-6 h-6 fill-current text-gray-600 flex-shrink-0",
+                  attrs: { name: "link" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticClass: "text-gray-700 text-xs tracking-tight ml-1" },
+                  [_vm._v("Click to go to Zoom / WebEx / MS Teams meeting")]
+                )
+              ],
+              1
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
       _vm.interview.notes
         ? _c(
             "div",
@@ -57675,7 +57783,7 @@ var render = function() {
                 "span",
                 {
                   staticClass:
-                    "text-gray-700 text-xs tracking-tight leading-none ml-1 flex-wrap truncate"
+                    "text-gray-700 text-xs tracking-tight leading-none ml-1 flex-wrap"
                 },
                 [_vm._v(_vm._s(_vm.interview.notes))]
               )
@@ -57813,7 +57921,7 @@ var render = function() {
             "div",
             {
               staticClass:
-                "flex flex-col sm:flex-row flex-wrap sm:space-x-4 lg:space-x-5 xl:space-x-6 p-4"
+                "p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 sm:gap-2"
             },
             _vm._l(_vm.interviews, function(interview) {
               return _c("interview", {
@@ -58383,6 +58491,34 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "w-full mt-2 sm:mt-4" }, [
+              _c("label", { staticClass: "form_label" }, [
+                _vm._v("Interview Link")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.url,
+                    expression: "form.url"
+                  }
+                ],
+                staticClass: "form_input",
+                attrs: { type: "url", placeholder: "URL" },
+                domProps: { value: _vm.form.url },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "url", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-full mt-2 sm:mt-4" }, [
               _c("label", { staticClass: "form_label" }, [_vm._v("Notes")]),
               _vm._v(" "),
               _c("textarea", {
@@ -58541,13 +58677,13 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n          " +
+                          "\n            " +
                             _vm._s(
                               submission.company.substr(0, 25) +
                                 " / " +
                                 submission.position.substr(0, 25)
                             ) +
-                            "\n        "
+                            "\n          "
                         )
                       ]
                     )
@@ -58638,6 +58774,34 @@ var render = function() {
                       return
                     }
                     _vm.$set(_vm.form, "interviewer", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-full mt-2 sm:mt-4" }, [
+              _c("label", { staticClass: "form_label" }, [
+                _vm._v("Interview Link")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.url,
+                    expression: "form.url"
+                  }
+                ],
+                staticClass: "form_input",
+                attrs: { type: "url", placeholder: "URL" },
+                domProps: { value: _vm.form.url },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "url", $event.target.value)
                   }
                 }
               })
@@ -59155,6 +59319,34 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "w-full mt-2 sm:mt-4" }, [
+              _c("label", { staticClass: "form_label" }, [
+                _vm._v("Interview Link")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.url,
+                    expression: "form.url"
+                  }
+                ],
+                staticClass: "form_input",
+                attrs: { type: "url", placeholder: "URL" },
+                domProps: { value: _vm.form.url },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "url", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-full mt-2 sm:mt-4" }, [
               _c("label", { staticClass: "form_label" }, [_vm._v("Notes")]),
               _vm._v(" "),
               _c("textarea", {
@@ -59650,7 +59842,7 @@ var render = function() {
                       ],
                       staticClass:
                         "w-full block pl-4 py-3 bg-gray-900 rounded-l-sm text-white placeholder-gray-400 focus:bg-gray-100 focus:text-gray-900 focus:placeholder-gray-600 focus:outline-none",
-                      attrs: { placeholder: "URL" },
+                      attrs: { type: "url", placeholder: "URL" },
                       domProps: { value: _vm.form.url },
                       on: {
                         input: function($event) {

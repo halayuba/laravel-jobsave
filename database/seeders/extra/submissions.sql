@@ -41,6 +41,8 @@ INSERT INTO `submissions` (`id`, `company`, `location`, `position`, `url`, `note
 (60,	'efelle creative',	'Seattle, WA',	'Application Developer',	'https://www.seattlewebdesign.com/about-us/current-job-openings',	NULL,	'No Feedback',	'2021-06-14 02:19:28',	'2021-06-14 02:19:28',	1),
 (61,	'Plan A',	'Permanent employee, Full-time · Berlin (Remote)',	'Senior Back End Engineer (PHP)',	'https://plana-earth.jobs.personio.de/job/320337',	NULL,	'Unsuccessful',	'2021-06-14 02:24:59',	'2021-06-16 21:45:48',	1),
 (62,	'Cognizant',	'Remote work',	'VueJS Developer',	NULL,	NULL,	'No Feedback',	'2021-07-14 02:04:47',	'2021-07-14 02:04:47',	1),
-(63,	'Juvare',	'Remote',	'PHP Web Developer',	NULL,	'10-12 mo contract.  Alyssa Arnson.  Insight Global',	'No Feedback',	'2021-07-09 05:00:00',	'2021-07-09 05:00:00',	1);
+(63,	'Juvare',	'Remote',	'PHP Web Developer',	NULL,	'10-12 mo contract.  Alyssa Arnson.  Insight Global',	'No Feedback',	'2021-07-09 05:00:00',	'2021-07-09 05:00:00',	1),
+(64,	'GRIN',	'Remote',	'Sr. Software Engineer (Full Stack)',	'https://careers-grin.icims.com/jobs/1177/sr.-software-engineer-%28full-stack%29/job?mobile=false&width=1567&height=500&bga=true&needsRedirect=false&jan1offset=-360&jun1offset=-300',	NULL,	'No Feedback',	'2021-07-22 06:31:43',	'2021-07-22 06:31:43',	1),
+(65,	'CGI Technologies and Solutions / End Client – Lumen',	'Remote',	'Sr. Front End Developer',	NULL,	'Duration: Contract until Feb 2022 – likely to extend',	'No Feedback',	'2021-07-21 05:00:00',	'2021-07-21 05:00:00',	1);
 
--- 2021-07-19 21:15:38
+-- 2021-07-25 20:15:58

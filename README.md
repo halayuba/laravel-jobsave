@@ -1,8 +1,8 @@
 ## Laravel Vuejs Tailwind - Job Save
 
 - Author: Simon Bashir
-- Version: 0.3
-- Release Date: Mar 15, 2021 (updated Jul 22, 2021)
+- Version: 0.4
+- Release Date: Mar 15, 2021 (updated Jul 25, 2021)
 - To see a hosted demo you can visit [jobsave.io](http://www.jobsave.io)
 
 ### Brief Description
@@ -10,7 +10,7 @@ Coded with `Laravel v8.32`, Job Save is a demo project.
 Personal organizer for professional job hunters. Job Save is an open-source web application with a simple objective - to help job hunters organize and manage the main steps being carried out during the process of searching for a new job. The focus here is on you as a job seeker to keep records about application submissions and interviews. Job Save attempts to give you a snapshot or an overview of the essential pieces of information or activities related to your job search.
 
 ### Basic Features
-1. This is a "demo" project but the additional sql file "Jobs.sql" contains "real" activities about my application submissions for this month.
+1. This is a "demo" project but the additional sql files "submissions.sql" and "interviews.sql" contain "real" activities about my own application submissions for job opportunities.
 2. This demo project shows variety of many techniques for creating API-based projects with Laravel/Vuejs/Tailwind.
 3. This project is under development and therefore may contain bugs, incomplete features, or broken "responsive" design.
 4. This project does not focus on Authentication and Authorizations (roles & permissions).
@@ -69,7 +69,7 @@ Job Save requires Laravel v8.32 (not tested with other versions).
     jobInterviewsApiUrl: 'http://{url}/api/interviews',
     authApiUrl: 'http://{url}/api/auth/user',
 ~~~
-* An optional sql files "interviews.sql" and "submissions.sql" are included as seeders in the "extra" folder (under "jobsave/database/seeders/extra") that you can import manually if prefer to see seeder data for job submissions and interviews.
+* An optional sql files "submissions.sql" and "interviews.sql" are included as seeders in the "extra" folder (under "jobsave/database/seeders/extra"). You can import these files manually (in the order listed above) into your DB if you prefer to see seeder data for job submissions and interviews.
 
 ### Maintainers & Contributors
 - Simon Bashir

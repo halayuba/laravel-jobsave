@@ -34,6 +34,7 @@ class InterviewController extends Controller
 
     $interview->update($attributes + [
       'interviewer' => $request->interviewer,
+      'url' => $request->url,
       'notes' => $request->notes
     ]);
 

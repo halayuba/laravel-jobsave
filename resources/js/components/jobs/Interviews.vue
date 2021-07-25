@@ -10,7 +10,7 @@
     </div>
 
     <div
-      class="flex flex-col sm:flex-row flex-wrap sm:space-x-4 lg:space-x-5 xl:space-x-6 p-4"
+      class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 sm:gap-2"
       v-if="interviews.length"
     >
       <interview

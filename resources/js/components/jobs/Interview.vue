@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-64">
+  <div class="card w-full sm:w-64">
 
     <!-- COMPANY -->
     <div class="mt-2 flex justify-between items-center">
@@ -39,6 +39,24 @@
         <span class="text-gray-700 text-sm tracking-tight ml-1">{{ interview.dateTime }}</span>
       </div>
 
+      <!-- LINK TO INTERVIEW MEETING -->
+      <div
+        class="mt-4 flex items-center"
+        v-if="interview.url"
+      >
+        <!-- LINK -->
+        <a
+          target="_blank"
+          :href="interview.url"
+        >
+          <icon
+            name="link"
+            class="w-6 h-6 fill-current text-gray-600 flex-shrink-0"
+          />
+          <span class="text-gray-700 text-xs tracking-tight ml-1">Click to go to Zoom / WebEx / MS Teams meeting</span>
+        </a>
+      </div>
+
       <!-- NOTES -->
       <div
         class="mt-4 flex items-center"
@@ -49,7 +67,7 @@
           class="w-6 h-6 fill-current text-gray-600 flex-shrink-0"
           :title="interview.notes"
         />
-        <span class="text-gray-700 text-xs tracking-tight leading-none ml-1 flex-wrap truncate">{{ interview.notes }}</span>
+        <span class="text-gray-700 text-xs tracking-tight leading-none ml-1 flex-wrap">{{ interview.notes }}</span>
       </div>
 
       <!-- STATUS -->

@@ -106,6 +106,17 @@
           >
         </div> <!-- INTERVIEWER -->
 
+        <!-- URL -->
+        <div class="w-full mt-2 sm:mt-4">
+          <label class="form_label">Interview Link</label>
+          <input
+            type="url"
+            class="form_input"
+            placeholder="URL"
+            v-model="form.url"
+          >
+        </div> <!-- URL -->
+
         <!-- NOTES ABOUT THE INTERVIEW -->
         <div class="w-full mt-2 sm:mt-4">
           <label class="form_label">Notes</label>
@@ -226,6 +237,7 @@ export default {
         date: moment(this.interview.date).format("MM-DD-YYYY"),
         time: moment(this.interview.time).format("h:mm:ss"),
         interviewer: this.interview.interviewer,
+        url: this.interview.url,
         notes: this.interview.notes,
         submissionId: this.interview.submission.id,
         status: this.interview.status
@@ -296,6 +308,7 @@ export default {
       this.form.date = ''
       this.form.time = ''
       this.form.interviewer = ''
+      this.form.url = ''
       this.form.notes = ''
       this.form.submissionId = ''
       this.$modal.hide('edit-submission-interview-modal')

@@ -123,7 +123,7 @@ class SubmissionController extends Controller
 
   public function destroy(Request $request, Submission $job)
   {
-    /* == IS THE JOB SUBMISSION TO BE DELETED HAS INTERVIEWS (AND OFFERS) == */
+    /* == DOES THE JOB SUBMISSION TO BE DELETED HAVE INTERVIEWS (AND OFFERS) == */
     if ($job->interviews) {
       $job->interviews->map->delete();
     }
@@ -147,6 +147,7 @@ class SubmissionController extends Controller
 
     $job->interviews()->create($attributes + [
       'interviewer' => $request->interviewer,
+      'url' => $request->url,
       'notes' => $request->notes
     ]);
 
