@@ -17,7 +17,6 @@ Route::prefix('home')->group(function(){
 Route::group(['prefix'=>'jobs'], function(){
   Route::get('/', [SubmissionController::class, 'index'])->name('submissions');
   Route::get('/interviews', [InterviewController::class, 'index'])->name('interviews');
-  // Route::get('/offers', [JobOfferController::class, 'index'])->name('offers');
 });
 
  //== NEWSLETTER

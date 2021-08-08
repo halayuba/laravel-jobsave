@@ -147,21 +147,15 @@
             </div>
 
             <!-- COMPLETED -->
-            <div
-              class="ml-2 p-2 border border-gray-300 rounded"
-              :class="{ 'bg-red-100': dateValidationNotMet }"
+            <div class="ml-2 p-2 border border-gray-300 rounded"
+              :class="{ 'bg-red-100 opacity-50': dateValidationNotMet }"
+              :title="dateValidationNotMet ?  'Disabled until after interview date.' : 'You have completed the interview'"
             >
-              <input
-                type="radio"
-                id="two"
-                value="Completed"
+              <input type="radio" id="two" value="Completed"
                 :disabled="dateValidationNotMet"
                 v-model="form.status"
               >
-              <label
-                for="two"
-                class="ml-1 text-gray-700"
-              >Completed</label>
+              <label for="two" class="ml-1 text-gray-700">Completed</label>
             </div>
 
             <!-- RESCHEDULED -->

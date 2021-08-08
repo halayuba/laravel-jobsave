@@ -40,20 +40,14 @@
       </div>
 
       <!-- LINK TO INTERVIEW MEETING -->
-      <div
-        class="mt-4 flex items-center"
+      <div class="mt-4 flex items-center"
         v-if="interview.url"
       >
         <!-- LINK -->
-        <a
-          target="_blank"
+        <a target="_blank" title="Click to go to Zoom / WebEx / MS Teams meeting"
           :href="interview.url"
         >
-          <icon
-            name="link"
-            class="w-6 h-6 fill-current text-gray-600 flex-shrink-0"
-          />
-          <span class="text-gray-700 text-xs tracking-tight ml-1">Click to go to Zoom / WebEx / MS Teams meeting</span>
+          <icon name="link" class="w-6 h-6 fill-current text-gray-600 flex-shrink-0" />
         </a>
       </div>
 

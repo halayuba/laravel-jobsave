@@ -12196,12 +12196,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -13013,8 +13007,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _misc_ErrorAlert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/misc/ErrorAlert */ "./resources/js/components/misc/ErrorAlert.vue");
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_1__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -13154,19 +13150,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       showInfoMsgFlag: '',
+      validDate: true,
       errors: [],
       form: {
         date: '',
         time: '',
         interviewer: '',
         url: '',
-        note: '',
-        submissionId: '' // submission_id: this.submission.id,
-
+        notes: '',
+        submissionId: ''
       }
     };
   },
@@ -13190,24 +13187,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     errorsExist: function errorsExist() {
       return this.errors ? this.errors.length > 0 : null;
+    },
+
+    /* == MUST NOT ALLOW TO "COMPLETE" THE INTERVIEW PRIOR TO THE INTERVIEW DATE == */
+    dateValidation: function dateValidation() {
+      if (this.form.date) return dayjs__WEBPACK_IMPORTED_MODULE_1___default()().isBefore(dayjs__WEBPACK_IMPORTED_MODULE_1___default()(this.form.date));else return false;
     }
   },
-  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapActions)({
     storeInterviewDetail: 'jobs/storeInterviewDetail'
   })), {}, {
     formSubmit: function formSubmit() {
       var _this = this;
 
-      if (this.formEditIsReady) {
+      if (this.formEditIsReady && this.dateValidation) {
         this.storeInterviewDetail({
           submissionId: this.form.submissionId,
           payload: this.form
         }).then(function (response) {
-          _this.$toastr.s('Created successfully');
+          if (response.data.success) {
+            _this.$toastr.s(response.data.message);
+          } else {
+            _this.$toastr.e(response.data.message);
+          }
 
           _this.closeForm();
-
-          location = response.data.redirect;
         })["catch"](function (error) {
           _this.flashErrors(error.response.data.errors);
 
@@ -13233,13 +13237,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.time = '';
       this.form.interviewer = '';
       this.form.url = '';
-      this.form.note = '';
+      this.form.notes = '';
       this.form.submissionId = '';
       this.$modal.hide('add-submission-interview-modal');
     },
     cancelForm: function cancelForm() {
       this.closeForm();
       this.$toastr.i('Form cancelled.');
+    },
+    dateSelected: function dateSelected() {
+      if (dayjs__WEBPACK_IMPORTED_MODULE_1___default()().isAfter(dayjs__WEBPACK_IMPORTED_MODULE_1___default()(this.form.date))) {
+        this.errors = [];
+        this.errors.push('Wrong Date: upcoming interviews must be in the future.');
+        this.form.date = '';
+        this.validDate = false;
+      } else {
+        this.errors = [];
+        this.validDate = true;
+      }
     }
   })
 });
@@ -13472,12 +13487,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -15374,20 +15383,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 5:
                 response = _context4.sent;
-                dispatch('getJobSubmissions');
+
+                if (!response.data.success) {
+                  _context4.next = 11;
+                  break;
+                }
+
+                dispatch('getJobInterviews');
                 return _context4.abrupt("return", Promise.resolve(response));
 
-              case 10:
-                _context4.prev = 10;
+              case 11:
+                return _context4.abrupt("return", Promise.resolve(response));
+
+              case 12:
+                _context4.next = 17;
+                break;
+
+              case 14:
+                _context4.prev = 14;
                 _context4.t0 = _context4["catch"](2);
                 return _context4.abrupt("return", Promise.reject(_context4.t0));
 
-              case 13:
+              case 17:
               case "end":
                 return _context4.stop();
             }
           }
-        }, _callee4, null, [[2, 10]]);
+        }, _callee4, null, [[2, 14]]);
       }))();
     },
 
@@ -57750,19 +57772,19 @@ var render = function() {
         ? _c("div", { staticClass: "mt-4 flex items-center" }, [
             _c(
               "a",
-              { attrs: { target: "_blank", href: _vm.interview.url } },
+              {
+                attrs: {
+                  target: "_blank",
+                  title: "Click to go to Zoom / WebEx / MS Teams meeting",
+                  href: _vm.interview.url
+                }
+              },
               [
                 _c("icon", {
                   staticClass:
                     "w-6 h-6 fill-current text-gray-600 flex-shrink-0",
                   attrs: { name: "link" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  { staticClass: "text-gray-700 text-xs tracking-tight ml-1" },
-                  [_vm._v("Click to go to Zoom / WebEx / MS Teams meeting")]
-                )
+                })
               ],
               1
             )
@@ -58709,9 +58731,11 @@ var render = function() {
                     }
                   ],
                   staticClass: "form_input",
+                  class: _vm.validDate ? "form_input" : "form_input_error",
                   attrs: { type: "date" },
                   domProps: { value: _vm.form.date },
                   on: {
+                    change: _vm.dateSelected,
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -58808,26 +58832,26 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "w-full mt-2 sm:mt-4" }, [
-              _c("label", { staticClass: "form_label" }, [_vm._v("Note")]),
+              _c("label", { staticClass: "form_label" }, [_vm._v("Notes")]),
               _vm._v(" "),
               _c("textarea", {
                 directives: [
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.form.note,
-                    expression: "form.note"
+                    value: _vm.form.notes,
+                    expression: "form.notes"
                   }
                 ],
                 staticClass: "form_textarea resize-none",
                 attrs: { rows: "3" },
-                domProps: { value: _vm.form.note },
+                domProps: { value: _vm.form.notes },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.form, "note", $event.target.value)
+                    _vm.$set(_vm.form, "notes", $event.target.value)
                   }
                 }
               })
@@ -59415,7 +59439,14 @@ var render = function() {
                   "div",
                   {
                     staticClass: "ml-2 p-2 border border-gray-300 rounded",
-                    class: { "bg-red-100": _vm.dateValidationNotMet }
+                    class: {
+                      "bg-red-100 opacity-50": _vm.dateValidationNotMet
+                    },
+                    attrs: {
+                      title: _vm.dateValidationNotMet
+                        ? "Disabled until after interview date."
+                        : "You have completed the interview"
+                    }
                   },
                   [
                     _c("input", {
@@ -60874,7 +60905,6 @@ var render = function() {
         ])
       : _vm.name == "link"
       ? _c("svg", { attrs: { viewBox: "0 0 20 20" } }, [
-          _c("title", [_vm._v("link")]),
           _c("path", {
             attrs: {
               d:

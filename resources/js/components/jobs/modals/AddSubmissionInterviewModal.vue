@@ -42,10 +42,10 @@
           <!-- DATE OF INTERVIEW -->
           <div class="w-full mt-2 lg:mt-0">
             <label class="form_label">Interview date</label>
-            <input
-              type="date"
-              class="form_input"
+            <input type="date" class="form_input"
               v-model="form.date"
+              @change="dateSelected"
+              :class="validDate ? 'form_input' : 'form_input_error'"
             >
           </div>
 
@@ -84,11 +84,11 @@
 
         <!-- NOTES ABOUT THE INTERVIEW -->
         <div class="w-full mt-2 sm:mt-4">
-          <label class="form_label">Note</label>
+          <label class="form_label">Notes</label>
           <textarea
             class="form_textarea resize-none"
             rows="3"
-            v-model="form.note"
+            v-model="form.notes"
           ></textarea>
         </div> <!-- NOTES ABOUT THE INTERVIEW -->
 
@@ -120,20 +120,21 @@
 <script>
 import { mapActions } from 'vuex'
 import ErrorAlert from '@/misc/ErrorAlert'
+import dayjs from 'dayjs'
 
 export default {
   data () {
     return {
       showInfoMsgFlag: '',
+      validDate: true,
       errors: [],
       form: {
         date: '',
         time: '',
         interviewer: '',
         url: '',
-        note: '',
+        notes: '',
         submissionId: ''
-        // submission_id: this.submission.id,
       }
     }
   },
@@ -156,22 +157,29 @@ export default {
     errorsExist () {
       return this.errors ? this.errors.length > 0 : null
     },
-
+    /* == MUST NOT ALLOW TO "COMPLETE" THE INTERVIEW PRIOR TO THE INTERVIEW DATE == */
+    dateValidation(){
+      if(this.form.date) return dayjs().isBefore(dayjs(this.form.date))
+      else return false
+    },
   },
   methods: {
     ...mapActions({
       storeInterviewDetail: 'jobs/storeInterviewDetail',
     }),
     formSubmit () {
-      if (this.formEditIsReady) {
+      if ( this.formEditIsReady && this.dateValidation ) {
         this.storeInterviewDetail({
           submissionId: this.form.submissionId,
           payload: this.form
         })
           .then(response => {
-            this.$toastr.s('Created successfully')
+            if(response.data.success){
+                this.$toastr.s(response.data.message)
+              } else {
+                this.$toastr.e(response.data.message)
+              }
             this.closeForm()
-            location = response.data.redirect
           })
           .catch(error => {
             this.flashErrors(error.response.data.errors)
@@ -193,7 +201,7 @@ export default {
       this.form.time = ''
       this.form.interviewer = ''
       this.form.url = ''
-      this.form.note = ''
+      this.form.notes = ''
       this.form.submissionId = ''
       this.$modal.hide('add-submission-interview-modal')
     },
@@ -201,6 +209,17 @@ export default {
       this.closeForm()
       this.$toastr.i('Form cancelled.')
     },
+    dateSelected(){
+      if(dayjs().isAfter(dayjs(this.form.date))){
+        this.errors = []
+        this.errors.push('Wrong Date: upcoming interviews must be in the future.')
+        this.form.date = ''
+        this.validDate = false
+      } else {
+        this.errors = []
+        this.validDate = true
+      }
+    }
 
   },
 

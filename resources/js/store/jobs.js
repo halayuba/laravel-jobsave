@@ -169,13 +169,17 @@ export default {
         },
         /* == STORE DETAILS ABOUT A NEW JOB INTERVIEW == */
         async storeInterviewDetail({ commit, dispatch }, { submissionId, payload }) {
-            try {
-                let response = await axios.post(`${baseUrl.jobSubmissionsApiUrl}/${submissionId}/interview`, payload);
-                dispatch('getJobSubmissions')
-                return Promise.resolve(response);
-            } catch (error) {
-                return Promise.reject(error);
-            }
+          try {
+              let response = await axios.post(`${baseUrl.jobSubmissionsApiUrl}/${submissionId}/interview`, payload);
+              if(response.data.success){
+                dispatch('getJobInterviews')
+                return Promise.resolve(response)
+              } else {
+                return Promise.resolve(response)
+              }
+          } catch (error) {
+              return Promise.reject(error);
+          }
         },
         /* == UPDATE A JOB SUBMISSION == */
         async updateJobSubmission({ commit, dispatch }, { submissionId, payload }) {

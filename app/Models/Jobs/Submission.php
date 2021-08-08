@@ -29,6 +29,14 @@ class Submission extends Model
       ->oldest();
   }
 
+    /* == TO DO: BEFORE STORING A NEW INTERVIEW, CHECK IF A JOB SUBMMISSION ALREADY HAS AN UPCOMING INTERVIEW  == */
+    public function scopeHasUpcomingInterviews($query, $val)
+    {
+      $query->join('interviews', 'submissions.id', '=', 'interviews.submission_id')
+            ->where('submissions.id', $val)
+            ->where('interviews.status', '=', 'Upcoming');
+    }
+
   /* == STAT SUMMARY (IN "SubmissionCollection") == */
   /* == GET ALL SUBMISSIONS THAT:
           1. WHERE THE SUBMISSION IS WITHIN A MONTH

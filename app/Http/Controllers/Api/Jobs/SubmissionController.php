@@ -35,13 +35,6 @@ class SubmissionController extends Controller
 
     /* == MUST USE "UNIQUE" BECAUSE MULTIPLE RECORDS WITH THE SAME ID WILL SHOW IF ONE OF THE JOB SUBMISSIONS HAD MORE THAN ONE JOB INTERVIEW ASSOCIATED WITH IT == */
     return new SubmissionCollection($submissions->unique('id')->flatten()); //== IT WILL NOT WORK WITHOUT FLATTEN() THE RESULT
-
-    /* OLD
-    return SubmissionResource::collection($submissions);
-
-    $submissions = Submission::with('interviews')->latest()->get();
-    return SubmissionResource::collection($submissions);
-    */
   }
 
   //== STORE A JOB SUBMISSION
@@ -56,13 +49,16 @@ class SubmissionController extends Controller
     ]);
 
     /* == CONFIRM NOT A DUPLICATE ENTRY == */
-    if (Submission::findDuplicateRecord()->exists()) {
+    if (Submission::findDuplicateRecord()->exists())
+    {
       return response()->json([
         'status' => 409,
         'message' => "Conflict. This is a duplicate entry"
       ]);
-    } else {
-      request()->user()->submissions()->create($attributes + [
+    }
+    else
+    {
+      $request->user()->submissions()->create($attributes + [
         'url' => $request->url,
         'note' => $request->note
       ]);
@@ -89,12 +85,15 @@ class SubmissionController extends Controller
     ]);
 
     /* == CONFIRM NOT A DUPLICATE ENTRY == */
-    if ($job->NotUniqueForUpdate()) {
+    if ($job->NotUniqueForUpdate())
+    {
       return response()->json([
         'status' => 409,
         'message' => "Conflict. This is a duplicate entry"
       ]);
-    } else {
+    }
+    else
+    {
       $job->update($attributes + [
         'url' => $request->url,
         'note' => $request->note
@@ -124,7 +123,8 @@ class SubmissionController extends Controller
   public function destroy(Request $request, Submission $job)
   {
     /* == DOES THE JOB SUBMISSION TO BE DELETED HAVE INTERVIEWS (AND OFFERS) == */
-    if ($job->interviews) {
+    if ($job->interviews)
+    {
       $job->interviews->map->delete();
     }
 
@@ -145,12 +145,24 @@ class SubmissionController extends Controller
       'time' => 'required',
     ]);
 
+    /* == CONFIRM THIS JOB SUBMISSION HAS NO "UPCOMING" INTERVIEW == */
+    if( $job->interviews && $job->hasUpcomingInterviews($job->id)->count() )
+    {
+      return response()->json([
+        'success' => false,
+        'message' => 'This job submission already has an upcoming interview and as a business rule you can only have one upcoming interview.'
+      ]);
+    }
+
     $job->interviews()->create($attributes + [
       'interviewer' => $request->interviewer,
       'url' => $request->url,
       'notes' => $request->notes
     ]);
 
-    return response()->json(['status' => 200]);
+    return response()->json([
+      'success' => true,
+      'message' => 'New interview created successfully.'
+    ]);
   }
 }
