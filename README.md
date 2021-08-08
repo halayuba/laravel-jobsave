@@ -1,8 +1,8 @@
 ## Laravel Vuejs Tailwind - Job Save
 
 - Author: Simon Bashir
-- Version: 0.4
-- Release Date: Mar 15, 2021 (updated Jul 25, 2021)
+- Version: 0.41
+- Release Date: Mar 15, 2021 (updated Aug 7, 2021)
 - To see a hosted demo you can visit [jobsave.io](http://www.jobsave.io)
 
 ### Brief Description
@@ -12,11 +12,10 @@ Personal organizer for professional job hunters. Job Save is an open-source web 
 ### Basic Features
 1. This is a "demo" project but the additional sql files "submissions.sql" and "interviews.sql" contain "real" activities about my own application submissions for job opportunities.
 2. This demo project shows variety of many techniques for creating API-based projects with Laravel/Vuejs/Tailwind.
-3. This project is under development and therefore may contain bugs, incomplete features, or broken "responsive" design.
-4. This project does not focus on Authentication and Authorizations (roles & permissions).
-5. No image upload is used in this demo project.
-6. Some "Form validation" and flash messaging are used in this project.
-7. Laravel Breeze is used.
+3. This project is under development and therefore may contain bugs, incomplete features, or broken design.
+4. This project employs basic Authentication, notification messaging, and form validation.
+5. Vuex store is used for state management.
+6. Laravel Breeze is used.
 
 ### Screen Shots
 Coming soon
