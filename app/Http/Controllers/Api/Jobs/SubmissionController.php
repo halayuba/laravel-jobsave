@@ -110,6 +110,17 @@ class SubmissionController extends Controller
 
   public function updateToUnsuccessful(Submission $job)
   {
+    /* == DOES THE JOB SUBMISSION TO BE UPDATED HAVE AN UPCOMING INTERVIEW == */
+    if( $job->interviews->count() )
+    {
+      if( $job->hasUpcomingInterviews()->count() )
+      {
+        $interviewId = $job->getInterviewId()->get()->flatten()->pluck('id');
+        $interview = Interview::find($interviewId)->first();
+        $interview->canceled();
+      }
+    }
+
     $job->update([
       'status' => 'Unsuccessful'
     ]);

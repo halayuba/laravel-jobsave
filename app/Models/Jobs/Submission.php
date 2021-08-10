@@ -30,10 +30,19 @@ class Submission extends Model
   }
 
     /* == TO DO: BEFORE STORING A NEW INTERVIEW, CHECK IF A JOB SUBMMISSION ALREADY HAS AN UPCOMING INTERVIEW  == */
-    public function scopeHasUpcomingInterviews($query, $val)
+    public function scopeHasUpcomingInterviews($query)
     {
       $query->join('interviews', 'submissions.id', '=', 'interviews.submission_id')
-            ->where('submissions.id', $val)
+            ->where('submissions.id', $this->id)
+            ->where('interviews.status', '=', 'Upcoming');
+    }
+
+    /* == TO DO: WHEN DELETING A SUBMISSION THAT HAS AN UPCOMING INTERVIEW PERFORM HOUSEKEEPING FIRST == */
+    public function scopeGetInterviewId($query)
+    {
+      $query->join('interviews', 'submissions.id', '=', 'interviews.submission_id')
+            ->select('interviews.id')
+            ->where('submissions.id', $this->id)
             ->where('interviews.status', '=', 'Upcoming');
     }
 

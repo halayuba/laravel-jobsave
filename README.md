@@ -1,8 +1,8 @@
 ## Laravel Vuejs Tailwind - Job Save
 
 - Author: Simon Bashir
-- Version: 0.41
-- Release Date: Mar 15, 2021 (updated Aug 7, 2021)
+- Version: 0.42
+- Release Date: Mar 15, 2021 (updated Aug 10, 2021)
 - To see a hosted demo you can visit [jobsave.io](http://www.jobsave.io)
 
 ### Brief Description
@@ -33,7 +33,7 @@ Job Save requires Laravel v8.32 (not tested with other versions).
 ~~~
     git clone https://github.com/halayuba/laravel-jobsave.git
 ~~~
-* Install the composer dependencies: go to the folder that contains the download and run this command
+* Install the composer dependencies: go to the folder that contains the downloaded repo and run this command
 ~~~
     composer install
 ~~~
@@ -58,7 +58,7 @@ Job Save requires Laravel v8.32 (not tested with other versions).
 ~~~
     sudo chmod -R 777 storage bootstrap/cache
 ~~~
-* Run the following artisan commands
+* Run the following commands
 ~~~
     npm install && npm run dev
 ~~~
