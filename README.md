@@ -58,15 +58,15 @@ Job Save requires Laravel v8.32 (not tested with other versions).
 ~~~
     sudo chmod -R 777 storage bootstrap/cache
 ~~~
-* Run the following commands
-~~~
-    npm install && npm run dev
-~~~
 * Update the values shown in [] below in "baseUrl.js" (in the resources/js/ folder) with your preferences.
 ~~~
     jobSubmissionsApiUrl: 'http://{url}/api/jobs',
     jobInterviewsApiUrl: 'http://{url}/api/interviews',
     authApiUrl: 'http://{url}/api/auth/user',
+~~~
+* Run the following commands
+~~~
+    npm install && npm run dev
 ~~~
 * Optional sql files "submissions.sql" and "interviews.sql" are included as seeders in the "extra" folder (under "jobsave/database/seeders/extra"). You can import these files manually (in the order listed above) into your DB if you prefer to see seeder data for job submissions and interviews.
 
