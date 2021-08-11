@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\Jobs;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Jobs\Submission;
+use App\Models\Jobs\{Submission, Interview};
 use App\Models\User;
 use App\Http\Resources\Jobs\{SubmissionResource, SubmissionCollection};
 
