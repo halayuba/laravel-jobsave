@@ -1,19 +1,30 @@
 <template>
   <div class="px-2 md:container md:mx-auto md:px-4 xl:px-8">
 
-    <!-- SUBMISSION FORM -->
-    <submission-form :auth="auth" />
-
     <!-- SUMMARY -->
     <submissions-summary />
 
+    <!-- SUBMISSION FORM -->
+    <div class="mt-6"
+      v-if="jobSubmissionForm"
+    >
+      <submission-form :auth="auth" @closeForm="jobSubmissionForm = false" />
+    </div>
+
     <!-- SEARCH FIELD -->
-    <div class="my-4">
+    <div class="mt-8 my-4 flex justify-between">
       <SearchInput
         v-if="result.length"
         @captured="quickSearch"
         @clearSearch="clearSearch"
       />
+
+      <a href="#" class="flex justify-center items-center inline-block px-4 lg:px-6 py-4 leading-none bg-gray-800 hover:bg-gray-700 text-sm font-medium text-white rounded"
+        @click.prevent="jobSubmissionForm = !jobSubmissionForm"
+        v-if="!jobSubmissionForm"
+      >
+        Add new job submission
+      </a>
     </div>
 
     <div
@@ -103,7 +114,8 @@ export default {
     return {
       result: '',
       submissionId: '',
-      submissionRecord: ''
+      submissionRecord: '',
+      jobSubmissionForm: false
     }
   },
   props: {

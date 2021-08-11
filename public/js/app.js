@@ -12673,6 +12673,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -12687,7 +12698,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       result: '',
       submissionId: '',
-      submissionRecord: ''
+      submissionRecord: '',
+      jobSubmissionForm: false
     };
   },
   props: {
@@ -13990,6 +14002,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
 //
 //
 //
@@ -58245,18 +58261,52 @@ var render = function() {
     "div",
     { staticClass: "px-2 md:container md:mx-auto md:px-4 xl:px-8" },
     [
-      _c("submission-form", { attrs: { auth: _vm.auth } }),
-      _vm._v(" "),
       _c("submissions-summary"),
+      _vm._v(" "),
+      _vm.jobSubmissionForm
+        ? _c(
+            "div",
+            { staticClass: "mt-6" },
+            [
+              _c("submission-form", {
+                attrs: { auth: _vm.auth },
+                on: {
+                  closeForm: function($event) {
+                    _vm.jobSubmissionForm = false
+                  }
+                }
+              })
+            ],
+            1
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "my-4" },
+        { staticClass: "mt-8 my-4 flex justify-between" },
         [
           _vm.result.length
             ? _c("SearchInput", {
                 on: { captured: _vm.quickSearch, clearSearch: _vm.clearSearch }
               })
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.jobSubmissionForm
+            ? _c(
+                "a",
+                {
+                  staticClass:
+                    "flex justify-center items-center inline-block px-4 lg:px-6 py-4 leading-none bg-gray-800 hover:bg-gray-700 text-sm font-medium text-white rounded",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.jobSubmissionForm = !_vm.jobSubmissionForm
+                    }
+                  }
+                },
+                [_vm._v("\n      Add new job submission\n    ")]
+              )
             : _vm._e()
         ],
         1
@@ -59958,12 +60008,26 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow",
+                          "text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 leading-tight px-4 py-2 shadow",
                         on: { click: _vm.resetFields }
                       },
-                      [_vm._v("Clear")]
+                      [_vm._v("Clear form")]
                     )
                   : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "ml-4 text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 leading-tight px-4 py-2 shadow",
+                    on: {
+                      click: function($event) {
+                        return _vm.$emit("closeForm")
+                      }
+                    }
+                  },
+                  [_vm._v("Cancel")]
+                ),
                 _vm._v(" "),
                 _c(
                   "button",

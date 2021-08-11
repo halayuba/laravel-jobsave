@@ -1,7 +1,7 @@
 ## Laravel Vuejs Tailwind - Job Save
 
 - Author: Simon Bashir
-- Version: 0.42
+- Version: 0.43
 - Release Date: Mar 15, 2021 (updated Aug 10, 2021)
 - To see a hosted demo you can visit [jobsave.io](http://www.jobsave.io)
 

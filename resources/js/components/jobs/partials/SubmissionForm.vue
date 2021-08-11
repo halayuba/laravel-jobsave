@@ -85,12 +85,16 @@
 
           <!-- BUTTONS -->
           <div class="flex">
-            <!-- CANCEL BUTTON -->
-            <button
-              class="text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 font-semibold text-lg rounded-r-sm leading-tight px-4 py-2 shadow"
+            <!-- CLEAR BUTTON -->
+            <button class="text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 leading-tight px-4 py-2 shadow"
               @click="resetFields"
               v-if="formHasOneField"
-            >Clear</button>
+            >Clear form</button>
+
+            <!-- CANCEL BUTTON -->
+            <button class="ml-4 text-center align-middle whitespace-no-wrap select-none cursor-pointer inline-block mb-0 bg-gray-100 text-gray-700 leading-tight px-4 py-2 shadow"
+              @click="$emit('closeForm')"
+            >Cancel</button>
 
             <!-- SAVE BUTTON -->
             <button
