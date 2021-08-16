@@ -58285,7 +58285,7 @@ var render = function() {
         "div",
         { staticClass: "mt-8 my-4 flex justify-between" },
         [
-          _vm.result.length
+          _vm.result.length || _vm.submissions.length
             ? _c("SearchInput", {
                 on: { captured: _vm.quickSearch, clearSearch: _vm.clearSearch }
               })

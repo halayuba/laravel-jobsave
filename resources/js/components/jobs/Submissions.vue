@@ -14,7 +14,7 @@
     <!-- SEARCH FIELD -->
     <div class="mt-8 my-4 flex justify-between">
       <SearchInput
-        v-if="result.length"
+        v-if="result.length || submissions.length"
         @captured="quickSearch"
         @clearSearch="clearSearch"
       />
