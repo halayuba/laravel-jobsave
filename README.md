@@ -1,7 +1,7 @@
 ## Laravel Vuejs Tailwind - Job Save
 
 - Author: Simon Bashir
-- Version: 0.43
+- Version: 0.44
 - Release Date: Mar 15, 2021 (updated Aug 10, 2021)
 - To see a hosted demo you can visit [jobsave.io](http://www.jobsave.io)
 
@@ -50,6 +50,11 @@ Job Save requires Laravel v8.32 (not tested with other versions).
     DB_USERNAME=[username]
     DB_PASSWORD=[password]
 ~~~
+* In .env add the following (e.g., to the bottom of .env)
+~~~
+    SANCTUM_STATEFUL_DOMAINS={url}
+    SESSION_DOMAIN={.url}
+~~~
 * Run all migrations to create and populate the database tables
 ~~~
     php artisan migrate --seed
@@ -66,7 +71,7 @@ Job Save requires Laravel v8.32 (not tested with other versions).
 ~~~
 * Run the following commands
 ~~~
-    npm install && npm run dev
+    npm install && npm run dev (for development)
 ~~~
 * Optional sql files "submissions.sql" and "interviews.sql" are included as seeders in the "extra" folder (under "jobsave/database/seeders/extra"). You can import these files manually (in the order listed above) into your DB if you prefer to see seeder data for job submissions and interviews.
 
