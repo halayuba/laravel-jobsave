@@ -145,13 +145,13 @@ export default {
     ErrorAlert
   },
   computed: {
-    formEditIsReady () {
+    formCanBeSubmitted () {
       return (this.form.date && this.form.time && this.form.submissionId) ? true : false
     },
     btnState () {
       return {
-        'pointer-events-none btn_cancel opacity-25': !this.formEditIsReady,
-        'btn_wide': this.formEditIsReady,
+        'pointer-events-none btn_cancel opacity-25': !this.formCanBeSubmitted,
+        'btn_wide': this.formCanBeSubmitted,
       }
     },
     errorsExist () {
@@ -168,7 +168,7 @@ export default {
       storeInterviewDetail: 'jobs/storeInterviewDetail',
     }),
     formSubmit () {
-      if ( this.formEditIsReady && this.dateValidation ) {
+      if ( this.formCanBeSubmitted && this.dateValidation ) {
         this.storeInterviewDetail({
           submissionId: this.form.submissionId,
           payload: this.form

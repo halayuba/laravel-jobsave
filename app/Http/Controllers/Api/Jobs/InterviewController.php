@@ -18,7 +18,7 @@ class InterviewController extends Controller
 
     $interviews = $user->interviews()
       ->with('submission')
-      ->orderBy('submission_id')
+      ->latest('date')
       ->get();
 
     return InterviewResource::collection($interviews);

@@ -46,7 +46,7 @@
 
         <!-- SECOND: TWO COLUMNS -->
         <div
-          class="flex flex-col lg:flex-row mt-4"
+          class="flex flex-col lg:flex-row mt-4 bg-red-100 p-2"
           v-if="dateTimeFlag == 'edit'"
         >
 
@@ -165,6 +165,7 @@
                 id="three"
                 value="Rescheduled"
                 v-model="form.status"
+                @click="rescheduleInterview"
               >
               <label
                 for="three"
@@ -245,13 +246,13 @@ export default {
     ErrorAlert
   },
   computed: {
-    formEditIsReady () {
+    formCanBeSubmitted () {
       return (this.form.date && this.form.time && this.form.submissionId && this.form.status) ? true : false
     },
     btnState () {
       return {
-        'pointer-events-none btn_cancel opacity-25': !this.formEditIsReady,
-        'btn_wide': this.formEditIsReady,
+        'pointer-events-none btn_cancel opacity-25': !this.formCanBeSubmitted,
+        'btn_wide': this.formCanBeSubmitted,
       }
     },
     errorsExist () {
@@ -274,7 +275,7 @@ export default {
       if (this.form.date === moment(this.interview.date).format("MM-DD-YYYY")) {
         this.form.date = moment(this.interview.date).format("YYYY-MM-DD")
       }
-      if (this.formEditIsReady) {
+      if (this.formCanBeSubmitted) {
         this.updateJobInterview({
           interviewId: this.interview.id,
           payload: this.form
@@ -315,6 +316,10 @@ export default {
     changeFieldType (value) {
       this.inputFiedFlag = value
     },
+    rescheduleInterview(){
+      this.dateTimeFlag = 'edit'
+      this.form.notes = this.form.notes.concat(".  The original scheduled date and time were ", this.interview.dateTime)
+    }
 
   },
 }
