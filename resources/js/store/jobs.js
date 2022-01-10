@@ -14,7 +14,8 @@ export default {
         submissionsHaveInterviews: '',
         completedInterviews: '',
         filteredSubmissions: '',
-        interviews: []
+        interviews: [],
+        statusUpdatedId: null
     },
 /*=====================================
   ||||| GETTERS |||||
@@ -40,6 +41,9 @@ export default {
         },
         interviews(state) {
             return state.interviews
+        },
+        statusUpdatedId(state) {
+            return state.statusUpdatedId
         },
     },
 /*=====================================
@@ -101,6 +105,7 @@ export default {
                 item => item.id === submissionId
             );
             state.submissions[submissionIndex].status = 'Unsuccessful'
+            state.statusUpdatedId = submissionIndex
         },
         UPDATE_INTERVIEW_COMPLETION(state, interviewId){
           state.interviews.map(interview => {

@@ -127,6 +127,7 @@
 
 <script>
 import moment from 'moment'
+import { mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -148,6 +149,10 @@ export default {
     },
   },
   computed: {
+    ...mapGetters({
+      statusUpdatedId: 'jobs/statusUpdatedId',
+      submissions: 'jobs/submissions'
+    }),
     statusIndicator () {
       return {
         'p-2 rounded-full bg-red-600': this.submission.status === 'Unsuccessful',
@@ -156,7 +161,11 @@ export default {
       }
     },
     submissionWithInterview () {
-      if (this.submission.interviews) {
+      if(this.submission.status === 'Unsuccessful'){
+          this.upcomingInterviewFlag = false
+          this.completedInterviewFlag = false
+        }
+      else if (this.submission.interviews) {
         this.submission.interviews.map(interview => {
           if (interview.status === 'Upcoming') {
             this.upcomingInterviewFullRecord = interview
@@ -178,7 +187,15 @@ export default {
     toggleShowInterviewFlag (val) {
       this.showInterviewFlag = this.showInterviewFlag === val ? '' : val
     },
-
+  },
+  watch:{
+    /* == WHEN UPDATING THE STATUS OF A SUBMISSION THEN UPDATE THE COLOR INDICATOR == */
+    statusUpdatedId(){
+      if(this.submission.id === this.submissions[this.statusUpdatedId].id){
+        this.submission.status = this.submissions[this.statusUpdatedId].status
+        this.submissionWithInterview
+      }
+    }
   },
   mounted () {
     this.submissionWithInterview
